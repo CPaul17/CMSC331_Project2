@@ -1,18 +1,42 @@
-<?php
-include("header.html");
-?>
-
 <html>
+<head>
+<!-- Format background and border for page -->
+<style>
+#header {
+	background-color:yellow;
+	border: 10px solid black;
+	padding:10px;
+	color:black;
+	text-align:center;
+	font-size: 40px;
+}
+#section {
+	border: 10px solid black;
+	height: 1000px;
+	padding:30px;
+	text-align:center;
+	font-size: 40px;
+}
+</style>
+
+</head>
 <body>
-<br>
-<P ALIGN="CENTER"><FONT SIZE="5"><U>Advising Administrator Log-in</U></FONT></P>
-<P ALIGN="CENTER"><FONT SIZE="3">(Enter 'username' for Username and 'password' for Password to log in.)<FONT></P>
-<P ALIGN="CENTER"><FONT SIZE="3">(The log-in feature will have more functionality when connected to an accounts database.)<FONT></P>
-<br>
-<form action='login.php' method='post' name='form1'>
-<pre><P ALIGN="CENTER"><FONT FACE="Times New Roman" SIZE = "3">Username: <input type='text' name='uname'>      Password: <input type='password' name='pass'></FONT>
-<br>
-<input type='submit' value="Log in" style="width:100px;height:60px;background-color:black;color:yellow;"> </P></pre>
+
+<!-- page banner -->
+<div id="header">
+<h1>UMBC Student Advising</h1>
+</div>
+
+<div id="section">
+<form action='studentLogin'>
+<input type="submit" style="font-size:100pt" name="submitted" value="Student">
 </form>
+
+<form action='adminLogin'>
+<input type="submit" style="font-size:100pt" name="submitted" value="Admin">
+</form>
+
+</div>
 </body>
 </html>
+

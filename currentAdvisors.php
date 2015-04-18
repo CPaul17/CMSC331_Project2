@@ -1,6 +1,6 @@
 <?php
 	$debug=false; session_start();
-	include('CommonMethods.php');
+	include('../CommonMethods.php');
 	$COMMON = new Common($debug);
 	
 		$sql = "select * from advisors order by `lname` ASC";
