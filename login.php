@@ -15,6 +15,6 @@ else
 	echo("</mark>");
 	echo("</FONT>");
 	echo("</P>");
-	include("index.php");
+	include("adminLogin.php");
 }
 ?>
