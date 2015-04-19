@@ -9,7 +9,22 @@
 	$month = $_POST['month'];
 	$day = $_POST['day'];
 	$year = $_POST['year'];
-	$date = $month."/".$day;
+	if($month < 10 && $year < 10)
+	{
+		$date = $year."-0".$month."-0".$day;
+	}
+	else if($month < 10)
+	{
+		$date = $year."-0".$month."-".$day;
+	}
+	else if($day < 10)
+	{
+		$date = $year."-".$month."-0".$day;
+	}
+	else
+	{
+		$date = $year."-".$month."-".$day;
+	}
 
 	$startTime = (($_POST['startHour']*100)+($_POST['startMin']));
 	$sTOD = $_POST['stimofday'];
@@ -149,7 +164,7 @@ else
 	for($i = 0; $i < $blocks; $i++)
 	{
 		
-		if(checkTime($ID, $date, $startTime, $year))
+		if(checkTime($ID, $date, $startTime))
 		{	
 			$tempEnd = $startTime + 30;
 			if((($tempEnd + 40) % 100) == 0)
@@ -160,7 +175,7 @@ else
 			{
 				$tempEnd = $tempEnd + 40;
 			}
-			addAppointment($ID, $startTime, $tempEnd, $date, $year, $group1);
+			addAppointment($ID, $startTime, $tempEnd, $date, $group1);
 			$startTime = $tempEnd;
 			header('Location: successfulEntry.php');
 		}
@@ -205,13 +220,13 @@ function getID($first, $last)
 	$row = mysql_fetch_array($rs); // collects row data into an array named row
 	return $row['ID'];
 }
-function checkTime($id, $appDate, $appTime, $appYear)
+function checkTime($id, $appDate, $appTime)
 {
 	$exact;
 	$overlap = false;
 
 	global $debug; global $COMMON;
-	$sql = "select `num1` from appointments2 where `ID` = '$id' AND `date1` = '$appDate' AND `year1` = '$appYear' AND `start1` = '$appTime'";
+	$sql = "select `num1` from appointments2 where `ID` = '$id' AND `date1` = '$appDate' AND `start1` = '$appTime'";
 	$rs = $COMMON->executeQuery($sql, __FILE__);
 	$row = mysql_fetch_array($rs); // collects row data into an array named row
 	if($row['num1'] == NULL)
@@ -223,7 +238,7 @@ function checkTime($id, $appDate, $appTime, $appYear)
 		$exact = true;
 	}
 
-	$sql = "select `start1` from appointments2 where `ID` = '$id' AND `date1` = '$appDate' AND `year1` = '$appYear'";
+	$sql = "select `start1` from appointments2 where `ID` = '$id' AND `date1` = '$appDate'";
 	$rs = $COMMON->executeQuery($sql, __FILE__);
 
 	while($row = mysql_fetch_array($rs))
@@ -245,10 +260,10 @@ function checkTime($id, $appDate, $appTime, $appYear)
 	
 }
 
-function addAppointment($id, $sTime, $eTime, $date1, $year1, $group_1)
+function addAppointment($id, $sTime, $eTime, $date1, $group_1)
 {
 	global $debug; global $COMMON;
-	$sql = "insert into appointments2 (`start1`, `end1`, `ID`, `date1`, `year1`, `group_1`) values ('$sTime', '$eTime', '$id', '$date1', '$year1', '$group_1')";
+	$sql = "insert into appointments2 (`start1`, `end1`, `ID`, `date1`, `group_1`) values ('$sTime', '$eTime', '$id', '$date1', '$group_1')";
 	$rs = $COMMON->executeQuery($sql, __FILE__);
 }
 function getBlocks($start, $end)

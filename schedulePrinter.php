@@ -9,14 +9,29 @@
 	$month = $_POST['month'];
 	$day = $_POST['day'];
 	$year = $_POST['year'];
-	$date = $month."/".$day;
-	
+	if($month < 10 && $year < 10)
+	{
+		$date = $year."-0".$month."-0".$day;
+	}
+	else if($month < 10)
+	{
+		$date = $year."-0".$month."-".$day;
+	}
+	else if($day < 10)
+	{
+		$date = $year."-".$month."-0".$day;
+	}
+	else
+	{
+		$date = $year."-".$month."-".$day;
+	}
+
 	$allD = $_POST['allDays'];
 	$allA = $_POST['allAds'];
 	
 	if(!($allD == NULL) && !($allA == NULL))
 	{
-		$sql = "select * from appointments2 order by `year1`, `date1`, `start1` ASC";
+		$sql = "select * from appointments2 order by `date1`, `start1` ASC";
 
 		$rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
 
@@ -42,7 +57,7 @@
 		echo("<tr>");
 		while($row = mysql_fetch_array($rs))
 		{	
-			$tempDate = $row['date1']."/".$row['year1'];
+			$tempDate = $row['date1'];
 			echo("<tr>");
 			echo("<td>".$tempDate."</td>");
 			echo("<td>".getName($row['ID'])."</td>");
@@ -89,7 +104,7 @@
 		{
 			$ID = getID($firstName, $lastName);
 			
-			$sql = "select * from appointments2 where `ID` = '$ID' order by `year1`, `date1`, `start1` ASC";
+			$sql = "select * from appointments2 where `ID` = '$ID' order by `date1`, `start1` ASC";
 
 			$rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
 
@@ -115,7 +130,7 @@
 			echo("<tr>");
 			while($row = mysql_fetch_array($rs))
 			{	
-				$tempDate = $row['date1']."/".$row['year1'];
+				$tempDate = $row['date1'];
 				echo("<tr>");
 				echo("<td>".$tempDate."</td>");
 				echo("<td>".getName($row['ID'])."</td>");
@@ -147,7 +162,7 @@
 	}
 	else if (!($allA == NULL))
 	{
-		if(!checkDate_($date, $year))
+		if(!checkDate_($date))
 		{
 			echo("<P ALIGN=\"CENTER\">");
 			echo("<FONT SIZE=\"5\">");
@@ -160,7 +175,7 @@
 		}
 		else
 		{
-			$sql = "select * from appointments2 where `date1` = '$date' AND `year1` = '$year' order by `year1`, `date1`, `start1` ASC";
+			$sql = "select * from appointments2 where `date1` = '$date' order by `date1`, `start1` ASC";
 			$rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
 			
 			include("header.html");
@@ -185,7 +200,7 @@
 			echo("<tr>");
 			while($row = mysql_fetch_array($rs))
 			{	
-				$tempDate = $row['date1']."/".$row['year1'];
+				$tempDate = $row['date1'];
 				echo("<tr>");
 				echo("<td>".$tempDate."</td>");
 				echo("<td>".getName($row['ID'])."</td>");
@@ -228,7 +243,7 @@
 			echo("</P>");
 			include("printingPage.php");
 		}
-		else if(!checkAdDate($date, $year, getID($firstName, $lastName)))
+		else if(!checkAdDate($date, getID($firstName, $lastName)))
 		{
 			echo("<P ALIGN=\"CENTER\">");
 			echo("<FONT SIZE=\"5\">");
@@ -419,10 +434,10 @@ function getName($id)
 	$fullName = $row['fname']." ".$row['lname'];
 	return $fullName;
 }
-function checkDate_($date1, $year1)
+function checkDate_($date1)
 {
 	global $debug; global $COMMON;
-	$sql = "select `num1` from appointments2 where `date1` = '$date1' AND `year1` = '$year1'";
+	$sql = "select `num1` from appointments2 where `date1` = '$date1'";
 	$rs = $COMMON->executeQuery($sql, __FILE__);
 	$row = mysql_fetch_array($rs); // collects row data into an array named row
 	if($row['num1'] != NULL)
@@ -434,10 +449,10 @@ function checkDate_($date1, $year1)
 		return false;
 	}
 }
-function checkAdDate($date1, $year1, $id)
+function checkAdDate($date1, $id)
 {
 	global $debug; global $COMMON;
-	$sql = "select `num1` from appointments2 where `date1` = '$date1' AND `year1` = '$year1' AND `ID` = '$id'";
+	$sql = "select `num1` from appointments2 where `date1` = '$date1' AND `ID` = '$id'";
 	$rs = $COMMON->executeQuery($sql, __FILE__);
 	$row = mysql_fetch_array($rs); // collects row data into an array named row
 	if($row['num1'] != NULL)

@@ -1,8 +1,8 @@
 <?php
 $username = $_POST['uname'];
 $password = $_POST['pass'];
-
-if($username == "username" && $password == "password")
+$adminPass = $_POST['adminPass'];
+if($adminPass == "password" && $username != "" && $password != "")
 {
 	header('Location: schedulingPage.php');
 }
@@ -11,7 +11,7 @@ else
 	echo("<P ALIGN=\"CENTER\">");
 	echo("<FONT SIZE=\"5\">");
 	echo("<mark>");
-	echo("** Log-in attempt failed. Invalid username or password. **");
+	echo("** Log-in attempt failed. Invalid administrator password. **");
 	echo("</mark>");
 	echo("</FONT>");
 	echo("</P>");
