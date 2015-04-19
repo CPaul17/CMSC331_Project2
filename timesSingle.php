@@ -46,18 +46,6 @@ $debug = false;
 include('../CommonMethods.php');
 $COMMON = new Common($debug);
 
-//array of all possible times for a Mon, Wed, or Fri
-$groupDay = array('09:00:00', '09:30:00', '13:00:00', '13:30:00', '14:00:00', 
-		    '14:30:00', '15:00:00', '15:30:00');
-
-//array of all possible times for a Tue or Thu
-$nonGroupDay = array('09:00:00', '09:30:00', '10:00:00', '10:30:00', '11:00:00', '11:30:00', 
-		    '12:00:00', '12:30:00', '13:00:00', '13:30:00', '14:00:00', '14:30:00', 
-	            '15:00:00', '15:30:00');
-
-//empty array to hold the times that are taken
-$takenSlots = array();
-
 //date of the desired appointment
 $date = $_POST['singleDay'];
 $_SESSION['date'] = $date;
@@ -67,44 +55,27 @@ $adv = $_POST['adv'];
 $_SESSION['advisor'] = $adv;
 
 //checks database for all taken appointment times
-$sql = "select `Time` from `$adv` where `Date`='$date'";
+$sql = "select `start1`, `num1` from `appointments2` where `date1`='$date' and `group_1`=0 
+	and `full1`=0 and `ID`=$adv";
 $rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
 
 //creates array of the taken times
-while($row = mysql_fetch_row($rs))
-{
-	foreach ($row as $element)
-	{ 
-		array_push($takenSlots, $element);	
-	}
-}
-
-//computes the name of the day
-$day = date('D', strtotime($date));
-
-//creates empty array to hold all available sign-up times
+$row = mysql_fetch_row($rs);
 $availSlots = array();
-
-//compares taken slots with all possible slots, depending on the day
-if($day == 'Tue' || $day == 'Thu'){
-	//finds difference between possible times and taken times
-	$availSlots = array_diff($nonGroupDay, $takenSlots);
-} 
-else{
-	//finds difference between possible times and taken times
-	$availSlots = array_diff($groupDay, $takenSlots);
+while($row != NULL){
+	$idAndTime = array($row[0], $row[1]);
+	array_push($availSlots, $idAndTime);
+	$row = mysql_fetch_row($rs);
 }
 
 //if there are available times
 if(count($availSlots) != NULL){
 	//echos form and drop down menu
 	echo "<form method='post' action='confirmSingle.php'>";
-	echo "<select style='font-size: 28pt' name='time'>";
+	echo "<select style='font-size: 28pt' name='appmt'>";
 	//all available times are echoed as a drop-down option
 	foreach($availSlots as $element){
-		//changes from military to standard time for display
-		$standardTime = date('h:i A', strtotime($element));
-		echo "<option value=".$element.">".$standardTime."</option>";
+		echo "<option value=".$element[1].">".$element[0]."</option>";
 	}	
 	echo "</select><br><br>";
 	echo "<input type='submit' style='font-size: 28pt' value='Sign-Up'>";
@@ -113,8 +84,8 @@ if(count($availSlots) != NULL){
 //if no available times are found
 else{
 	//prompts user to return to previous page and choose a different day
-	echo "All times for this day have been booked.<br>";
-	echo "Please return to the previous page and select a new day.<br><br>";
+	echo "No times are available for this day.<br>";
+	echo "Please return to the previous page and select a new day or advisor.<br><br>";
 }
 ?>
 

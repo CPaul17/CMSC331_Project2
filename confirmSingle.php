@@ -44,18 +44,15 @@ include('../CommonMethods.php');
 $COMMON = new Common($debug);
 
 //retrieves student information from session
-$id = $_SESSION["idNum"];
-$advisor = $_SESSION["advisor"];
-$date = $_SESSION["date"];
-$time = $_POST["time"];
+$studentID = $_SESSION["idNum"];
 
-//inserts appointment information into the selected advisor's table
-$sql = "insert into $advisor(`StudentID`, `Time`, `Date`) values ('$id', '$time', '$date')";
+//ID number for the appointment
+$appointmentID = $_POST['appmt'];
+
+$sql = "update `appointments2` set `full1`=1, `StudentID`='$studentID' 
+	where `num1`=$appointmentID";
+
 $rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
-
-//updates Appointment field in StudentInfo table to show what type of appointment they have
-$sql = "update `StudentInfo` set `Appointment`='$advisor' where `ID` = '$id'";
-$rs =  $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
 
 ?>
 

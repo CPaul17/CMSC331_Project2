@@ -47,14 +47,14 @@ $debug = false;
 include('../CommonMethods.php');
 $COMMON = new Common($debug);
 
-$sql = "select `fname`, `lname` from `advisors`";
+$sql = "select `fname`, `lname`, `ID` from `advisors`";
 $rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
 
 $row = mysql_fetch_row($rs);
 
 $advisorNames = array();
 while($row != NULL){
-	$name = array($row[0], $row[1]);
+	$name = array($row[0], $row[1], $row[2]);
 	array_push($advisorNames, $name);
 	$row = mysql_fetch_row($rs);
 }
@@ -63,7 +63,7 @@ if(count($advisorNames) != NULL){
 	echo "Advisors: ";
 	echo "<select name='adv' style='font-size: 28pt'>";
 	foreach($advisorNames as $element){
-		echo "<option value=".$element.">".$element[0]." ".$element[1]."</option>";
+		echo "<option value=".$element[2].">".$element[0]." ".$element[1]."</option>";
 	}	
 	echo "</select><br><br>";
 }
@@ -77,7 +77,7 @@ else{
 <!-- List of dates available -->
 Day:
 <select name='singleDay' style="font-size: 28pt">
-<option value='2015-03-23'>Monday, March 23</option>
+<option value='2015-01-01'>Thursday, January 1</option>
 <option value='2015-03-24'>Tuesday, March 24</option>
 <option value='2015-03-25'>Wednesday, March 25</option>
 <option value='2015-03-26'>Thursday, March 26</option>
