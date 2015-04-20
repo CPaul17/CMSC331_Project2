@@ -29,7 +29,7 @@ Email: <input type='text' name='email' value="jdoe123">@umbc.edu
 	</FONT></P></pre>
 	</form>
 	<P ALIGN="CENTER">
-<a href="schedulingPage.php"><button type="button" class="Button" style="height:50px;background-color:red;color:white;">Return to Scheduling</button></a>	
+<a href="adminMenu.php"><button type="button" class="Button" style="height:50px;width:150px;background-color:red;color:white;">Main Menu</button></a>	
 <a href="currentAdvisors.php"><button type="button" class="Button" style="height:50px;background-color:yellow;">View Current Advisors</button></a>
 </P>
 </body>

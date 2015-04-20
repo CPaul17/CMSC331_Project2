@@ -37,7 +37,7 @@ rpad.padding {
 	</P></pre>
 	</form>
 <P ALIGN="RIGHT">
-<rpad class="padding"><a href="schedulingPage.php"><button type="button" style="height:25px;background-color:red;color:white;">Update Schedule</button></a></rpad>
+<rpad class="padding"><a href="adminMenu.php"><button type="button" style="height:25px;background-color:red;color:white;">Main Menu</button></a></rpad>
 </P>
 
 </body>

@@ -104,7 +104,7 @@
 		{
 			$ID = getID($firstName, $lastName);
 			
-			$sql = "select * from appointments2 where `ID` = '$ID' order by `date1`, `start1` ASC";
+			$sql = "select * from appointments2 where `ID` = '$ID' OR `ID` = -1 order by `date1`, `start1` ASC";
 
 			$rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
 
@@ -258,7 +258,7 @@
 		{
 			$ID = getID($firstName, $lastName);
 			
-			$sql = "select * from appointments2 where `date1` = '$date' AND `year1` = '$year' AND `ID` = '$ID' order by `year1`, `date1`, `start1` ASC";
+			$sql = "select * from appointments2 where `date1` = '$date' AND (`ID` = '$ID' OR `ID` = -1) order by `date1`, `start1` ASC";
 			$rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
 
 			include("header.html");
@@ -432,6 +432,11 @@ function getName($id)
 	$row = mysql_fetch_array($rs);
 	
 	$fullName = $row['fname']." ".$row['lname'];
+	
+	if($fullName == " ")
+	{
+		$fullName = "Group";
+	}
 	return $fullName;
 }
 function checkDate_($date1)
@@ -452,7 +457,7 @@ function checkDate_($date1)
 function checkAdDate($date1, $id)
 {
 	global $debug; global $COMMON;
-	$sql = "select `num1` from appointments2 where `date1` = '$date1' AND `ID` = '$id'";
+	$sql = "select `num1` from appointments2 where `date1` = '$date1' AND (`ID` = '$id' OR `ID` = -1)";
 	$rs = $COMMON->executeQuery($sql, __FILE__);
 	$row = mysql_fetch_array($rs); // collects row data into an array named row
 	if($row['num1'] != NULL)

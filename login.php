@@ -4,7 +4,7 @@ $password = $_POST['pass'];
 $adminPass = $_POST['adminPass'];
 if($adminPass == "password" && $username != "" && $password != "")
 {
-	header('Location: schedulingPage.php');
+	header('Location: adminMenu.php');
 }
 else
 {

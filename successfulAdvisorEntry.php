@@ -22,6 +22,6 @@
 	<br>
 	<a href="addAdvisor.php"><button type="button" class="Button" style="height:35px;background-color:black;color:white;">Add Another Advisor</button></a>
 	
-	<a href="schedulingPage.php"><button type="button" class="Button" style="height:35px;background-color:red;color:white;">Go To Scheduling</button></a>
+	<a href="adminMenu.php"><button type="button" class="Button" style="height:35px;width:120px;background-color:red;color:white;">Main Menu</button></a>
 </body>
 </html>
