@@ -213,7 +213,7 @@ function checkTime($appDate, $appTime)
 function addAppointment($sTime, $eTime, $date1)
 {
 	global $debug; global $COMMON;
-	$sql = "insert into appointments2 (`start1`, `end1`, `ID`, `date1`, `group_1`) values ('$sTime', '$eTime', -1, '$date1', 0)";
+	$sql = "insert into appointments2 (`start1`, `end1`, `ID`, `date1`, `capacity1`) values ('$sTime', '$eTime', -1, '$date1', 10)";
 	$rs = $COMMON->executeQuery($sql, __FILE__);
 }
 function getBlocks($start, $end)
