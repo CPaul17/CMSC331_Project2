@@ -43,16 +43,17 @@
 		echo("<style>table tr:nth-child(odd) {background-color: #F5A9A9;}</style>");
 		echo("<style>table th {color:white;background-color:black;}</style>");
 		echo("<style>table th, td {padding:20px;}</style>");
-		echo("<P ALIGN=\"CENTER\">"); 
+		echo("<CENTER>"); 
 		echo("<table border='5px' style=\"border:solid black;border-collapse:collapse;text-align:center;\"");
 		echo("<tr>");
 		echo("<th>"."<FONT SIZE=5>"."Date"."</FONT>"."</th>");
 		echo("<th>"."<FONT SIZE=5>"."Advisor"."</FONT>"."</th>");
 		echo("<th>"."<FONT SIZE=5>"."Appt. Start"."</FONT>"."</th>");
 		echo("<th>"."<FONT SIZE=5>"."Appt. End  "."</FONT>"."</th>");
-		echo("<th>"."<FONT SIZE=5>"."Group?"."</FONT>"."</th>");
-		echo("<th>"."<FONT SIZE=5>"."Full?"."</FONT>"."</th>");
 		echo("<th>"."<FONT SIZE=5>"."Signups"."</FONT>"."</th>");
+		echo("<th>"."<FONT SIZE=5>"."Capacity"."</FONT>"."</th>");
+		echo("<th>"."<FONT SIZE=5>"."Full?"."</FONT>"."</th>");
+		echo("<th>"."<FONT SIZE=5>"."Delete"."</FONT>"."</th>");
 		echo("</tr>");
 		echo("<tr>");
 		while($row = mysql_fetch_array($rs))
@@ -63,28 +64,73 @@
 			echo("<td>".getName($row['ID'])."</td>");
 			echo("<td>".convertTime($row['start1'])."</td>");
 			echo("<td>".convertTime($row['end1'])."</td>");
-			if($row['group_1'] == 1)
-			{
-				echo("<td>"." Yes "."</td>");
-			}
-			else
-			{
-				echo("<td>"." No "."</td>");
-			}
-			if($row['full1'] == 1)
-			{
-				echo("<td>"." Yes "."</td>");
-			}
-			else
-			{
-				echo("<td>"." No "."</td>");
-			}
-			echo("<td>".$row['signups1']."</td>");
 			
+			$signups;
+			$capacity;
+			if($row['ID'] == -1)
+			{
+				$signups = 10 - $row['capacity1'];
+				$capacity = 10;
+			}
+			else if ($row['ID'] == -2)
+			{
+				$signups = 5 - $row['capacity1'];
+				$capacity = 5;
+			}
+			else
+			{
+				$signups = 1 - $row['capacity1'];
+				$capacity = 1;
+			}
+			echo("<td>".$signups."</td>");
+			if ($capacity == 10)
+			{
+				echo("<form action='changeCap.php' method='post' name='form1'>");
+				echo("<input type=\"hidden\" name=\"fname\" value=\"".$firstName."\">");
+				echo("<input type=\"hidden\" name=\"lname\" value=\"".$lastName."\">");
+				echo("<input type=\"hidden\" name=\"month\" value=\"".$month."\">");
+				echo("<input type=\"hidden\" name=\"day\" value=\"".$day."\">");
+				echo("<input type=\"hidden\" name=\"year\" value=\"".$year."\">");
+				echo("<input type=\"hidden\" name=\"allDays\" value=\"".$allD."\">");
+				echo("<input type=\"hidden\" name=\"allAds\" value=\"".$allA."\">");
+				echo("<input type=\"hidden\" name=\"num\" value=\"".$row['num1']."\">");
+				echo("<td>".$capacity."&nbsp;<input type='submit' value=\"&dArr;\" style=\"background-color:black;color:red;\"></td></form>");
+			}
+			else if ($capacity == 5)
+			{
+				echo("<form action='changeCap.php' method='post' name='form1'>");
+				echo("<input type=\"hidden\" name=\"fname\" value=\"".$firstName."\">");
+				echo("<input type=\"hidden\" name=\"lname\" value=\"".$lastName."\">");
+				echo("<input type=\"hidden\" name=\"month\" value=\"".$month."\">");
+				echo("<input type=\"hidden\" name=\"day\" value=\"".$day."\">");
+				echo("<input type=\"hidden\" name=\"year\" value=\"".$year."\">");
+				echo("<input type=\"hidden\" name=\"allDays\" value=\"".$allD."\">");
+				echo("<input type=\"hidden\" name=\"allAds\" value=\"".$allA."\">");
+				echo("<input type=\"hidden\" name=\"num\" value=\"".$row['num1']."\">");
+				echo("<td>".$capacity."&nbsp;<input type='submit' value=\"&uArr;\" style=\"background-color:black;color:green;\"></td></form>");
+
+			}
+			else
+			{
+				echo("<td>".$capacity."</td>");
+			}
+			if($row['capacity1'] == 0)
+			{
+				echo("<td>"." Yes "."</td>");
+			}
+			else
+			{
+				echo("<td>"." No "."</td>");
+			}
+			echo("<form action='deleteAppA.php' method='post' name='form2'>");
+			echo("<input type=\"hidden\" name=\"num\" value=\"".$row['num1']."\">");
+			echo("<input type=\"hidden\" name=\"date\" value=\"".$row['date1']."\">");
+			echo("<input type=\"hidden\" name=\"time\" value=\"".$row['start1']."\">");
+			echo("<td><input type='submit' value=\"Delete\"></td></form>");
 			echo("</tr>");	
 		}
 		echo("</table>");
-		echo("</P>");
+		echo("</CENTER>");
 
 	}
 	else if (!($allD == NULL))
@@ -104,7 +150,7 @@
 		{
 			$ID = getID($firstName, $lastName);
 			
-			$sql = "select * from appointments2 where `ID` = '$ID' OR `ID` = -1 order by `date1`, `start1` ASC";
+			$sql = "select * from appointments2 where `ID` = '$ID' OR `ID` = -1 OR `ID` = -2 order by `date1`, `start1` ASC";
 
 			$rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
 
@@ -116,16 +162,17 @@
 			echo("<style>table tr:nth-child(odd) {background-color: #F5A9A9;}</style>");
 			echo("<style>table th {color:white;background-color:black;}</style>");
 			echo("<style>table th, td {padding:20px;}</style>");
-			echo("<P ALIGN=\"CENTER\">"); 
+			echo("<CENTER>"); 
 			echo("<table border='5px' style=\"border:solid black;border-collapse:collapse;text-align:center;\"");
 			echo("<tr>");
 			echo("<th>"."<FONT SIZE=5>"."Date"."</FONT>"."</th>");
 			echo("<th>"."<FONT SIZE=5>"."Advisor"."</FONT>"."</th>");
 			echo("<th>"."<FONT SIZE=5>"."Appt. Start"."</FONT>"."</th>");
 			echo("<th>"."<FONT SIZE=5>"."Appt. End  "."</FONT>"."</th>");
-			echo("<th>"."<FONT SIZE=5>"."Group?"."</FONT>"."</th>");
-			echo("<th>"."<FONT SIZE=5>"."Full?"."</FONT>"."</th>");
 			echo("<th>"."<FONT SIZE=5>"."Signups"."</FONT>"."</th>");
+			echo("<th>"."<FONT SIZE=5>"."Capacity"."</FONT>"."</th>");
+			echo("<th>"."<FONT SIZE=5>"."Full?"."</FONT>"."</th>");
+			echo("<th>"."<FONT SIZE=5>"."Delete"."</FONT>"."</th>");
 			echo("</tr>");
 			echo("<tr>");
 			while($row = mysql_fetch_array($rs))
@@ -136,7 +183,56 @@
 				echo("<td>".getName($row['ID'])."</td>");
 				echo("<td>".convertTime($row['start1'])."</td>");
 				echo("<td>".convertTime($row['end1'])."</td>");
-				if($row['group_1'] == 1)
+				$signups;
+				$capacity;
+				if($row['ID'] == -1)
+				{
+					$signups = 10 - $row['capacity1'];
+					$capacity = 10;
+				}
+				else if ($row['ID'] == -2)
+				{
+					$signups = 5 - $row['capacity1'];
+					$capacity = 5;
+				}
+				else
+				{
+					$signups = 1 - $row['capacity1'];
+					$capacity = 1;
+				}
+				echo("<td>".$signups."</td>");
+				if ($capacity == 10)
+				{
+					echo("<form action='changeCap.php' method='post' name='form1'>");
+					echo("<input type=\"hidden\" name=\"fname\" value=\"".$firstName."\">");
+					echo("<input type=\"hidden\" name=\"lname\" value=\"".$lastName."\">");
+					echo("<input type=\"hidden\" name=\"month\" value=\"".$month."\">");
+					echo("<input type=\"hidden\" name=\"day\" value=\"".$day."\">");
+					echo("<input type=\"hidden\" name=\"year\" value=\"".$year."\">");
+					echo("<input type=\"hidden\" name=\"allDays\" value=\"".$allD."\">");
+					echo("<input type=\"hidden\" name=\"allAds\" value=\"".$allA."\">");
+					echo("<input type=\"hidden\" name=\"num\" value=\"".$row['num1']."\">");
+					echo("<td>".$capacity."&nbsp;<input type='submit' value=\"&dArr;\" style=\"background-color:black;color:red;\"></td></form>");
+				}
+				else if ($capacity == 5)
+				{
+					echo("<form action='changeCap.php' method='post' name='form1'>");
+					echo("<input type=\"hidden\" name=\"fname\" value=\"".$firstName."\">");
+					echo("<input type=\"hidden\" name=\"lname\" value=\"".$lastName."\">");
+					echo("<input type=\"hidden\" name=\"month\" value=\"".$month."\">");
+					echo("<input type=\"hidden\" name=\"day\" value=\"".$day."\">");
+					echo("<input type=\"hidden\" name=\"year\" value=\"".$year."\">");
+					echo("<input type=\"hidden\" name=\"allDays\" value=\"".$allD."\">");
+					echo("<input type=\"hidden\" name=\"allAds\" value=\"".$allA."\">");
+					echo("<input type=\"hidden\" name=\"num\" value=\"".$row['num1']."\">");
+					echo("<td>".$capacity."&nbsp;<input type='submit' value=\"&uArr;\" style=\"background-color:black;color:green;\"></td></form>");	
+
+				}
+				else
+				{
+					echo("<td>".$capacity."</td>");
+				}
+				if($row['capacity1'] == 0)
 				{
 					echo("<td>"." Yes "."</td>");
 				}
@@ -144,20 +240,15 @@
 				{
 					echo("<td>"." No "."</td>");
 				}
-				if($row['full1'] == 1)
-				{
-					echo("<td>"." Yes "."</td>");
-				}
-				else
-				{
-					echo("<td>"." No "."</td>");
-				}
-				echo("<td>".$row['signups1']."</td>");
-			
+				echo("<form action='deleteAppA.php' method='post' name='form2'>");
+				echo("<input type=\"hidden\" name=\"num\" value=\"".$row['num1']."\">");
+				echo("<input type=\"hidden\" name=\"date\" value=\"".$row['date1']."\">");
+				echo("<input type=\"hidden\" name=\"time\" value=\"".$row['start1']."\">");
+				echo("<td><input type='submit' value=\"Delete\"></td></form>");
 				echo("</tr>");	
 			}
 			echo("</table>");
-			echo("</P>");
+			echo("</CENTER>");
 		}	
 	}
 	else if (!($allA == NULL))
@@ -186,16 +277,17 @@
 			echo("<style>table tr:nth-child(odd) {background-color: #F5A9A9;}</style>");
 			echo("<style>table th {color:white;background-color:black;}</style>");
 			echo("<style>table th, td {padding:20px;}</style>");
-			echo("<P ALIGN=\"CENTER\">"); 
+			echo("<CENTER>"); 
 			echo("<table border='5px' style=\"border:solid black;border-collapse:collapse;text-align:center;\"");
 			echo("<tr>");
 			echo("<th>"."<FONT SIZE=5>"."Date"."</FONT>"."</th>");
 			echo("<th>"."<FONT SIZE=5>"."Advisor"."</FONT>"."</th>");
 			echo("<th>"."<FONT SIZE=5>"."Appt. Start"."</FONT>"."</th>");
 			echo("<th>"."<FONT SIZE=5>"."Appt. End  "."</FONT>"."</th>");
-			echo("<th>"."<FONT SIZE=5>"."Group?"."</FONT>"."</th>");
-			echo("<th>"."<FONT SIZE=5>"."Full?"."</FONT>"."</th>");
 			echo("<th>"."<FONT SIZE=5>"."Signups"."</FONT>"."</th>");
+			echo("<th>"."<FONT SIZE=5>"."Capacity"."</FONT>"."</th>");
+			echo("<th>"."<FONT SIZE=5>"."Full?"."</FONT>"."</th>");
+			echo("<th>"."<FONT SIZE=5>"."Delete"."</FONT>"."</th>");
 			echo("</tr>");
 			echo("<tr>");
 			while($row = mysql_fetch_array($rs))
@@ -206,28 +298,73 @@
 				echo("<td>".getName($row['ID'])."</td>");
 				echo("<td>".convertTime($row['start1'])."</td>");
 				echo("<td>".convertTime($row['end1'])."</td>");
-				if($row['group_1'] == 1)
-				{
-					echo("<td>"." Yes "."</td>");
-				}
-				else
-				{
-					echo("<td>"." No "."</td>");
-				}
-				if($row['full1'] == 1)
-				{
-					echo("<td>"." Yes "."</td>");
-				}
-				else
-				{
-					echo("<td>"." No "."</td>");
-				}
-				echo("<td>".$row['signups1']."</td>");
-			
-				echo("</tr>");	
+				$signups;
+			$capacity;
+			if($row['ID'] == -1)
+			{
+				$signups = 10 - $row['capacity1'];
+				$capacity = 10;
 			}
-			echo("</table>");
-			echo("</P>");
+			else if ($row['ID'] == -2)
+			{
+				$signups = 5 - $row['capacity1'];
+				$capacity = 5;
+			}
+			else
+			{
+				$signups = 1 - $row['capacity1'];
+				$capacity = 1;
+			}
+			echo("<td>".$signups."</td>");
+			if ($capacity == 10)
+			{
+				echo("<form action='changeCap.php' method='post' name='form1'>");
+				echo("<input type=\"hidden\" name=\"fname\" value=\"".$firstName."\">");
+				echo("<input type=\"hidden\" name=\"lname\" value=\"".$lastName."\">");
+				echo("<input type=\"hidden\" name=\"month\" value=\"".$month."\">");
+				echo("<input type=\"hidden\" name=\"day\" value=\"".$day."\">");
+				echo("<input type=\"hidden\" name=\"year\" value=\"".$year."\">");
+				echo("<input type=\"hidden\" name=\"allDays\" value=\"".$allD."\">");
+				echo("<input type=\"hidden\" name=\"allAds\" value=\"".$allA."\">");
+				echo("<input type=\"hidden\" name=\"num\" value=\"".$row['num1']."\">");
+				echo("<td>".$capacity."&nbsp;<input type='submit' value=\"&dArr;\" style=\"background-color:black;color:red;\"></td></form>");
+			}
+			else if ($capacity == 5)
+			{
+				echo("<form action='changeCap.php' method='post' name='form1'>");
+				echo("<input type=\"hidden\" name=\"fname\" value=\"".$firstName."\">");
+				echo("<input type=\"hidden\" name=\"lname\" value=\"".$lastName."\">");
+				echo("<input type=\"hidden\" name=\"month\" value=\"".$month."\">");
+				echo("<input type=\"hidden\" name=\"day\" value=\"".$day."\">");
+				echo("<input type=\"hidden\" name=\"year\" value=\"".$year."\">");
+				echo("<input type=\"hidden\" name=\"allDays\" value=\"".$allD."\">");
+				echo("<input type=\"hidden\" name=\"allAds\" value=\"".$allA."\">");
+				echo("<input type=\"hidden\" name=\"num\" value=\"".$row['num1']."\">");
+				echo("<td>".$capacity."&nbsp;<input type='submit' value=\"&uArr;\" style=\"background-color:black;color:green;\"></td></form>");
+
+			}
+			else
+			{
+				echo("<td>".$capacity."</td>");
+			}
+			if($row['capacity1'] == 0)
+			{
+				echo("<td>"." Yes "."</td>");
+			}
+			else
+			{
+				echo("<td>"." No "."</td>");
+			}
+			echo("<form action='deleteAppA.php' method='post' name='form2'>");
+			echo("<input type=\"hidden\" name=\"num\" value=\"".$row['num1']."\">");
+			echo("<input type=\"hidden\" name=\"date\" value=\"".$row['date1']."\">");
+			echo("<input type=\"hidden\" name=\"time\" value=\"".$row['start1']."\">");
+			echo("<td><input type='submit' value=\"Delete\"></td></form>");
+			echo("</tr>");	
+		}
+		echo("</table>");
+		echo("</CENTER>");
+
 		}
 	}
 	else
@@ -258,7 +395,7 @@
 		{
 			$ID = getID($firstName, $lastName);
 			
-			$sql = "select * from appointments2 where `date1` = '$date' AND (`ID` = '$ID' OR `ID` = -1) order by `date1`, `start1` ASC";
+			$sql = "select * from appointments2 where `date1` = '$date' AND (`ID` = '$ID' OR `ID` = -1 OR `ID` = -2) order by `date1`, `start1` ASC";
 			$rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
 
 			include("header.html");
@@ -269,16 +406,17 @@
 			echo("<style>table tr:nth-child(odd) {background-color: #F5A9A9;}</style>");
 			echo("<style>table th {color:white;background-color:black;}</style>");
 			echo("<style>table th, td {padding:20px;}</style>");
-			echo("<P ALIGN=\"CENTER\">"); 
+			echo("<CENTER>"); 
 			echo("<table border='5px' style=\"border:solid black;border-collapse:collapse;text-align:center;\"");
 			echo("<tr>");
 			echo("<th>"."<FONT SIZE=5>"."Date"."</FONT>"."</th>");
 			echo("<th>"."<FONT SIZE=5>"."Advisor"."</FONT>"."</th>");
 			echo("<th>"."<FONT SIZE=5>"."Appt. Start"."</FONT>"."</th>");
 			echo("<th>"."<FONT SIZE=5>"."Appt. End  "."</FONT>"."</th>");
-			echo("<th>"."<FONT SIZE=5>"."Group?"."</FONT>"."</th>");
-			echo("<th>"."<FONT SIZE=5>"."Full?"."</FONT>"."</th>");
 			echo("<th>"."<FONT SIZE=5>"."Signups"."</FONT>"."</th>");
+			echo("<th>"."<FONT SIZE=5>"."Capacity"."</FONT>"."</th>");
+			echo("<th>"."<FONT SIZE=5>"."Full?"."</FONT>"."</th>");
+			echo("<th>"."<FONT SIZE=5>"."Delete"."</FONT>"."</th>");
 			echo("</tr>");
 			echo("<tr>");
 			while($row = mysql_fetch_array($rs))
@@ -289,28 +427,73 @@
 				echo("<td>".getName($row['ID'])."</td>");
 				echo("<td>".convertTime($row['start1'])."</td>");
 				echo("<td>".convertTime($row['end1'])."</td>");
-				if($row['group_1'] == 1)
-				{
-					echo("<td>"." Yes "."</td>");
-				}
-				else
-				{
-					echo("<td>"." No "."</td>");
-				}
-				if($row['full1'] == 1)
-				{
-					echo("<td>"." Yes "."</td>");
-				}
-				else
-				{
-					echo("<td>"." No "."</td>");
-				}
-				echo("<td>".$row['signups1']."</td>");
-			
-				echo("</tr>");	
+				$signups;
+			$capacity;
+			if($row['ID'] == -1)
+			{
+				$signups = 10 - $row['capacity1'];
+				$capacity = 10;
 			}
-			echo("</table>");
-			echo("</P>");
+			else if ($row['ID'] == -2)
+			{
+				$signups = 5 - $row['capacity1'];
+				$capacity = 5;
+			}
+			else
+			{
+				$signups = 1 - $row['capacity1'];
+				$capacity = 1;
+			}
+			echo("<td>".$signups."</td>");
+			if ($capacity == 10)
+			{
+				echo("<form action='changeCap.php' method='post' name='form1'>");
+				echo("<input type=\"hidden\" name=\"fname\" value=\"".$firstName."\">");
+				echo("<input type=\"hidden\" name=\"lname\" value=\"".$lastName."\">");
+				echo("<input type=\"hidden\" name=\"month\" value=\"".$month."\">");
+				echo("<input type=\"hidden\" name=\"day\" value=\"".$day."\">");
+				echo("<input type=\"hidden\" name=\"year\" value=\"".$year."\">");
+				echo("<input type=\"hidden\" name=\"allDays\" value=\"".$allD."\">");
+				echo("<input type=\"hidden\" name=\"allAds\" value=\"".$allA."\">");
+				echo("<input type=\"hidden\" name=\"num\" value=\"".$row['num1']."\">");
+				echo("<td>".$capacity."&nbsp;<input type='submit' value=\"&dArr;\" style=\"background-color:black;color:red;\"></td></form>");
+			}
+			else if ($capacity == 5)
+			{
+				echo("<form action='changeCap.php' method='post' name='form1'>");
+				echo("<input type=\"hidden\" name=\"fname\" value=\"".$firstName."\">");
+				echo("<input type=\"hidden\" name=\"lname\" value=\"".$lastName."\">");
+				echo("<input type=\"hidden\" name=\"month\" value=\"".$month."\">");
+				echo("<input type=\"hidden\" name=\"day\" value=\"".$day."\">");
+				echo("<input type=\"hidden\" name=\"year\" value=\"".$year."\">");
+				echo("<input type=\"hidden\" name=\"allDays\" value=\"".$allD."\">");
+				echo("<input type=\"hidden\" name=\"allAds\" value=\"".$allA."\">");
+				echo("<input type=\"hidden\" name=\"num\" value=\"".$row['num1']."\">");
+				echo("<td>".$capacity."&nbsp;<input type='submit' value=\"&uArr;\" style=\"background-color:black;color:green;\"></td></form>");
+
+			}
+			else
+			{
+				echo("<td>".$capacity."</td>");
+			}
+			if($row['capacity1'] == 0)
+			{
+				echo("<td>"." Yes "."</td>");
+			}
+			else
+			{
+				echo("<td>"." No "."</td>");
+			}
+			echo("<form action='deleteAppA.php' method='post' name='form2'>");
+			echo("<input type=\"hidden\" name=\"num\" value=\"".$row['num1']."\">");
+			echo("<input type=\"hidden\" name=\"date\" value=\"".$row['date1']."\">");
+			echo("<input type=\"hidden\" name=\"time\" value=\"".$row['start1']."\">");
+			echo("<td><input type='submit' value=\"Delete\"></td></form>");
+			echo("</tr>");	
+		}
+		echo("</table>");
+		echo("</CENTER>");
+
 		}	
 	}
 
@@ -457,7 +640,7 @@ function checkDate_($date1)
 function checkAdDate($date1, $id)
 {
 	global $debug; global $COMMON;
-	$sql = "select `num1` from appointments2 where `date1` = '$date1' AND (`ID` = '$id' OR `ID` = -1)";
+	$sql = "select `num1` from appointments2 where `date1` = '$date1' AND (`ID` = '$id' OR `ID` = -1 OR `ID` = -2)";
 	$rs = $COMMON->executeQuery($sql, __FILE__);
 	$row = mysql_fetch_array($rs); // collects row data into an array named row
 	if($row['num1'] != NULL)

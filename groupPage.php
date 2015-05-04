@@ -70,7 +70,10 @@ Availability End Time:  <select name='endHour'>
 			</select> <select name='etimofday'>
   <option value="am">AM</option>
   <option value="pm">PM</option>
-</select>                                                                         
+</select>                                             Capacity:  <select name='capacity'>
+			<option value="10">10</option>
+			<option value="5">5</option>
+</select>
 </FONT>
 <br>
 <input type='submit' value="Submit" style="width:100px;height:60px;background-color:red;color:white;"> </P></pre>
