@@ -7,12 +7,34 @@
 	$date = $_POST['date'];
 	$time = $_POST['time'];	
 
+	$firstName = $_POST['fname'];
+	$lastName = $_POST['lname'];
+	
+	$month = $_POST['month'];
+	$day = $_POST['day'];
+	$year = $_POST['year'];
+
+	$allD = $_POST['allDays'];
+	$allA = $_POST['allAds'];
+	
 	deleteAppointment($num);
 	
 	include("header.html");
 	echo("<br>");
 	echo("<P ALIGN=\"CENTER\"><FONT SIZE=\"5\">The appointment at ".convertTime($time)." on ".$date." has been removed.</FONT></P>");
-	include("buttons.html");
+	echo("<CENTER>");
+	echo("<br>");
+	echo("<form action='schedulePrinter.php' method='post' name='form1'>");
+	echo("<input type=\"hidden\" name=\"fname\" value=\"".$firstName."\">");
+	echo("<input type=\"hidden\" name=\"lname\" value=\"".$lastName."\">");
+	echo("<input type=\"hidden\" name=\"month\" value=\"".$month."\">");
+	echo("<input type=\"hidden\" name=\"day\" value=\"".$day."\">");
+	echo("<input type=\"hidden\" name=\"year\" value=\"".$year."\">");
+	echo("<input type=\"hidden\" name=\"allDays\" value=\"".$allD."\">");
+	echo("<input type=\"hidden\" name=\"allAds\" value=\"".$allA."\">");
+	echo("<input type='submit' value=\"Back\" style=\"width:100px;height:60px;background-color:black;color:white;\">");
+	echo("</CENTER>");
+
 	
 
 function deleteAppointment($app)

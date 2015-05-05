@@ -126,6 +126,13 @@
 			echo("<input type=\"hidden\" name=\"num\" value=\"".$row['num1']."\">");
 			echo("<input type=\"hidden\" name=\"date\" value=\"".$row['date1']."\">");
 			echo("<input type=\"hidden\" name=\"time\" value=\"".$row['start1']."\">");
+			echo("<input type=\"hidden\" name=\"fname\" value=\"".$firstName."\">");
+			echo("<input type=\"hidden\" name=\"lname\" value=\"".$lastName."\">");
+			echo("<input type=\"hidden\" name=\"month\" value=\"".$month."\">");
+			echo("<input type=\"hidden\" name=\"day\" value=\"".$day."\">");
+			echo("<input type=\"hidden\" name=\"year\" value=\"".$year."\">");
+			echo("<input type=\"hidden\" name=\"allDays\" value=\"".$allD."\">");
+			echo("<input type=\"hidden\" name=\"allAds\" value=\"".$allA."\">");
 			echo("<td><input type='submit' value=\"Delete\"></td></form>");
 			echo("</tr>");	
 		}
@@ -244,6 +251,14 @@
 				echo("<input type=\"hidden\" name=\"num\" value=\"".$row['num1']."\">");
 				echo("<input type=\"hidden\" name=\"date\" value=\"".$row['date1']."\">");
 				echo("<input type=\"hidden\" name=\"time\" value=\"".$row['start1']."\">");
+				echo("<input type=\"hidden\" name=\"fname\" value=\"".$firstName."\">");
+				echo("<input type=\"hidden\" name=\"lname\" value=\"".$lastName."\">");
+				echo("<input type=\"hidden\" name=\"month\" value=\"".$month."\">");
+				echo("<input type=\"hidden\" name=\"day\" value=\"".$day."\">");
+				echo("<input type=\"hidden\" name=\"year\" value=\"".$year."\">");
+				echo("<input type=\"hidden\" name=\"allDays\" value=\"".$allD."\">");
+				echo("<input type=\"hidden\" name=\"allAds\" value=\"".$allA."\">");
+
 				echo("<td><input type='submit' value=\"Delete\"></td></form>");
 				echo("</tr>");	
 			}
@@ -359,6 +374,14 @@
 			echo("<input type=\"hidden\" name=\"num\" value=\"".$row['num1']."\">");
 			echo("<input type=\"hidden\" name=\"date\" value=\"".$row['date1']."\">");
 			echo("<input type=\"hidden\" name=\"time\" value=\"".$row['start1']."\">");
+			echo("<input type=\"hidden\" name=\"fname\" value=\"".$firstName."\">");
+			echo("<input type=\"hidden\" name=\"lname\" value=\"".$lastName."\">");
+			echo("<input type=\"hidden\" name=\"month\" value=\"".$month."\">");
+			echo("<input type=\"hidden\" name=\"day\" value=\"".$day."\">");
+			echo("<input type=\"hidden\" name=\"year\" value=\"".$year."\">");
+			echo("<input type=\"hidden\" name=\"allDays\" value=\"".$allD."\">");
+			echo("<input type=\"hidden\" name=\"allAds\" value=\"".$allA."\">");
+
 			echo("<td><input type='submit' value=\"Delete\"></td></form>");
 			echo("</tr>");	
 		}
@@ -488,6 +511,13 @@
 			echo("<input type=\"hidden\" name=\"num\" value=\"".$row['num1']."\">");
 			echo("<input type=\"hidden\" name=\"date\" value=\"".$row['date1']."\">");
 			echo("<input type=\"hidden\" name=\"time\" value=\"".$row['start1']."\">");
+			echo("<input type=\"hidden\" name=\"fname\" value=\"".$firstName."\">");
+			echo("<input type=\"hidden\" name=\"lname\" value=\"".$lastName."\">");
+			echo("<input type=\"hidden\" name=\"month\" value=\"".$month."\">");
+			echo("<input type=\"hidden\" name=\"day\" value=\"".$day."\">");
+			echo("<input type=\"hidden\" name=\"year\" value=\"".$year."\">");
+			echo("<input type=\"hidden\" name=\"allDays\" value=\"".$allD."\">");
+			echo("<input type=\"hidden\" name=\"allAds\" value=\"".$allA."\">");
 			echo("<td><input type='submit' value=\"Delete\"></td></form>");
 			echo("</tr>");	
 		}
