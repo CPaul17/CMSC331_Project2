@@ -1,42 +1,77 @@
+<?php
+
+include('cssCode.html');
+
+?>
+
 <html>
-<head>
-<!-- Format background and border for page -->
-<style>
-#header {
-	background-color:yellow;
-	border: 10px solid black;
-	padding:10px;
-	color:black;
-	text-align:center;
-	font-size: 40px;
-}
-#section {
-	border: 10px solid black;
-	height: 1000px;
-	padding:30px;
-	text-align:center;
-	font-size: 40px;
-}
-</style>
-
-</head>
 <body>
+   <div id="security-tip">
+      <div class="content">
 
-<!-- page banner -->
-<div id="header">
-<h1>UMBC Student Advising</h1>
-</div>
+ 	<center><big><big><big><big><big><big><strong>UMBC Undergraduate Advising</strong></center></big></big></big></big></big></big></center>
 
-<div id="section">
-<form action='studentLogin'>
-<input type="submit" style="font-size:100pt" name="submitted" value="Student">
-</form>
+        </div>
+        <div class="secondary">
 
-<form action='adminLogin'>
-<input type="submit" style="font-size:100pt" name="submitted" value="Admin">
-</form>
+        </div>
+      </div>
+    </div>
 
-</div>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+
+
+
 </body>
 </html>
 
+
+    <!-- <div id="login2" > -->
+    <div id="login2" >
+    <center><h1>Select this option if you are a student seeking an advising appointment<span class="login-create"></center> 
+
+      <div id="logo"><a href="#" title="myUMBC Home"></a></div>
+      <div id="form">
+
+    <form action='studentLogin.php'>
+    <center>
+    <input value="Student" class="button go large" type="submit"> 			 
+    </center>
+  </form>
+    </div>
+    </div>
+    </div>
+    </div>
+
+<br>
+
+    <div id="login2" >
+      <div id="logo"><a href="#" title="myUMBC Home"></a></div>
+      <div id="form">
+    <center><h1>Select this option if you are an admin wanting to view and change schedules<span class="login-create"></center> 
+
+    <form action='adminLogin.php'>
+    <center>
+    
+    <input value="Admin" class="button go large" type="submit"> 			 
+    </center>
+</form>
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+<?php
+
+
+
+
+
+
+
+?>
