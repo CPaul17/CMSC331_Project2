@@ -1,7 +1,10 @@
 <?php
+	
+
 	$debug=false; session_start();
 	include('../CommonMethods.php');
 	$COMMON = new Common($debug); 
+
 	
 	$firstName = $_POST['fname'];
 	$lastName = $_POST['lname'];
@@ -101,8 +104,20 @@
 
 	$ID;
 	
+
+
+
 	if(!checkAdvisors($firstName, $lastName))
 	{
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+
 		echo("<P ALIGN=\"CENTER\">");
 		echo("<FONT SIZE=\"5\">");
 		echo("<mark>");
@@ -110,10 +125,21 @@
 		echo("</mark>");
 		echo("</FONT>");
 		echo("</P>");
+		echo("<div style = \"margin-top: -100px\">");
+		echo("</div>");
 		include("individualPage.php");
 	}
 	else if(!((($endTime - $startTime) >= 30) && (($endTime - $startTime) != 55)))
 	{
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+
 		echo("<P ALIGN=\"CENTER\">");
 		echo("<FONT SIZE=\"5\">");
 		echo("<mark>");
@@ -121,10 +147,21 @@
 		echo("</mark>");
 		echo("</FONT>");
 		echo("</P>");
+		echo("<div style = \"margin-top: -100px\">");
+		echo("</div>");
 		include("individualPage.php");
 	}
 	else if($checkTOD == 1)
 	{
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+
 		echo("<P ALIGN=\"CENTER\">");
 		echo("<FONT SIZE=\"5\">");
 		echo("<mark>");
@@ -132,10 +169,21 @@
 		echo("</mark>");
 		echo("</FONT>");
 		echo("</P>");
+		echo("<div style = \"margin-top: -100px\">");
+		echo("</div>");
 		include("individualPage.php");
 	}
 	else if($checkMonth == 1)
 	{
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+
 		echo("<P ALIGN=\"CENTER\">");
 		echo("<FONT SIZE=\"5\">");
 		echo("<mark>");
@@ -143,6 +191,8 @@
 		echo("</mark>");
 		echo("</FONT>");
 		echo("</P>");
+		echo("<div style = \"margin-top: -100px\">");
+		echo("</div>");
 		include("individualPage.php");
 	}
 	
@@ -176,6 +226,15 @@ else
 	}
 	if($check == 1)
 	{
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+
 		echo("<P ALIGN=\"CENTER\">");
 		echo("<FONT SIZE=\"5\">");
 		echo("<mark>");
