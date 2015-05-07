@@ -1,7 +1,28 @@
+<?php
+
+	include("cssCode.html");
+	include("cssCode2.html");
+
+
+?>
+
 <html>
 <head>
+	<div id="security-tip">
+      <div class="content">
+
 	<P ALIGN="CENTER"><FONT SIZE="7" COLOR="RED"><U>UMBC</U></FONT>
 	<br><FONT SIZE="4">College of Engineering <br>and Information Technology</FONT>
+</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 	</P>
 <style>
 .Button
@@ -14,6 +35,7 @@
 <body>
 <br><br>
 <P ALIGN="CENTER"><FONT SIZE="5"><U>Schedule Individual Advising Availability</U></FONT>
+
 <br><FONT SIZE="1"><br></FONT>
 <FONT SIZE="3">* Availability larger than 30 minutes will be broken up into 30 minute blocks.*
 <br>
@@ -75,12 +97,23 @@ Availability End Time:  <select name='endHour'>
 </FONT>
 <br>
 
-<input type='submit' value="Submit" style="width:100px;height:60px;background-color:red;color:white;"> </P></pre>
+
+<div class="fieldLogin">
+	<div class="center2">
+<input type='submit' value="Submit" class="button go large">
+</div>
+</div>
+
 </form>
 <P ALIGN="CENTER">
-<br>
-<br>
-<a href="adminMenu.php"><button type="button" class="Button" style="height:35px;width:120px;background-color:black;color:white">Main Menu</button></a>
+
+<div class="fieldLogin">
+	<div class="center3">
+		<div style = "margin-top: -160px"/>
+ <a href="adminMenu.php"><button type="button" class="button go large">Main Menu</button></a>
+</div>
+</div>
+</div>
 </P>
 </body>
 </html>
