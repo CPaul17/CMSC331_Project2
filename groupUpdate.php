@@ -1,8 +1,11 @@
 <?php
+
+
 	$debug=false; session_start();
 	include('../CommonMethods.php');
 	$COMMON = new Common($debug); 
 	
+
 	$capacity = $_POST['capacity'];
 	$month = $_POST['month'];
 	$day = $_POST['day'];
@@ -99,6 +102,15 @@
 
 	if(!((($endTime - $startTime) >= 30) && (($endTime - $startTime) != 55)))
 	{
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+
 		echo("<P ALIGN=\"CENTER\">");
 		echo("<FONT SIZE=\"5\">");
 		echo("<mark>");
@@ -106,10 +118,21 @@
 		echo("</mark>");
 		echo("</FONT>");
 		echo("</P>");
+		echo("<div style = \"margin-top: -100px\">");
+		echo("</div>");
 		include("groupPage.php");
 	}
 	else if($checkTOD == 1)
 	{
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+
 		echo("<P ALIGN=\"CENTER\">");
 		echo("<FONT SIZE=\"5\">");
 		echo("<mark>");
@@ -117,10 +140,21 @@
 		echo("</mark>");
 		echo("</FONT>");
 		echo("</P>");
+		echo("<div style = \"margin-top: -100px\">");
+		echo("</div>");
 		include("groupPage.php");
 	}
 	else if($checkMonth == 1)
 	{
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+
 		echo("<P ALIGN=\"CENTER\">");
 		echo("<FONT SIZE=\"5\">");
 		echo("<mark>");
@@ -128,6 +162,8 @@
 		echo("</mark>");
 		echo("</FONT>");
 		echo("</P>");
+		echo("<div style = \"margin-top: -100px\">");
+		echo("</div>");
 		include("groupPage.php");
 	}
 	
@@ -167,6 +203,15 @@ else
 	}
 	if($check == 1)
 	{
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+
 		echo("<P ALIGN=\"CENTER\">");
 		echo("<FONT SIZE=\"5\">");
 		echo("<mark>");
@@ -174,6 +219,8 @@ else
 		echo("</mark>");
 		echo("</FONT>");
 		echo("</P>");
+		echo("<div style = \"margin-top: -100px\">");
+		echo("</div>");
 		include("groupPage.php");
 	}
 }

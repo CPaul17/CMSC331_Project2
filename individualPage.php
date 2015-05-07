@@ -34,6 +34,9 @@
 
 <body>
 <br><br>
+
+<div class="centerInd">
+
 <P ALIGN="CENTER"><FONT SIZE="5"><U>Schedule Individual Advising Availability</U></FONT>
 
 <br><FONT SIZE="1"><br></FONT>
@@ -95,25 +98,42 @@ Availability End Time:  <select name='endHour'>
   <option value="pm">PM</option>
 </select>                                                                         
 </FONT>
+
+
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <br>
 
+<div style = "margin-top: -70px"/>
 
-<div class="fieldLogin">
-	<div class="center2">
-<input type='submit' value="Submit" class="button go large">
 </div>
-</div>
+
+
+
+<center><input type='submit' value="Submit" class="button go large"></center>
+
 
 </form>
-<P ALIGN="CENTER">
 
-<div class="fieldLogin">
-	<div class="center3">
+
+<P ALIGN="CENTER">
+<div style = "margin-top: 190px"/>
+
+</div>
+
+
 		<div style = "margin-top: -160px"/>
- <a href="adminMenu.php"><button type="button" class="button go large">Main Menu</button></a>
-</div>
-</div>
-</div>
+<center><a href="adminMenu.php"><button type="button" class="button go large">Main Menu</button></a></center>
+
+ </div>
+
+
 </P>
 </body>
 </html>

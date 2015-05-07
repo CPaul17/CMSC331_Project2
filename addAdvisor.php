@@ -1,9 +1,38 @@
+<?php
+
+	include("cssCode.html");
+	include("cssCode2.html");
+
+
+?>
+
 <html>
 <head>
+	<div id="security-tip">
+      <div class="content">
 	<P ALIGN="CENTER"><FONT SIZE="7" COLOR="RED"><U>UMBC</U></FONT>
 	<br><FONT SIZE="4">College of Engineering <br>and Information Technology</FONT>
 	</P>
+</div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
 <style>
+
+
+
 .Button
     {
         margin-left:150px;
@@ -15,6 +44,9 @@
 
 <body>
 <br>
+
+<div class = "centerInd">
+
 <P ALIGN="CENTER"><FONT SIZE="5"><U>Add an Advisor</U></FONT></P>
 	<br>
 	<form action='advisorUpdate.php' method='post' name='form1'>
@@ -23,14 +55,59 @@
 <FONT SIZE="4"><U>Optional:</U></FONT>
 	<br>
 Email: <input type='text' name='email' value="jdoe123">@umbc.edu
+
+</div>
+
 	<br><br>
-<input type='submit' value="Submit" style="width:100px;height:60px;background-color:black;color:white;"> </P></pre>
+<center><input type='submit' value="Submit" class="button go large"> </P></pre></center>
+
+<br>
 
 	</FONT></P></pre>
 	</form>
-	<P ALIGN="CENTER">
-<a href="adminMenu.php"><button type="button" class="Button" style="height:50px;width:150px;background-color:red;color:white;">Main Menu</button></a>	
-<a href="currentAdvisors.php"><button type="button" class="Button" style="height:50px;background-color:yellow;">View Current Advisors</button></a>
-</P>
+<!-- 	<div class = "centerLeftAdvisor"> -->
+<!-- <div style = "width: 400px;">
+<div style="float: right; right: 225px"> -->
+<!-- 	<P ALIGN="CENTER"> -->
+
+<center><a href="adminMenu.php"><button type="button" class="button go large" style="height:40px; width:150px; display: inline-block">Main Menu</button></a></center>	
+
+<br>
+
+
+<!-- &nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp -->
+
+<!-- 	<div class = "centerLeftAdvisor"> -->
+
+	<!-- <div style="float: left; width: 130px"> -->
+
+
+<center><a href="currentAdvisors.php"><button type="button" class="button go large" style="height:40px; display: inline-block">View Current Advisors</button></a></center>
+
 </body>
 </html>

@@ -18,6 +18,16 @@
 		}
 		else
 		{
+
+			echo("<br>");
+			echo("<br>");	
+			echo("<br>");
+			echo("<br>");
+			echo("<br>");
+			echo("<br>");
+			echo("<br>");
+			echo("<br>");
+
 			echo("<P ALIGN=\"CENTER\">");
 			echo("<FONT SIZE=\"5\">");
 			echo("<mark>");
@@ -25,6 +35,8 @@
 			echo("</mark>");
 			echo("</FONT>");
 			echo("</P>");
+			echo("<div style = \"margin-top: -100px\">");
+			echo("</div>");
 			
 			include("addAdvisor.php");
 		}
@@ -39,6 +51,16 @@
 		}
 		else
 		{
+
+			echo("<br>");
+			echo("<br>");	
+			echo("<br>");
+			echo("<br>");
+			echo("<br>");
+			echo("<br>");
+			echo("<br>");
+			echo("<br>");
+
 			echo("<P ALIGN=\"CENTER\">");
 			echo("<FONT SIZE=\"5\">");
 			echo("<mark>");
@@ -46,6 +68,8 @@
 			echo("</mark>");
 			echo("</FONT>");
 			echo("</P>");
+			echo("<div style = \"margin-top: -100px\">");
+			echo("</div>");
 			
 			include("addAdvisor.php");
 		}
