@@ -1,8 +1,33 @@
+<?php
+	// include("header.html");
+ 	
+	include("cssCode.html");
+	include("cssCode2.html");
+?>
+
 <html>
 <head>
+	<div id="security-tip">
+      <div class="content">
 	<P ALIGN="CENTER"><FONT SIZE="7" COLOR="RED"><U>UMBC</U></FONT>
 	<br><FONT SIZE="4">College of Engineering <br>and Information Technology</FONT>
 	</P>
+</div>
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 <style>
 rpad.padding { 
 	padding-right: 25%;
@@ -10,6 +35,10 @@ rpad.padding {
 </style>
 <head>
 <body>
+
+	<div class="centerPrintPage">
+
+
 	<br>
 	<br>
 	<P ALIGN="CENTER"><FONT SIZE="6"><U>Printing Options</U></FONT></P>
@@ -33,11 +62,21 @@ rpad.padding {
 	<br></FONT><br><FONT FACE="Times New Roman" SIZE = "4">Enter a name or check 'All' to print for each advisor:</FONT>
 	<FONT FACE="Times New Roman" SIZE = "3"><br>
 	First Name: <input type='text' name='fname'>      Last Name: <input type='text' name='lname'>   or All? <input type='checkbox' name='allAds'>
-</FONT><br><br><input type='submit' value="Print Schedule" style="width:150px;height:100px;background-color:yellow;font-size:20;"> 
+
+
+</div>
+
+
+
+<!-- </FONT><br><br><input type='submit' value="Print Schedule" style="width:150px;height:100px;background-color:yellow;font-size:20;">  -->
+<center></FONT><br><br><input type='submit' value="Print Schedule" class="button go large" style="width:150px;height:40px;"> </center>
 	</P></pre>
 	</form>
 <P ALIGN="RIGHT">
-<rpad class="padding"><a href="adminMenu.php"><button type="button" style="height:25px;background-color:red;color:white;">Main Menu</button></a></rpad>
+<br>
+<!-- <rpad class="padding"><a href="adminMenu.php"><button type="button" style="height:25px;background-color:red;color:white;">Main Menu</button></a></rpad>
+ -->
+ <rpad class="padding"><a href="adminMenu.php"><button type="button" class ="button go large" style="height:30px;">Main Menu</button></a></rpad>
 </P>
 
 </body>

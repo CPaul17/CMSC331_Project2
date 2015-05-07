@@ -1,7 +1,8 @@
 <?php
 	// include("header.html");
  	
-	include("cssCode.html")
+	include("cssCode.html");
+	include("cssCode2.html");
 ?>
 
 
@@ -28,13 +29,16 @@
 	<br>
 
 	<br>
-	<br>
+
+	<div class="centerMenu">
+
+
+	
 	<P ALIGN="CENTER"><FONT SIZE="6"><U>Main Menu</U></FONT>
 	<br>	
 
 	<br>
 	<br>
-
 <!-- 	<a href="individualPage.php"><button type="button" class="button go large">Schedule Individual</button></a> -->
 <!-- 	<a href="individualPage.php"><button type="button" class="Button" style="height:50px;width:200px;background-color: #66AA44;color:#FFF;border-radius: 8px;"><big><b>Schedule Individual</b></big></button></a> -->
 	<a href="individualPage.php"><button type="button" class="button go large" style="height: 40px; width: 210px"><big><b>Schedule Individual</b></big></button></a>
@@ -60,6 +64,8 @@
 
 <!-- 	<a href="printingPage.php"><big><button type="button" class="button go large" >Print Schedule</button></big></a> -->
 	<a href="printingPage.php"><big><button type="button" class="button go large" style="height: 40px; width: 210px" ><big><b>Print Schedule</b></big></button></big></a>
+
+</div>
 
 	</P>	
 </body>

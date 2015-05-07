@@ -65,49 +65,50 @@ Email: <input type='text' name='email' value="jdoe123">@umbc.edu
 
 	</FONT></P></pre>
 	</form>
-<!-- 	<div class = "centerLeftAdvisor"> -->
-<!-- <div style = "width: 400px;">
-<div style="float: right; right: 225px"> -->
-<!-- 	<P ALIGN="CENTER"> -->
 
-<center><a href="adminMenu.php"><button type="button" class="button go large" style="height:40px; width:150px; display: inline-block">Main Menu</button></a></center>	
+
+<!-- <center><a href="adminMenu.php"><button type="button" class="button go large" style="height:40px; width:150px; display: inline-block">Main Menu</button></a></center>	
+
+<br>
+ -->
 
 <br>
 
 
-<!-- &nbsp
-&nbsp
-&nbsp
-&nbsp
-&nbsp
-&nbsp
-&nbsp
-&nbsp
-&nbsp
-&nbsp
-&nbsp
-&nbsp
-&nbsp
-&nbsp
-&nbsp
-&nbsp
-&nbsp
-&nbsp
-&nbsp
-&nbsp
-&nbsp
-&nbsp
-&nbsp
-&nbsp
-&nbsp
-&nbsp -->
-
-<!-- 	<div class = "centerLeftAdvisor"> -->
-
-	<!-- <div style="float: left; width: 130px"> -->
+<center><a href="adminMenu.php"><button type="button" class="button go large" style="height:40px; width:150px; display: inline-block">Main Menu</button></a> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <a href="currentAdvisors.php"><button type="button" class="button go large" style="height:40px; display: inline-block">View Current Advisors</button></a></center>
 
 
-<center><a href="currentAdvisors.php"><button type="button" class="button go large" style="height:40px; display: inline-block">View Current Advisors</button></a></center>
+<!-- &nbsp>
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+ -->
+
+<!-- <center><a href="currentAdvisors.php"><button type="button" class="button go large" style="height:40px; display: inline-block">View Current Advisors</button></a></center>
+ -->
+
 
 </body>
 </html>
