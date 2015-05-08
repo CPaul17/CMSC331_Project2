@@ -8,40 +8,41 @@
 
 //start session to save variables
 session_start(); 
+
+include ("cssCode.html");
+include ("cssCode2.html");
 ?>
 <html>
 <head>
 <!-- Format for page color and border -->
 <style>
-#header {
-	background-color:yellow;
-	border: 10px solid black;
-	padding:10px;
-	color:black;
-	text-align:center;
-	font-size: 40px;
-}
-#section {
-	border: 10px solid black;
-	height: 1000px;
-	padding:30px;
-	text-align:center;
-	font-size: 40px;
-}
-#boxed {
-	border: 1px solid black;
-	width: 600px;
-}
+
 </style>
 </head>
 <body>
 
 <!-- Page banner -->
-<div id = "header">
-<h1>UMBC Student Advising</h1>
-</div>
+	<div id="security-tip">
+      <div class="content">
+	<P ALIGN="CENTER"><FONT SIZE="7" COLOR="RED"><U>UMBC</U></FONT>
+	<br><FONT SIZE="4">College of Engineering <br>and Information Technology</FONT>
+	</P>
+	</div>
+	</div>
 
-<div id = "section">
+
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+
+
 
 <?php
 
@@ -64,26 +65,55 @@ $appointment = $row[4];
 <!-- Displays individual and group advising options -->
 <?php if($appointment == NULL) : ?>
 
-<center>
-<div id="boxed">
-Select this option for single appointments.<br><br>
-<form method="post" action="singleApp.php">
-<input type="submit" style="font-size: 28pt" value="Single">
-</form>
-<div>
-</center><br>
+
+<div class="center">
+
 
 <center>
-<div id="boxed">
-Select this option for group adivising with up to 10 students.<br><br>
-<form method="post" action="groupApp.php">
-<input type="submit" style="font-size: 28pt" value="Group">
+<br>
+<!-- Select this option for single appointments.<br><br> -->
+<P ALIGN="CENTER"><FONT SIZE="4"><U><big><b>Select this option for single appointments.</b></big></U></FONT></P>
+<br>
+<br>
+<form method="post" action="singleApp.php">
+<input type="submit" style="font-size: 28pt; height: 45px" class="button go large" value="Single">
 </form>
-</div>
 </center><br>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<center>
+<!-- Select this option for group adivising with up to 10 students.<br><br> -->
+<P ALIGN="CENTER"><FONT SIZE="4"><U><big><b>Select this option for group adivising with up to 10 students.</b></big></U></FONT></P>
+<br>
+<br>
+<form method="post" action="groupApp.php">
+<input type="submit" style="font-size: 28pt; height: 45px" class="button go large" value="Group">
+</form>
+</center>
+
+<br>
+<br>
+<br>
+
+
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
 
 <form action="studentLogin.php">
-<input type="submit" style="font-size: 28pt" value="Log-out">
+<center><input type="submit" style="font-size: 25pt; height: 50px" class="button go large" value="Log-out"></center>
 </form>
 
 <!-- Displays delete option if an appointment is already scheduled -->
@@ -117,11 +147,9 @@ $formatTime = date('h:i A', strtotime($time));
 ?>
 
 <center>
-<div id="boxed">
 Advisor: <?php echo $appointment."<br>"; ?>
    Date: <?php echo $formatDate."<br>"; ?>
    Time: <?php echo $formatTime."<br>"; ?>
-</div>
 </center><br>
 
 You can only have one appointment. To get sign-up for a different option, 
@@ -129,14 +157,19 @@ please delete your existing appointment<br><br>
 
 <!-- Log-out of scheduler -->
 <form action="studentLogin.php">
-<input type="submit" style="font-size: 28pt" value="Log-out">
+<center><input type="submit" style="font-size: 28pt" value="Log-out"></center>
 </form>
+
+<br>
+
 
 <!-- students must delete existing appointments to create a new one -->
 <form method="post" action="deleteApp.php">
 <input type="hidden" value="<?php echo $appointment; ?>" name="appointment">
 <input type = "submit" style="font-size: 28pt" value="Delete Appointment" name="update">
 </form>
+
+
 
 <?php endif; ?>
 
