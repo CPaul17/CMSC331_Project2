@@ -1,7 +1,13 @@
 <?php
+ 	
+
 	$debug=false; session_start();
 	include('../CommonMethods.php');
 	$COMMON = new Common($debug);
+
+	include("cssCode.html");
+	include("cssCode2.html");
+
 	
 	$firstName = $_POST['fname'];
 	$lastName = $_POST['lname'];
@@ -35,13 +41,34 @@
 
 		$rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
 
-		include("header.html");
+		// include("header.html");
+		// echo("CHECK\n");
+		echo("<div id=\"security-tip\">");
+		echo("<div class=\"content\">");
+		echo("<P ALIGN=\"CENTER\"><FONT SIZE=\"7\" COLOR=\"RED\"><U>UMBC</U></FONT>");
+		echo("<br><FONT SIZE=\"4\">College of Engineering <br>and Information Technology</FONT>");
+		echo("</P>");	
+		echo("</div>");
+		echo("</div>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+
+
 		
 		include("buttons.html");
 
 		echo("<style>table tr:nth-child(even) {background-color: #F2F5A9;}</style>");
 		echo("<style>table tr:nth-child(odd) {background-color: #F5A9A9;}</style>");
-		echo("<style>table th {color:white;background-color:black;}</style>");
+		// echo("<style>table th {color:white;background-color:black;}</style>");
+		echo("<style>table th {color:white;background-color:#122232;}</style>");	
 		echo("<style>table th, td {padding:20px;}</style>");
 		echo("<CENTER>"); 
 		echo("<table border='5px' style=\"border:solid black;border-collapse:collapse;text-align:center;\"");
@@ -94,7 +121,10 @@
 				echo("<input type=\"hidden\" name=\"allDays\" value=\"".$allD."\">");
 				echo("<input type=\"hidden\" name=\"allAds\" value=\"".$allA."\">");
 				echo("<input type=\"hidden\" name=\"num\" value=\"".$row['num1']."\">");
-				echo("<td>".$capacity."&nbsp;<input type='submit' value=\"&dArr;\" style=\"background-color:black;color:red;\"></td></form>");
+				// echo("<td>".$capacity."&nbsp;<input type='submit' value=\"&dArr;\" style=\"background-color:black;color:red;\"></td></form>");
+				echo("<td>".$capacity."&nbsp;<input type='submit' value=\"&dArr;\"  class = \"button large\" style=\"width: 30px; height: 30px; background-color:#66AA44; border-radius:8px;\"></td></form>");
+
+				// class=\"go hover\"
 			}
 			else if ($capacity == 5)
 			{
@@ -107,8 +137,8 @@
 				echo("<input type=\"hidden\" name=\"allDays\" value=\"".$allD."\">");
 				echo("<input type=\"hidden\" name=\"allAds\" value=\"".$allA."\">");
 				echo("<input type=\"hidden\" name=\"num\" value=\"".$row['num1']."\">");
-				echo("<td>".$capacity."&nbsp;<input type='submit' value=\"&uArr;\" style=\"background-color:black;color:green;\"></td></form>");
-
+				// echo("<td>".$capacity."&nbsp;<input type='submit' value=\"&uArr;\" style=\"background-color:black;color:green;\"></td></form>");
+				echo("<td>".$capacity."&nbsp;<input type='submit' value=\"&uArr;\"  class = \"button large\" style=\"width: 30px; height: 30px; background-color:#66AA44; border-radius:8px;\"></td></form>");
 			}
 			else
 			{
@@ -133,7 +163,8 @@
 			echo("<input type=\"hidden\" name=\"year\" value=\"".$year."\">");
 			echo("<input type=\"hidden\" name=\"allDays\" value=\"".$allD."\">");
 			echo("<input type=\"hidden\" name=\"allAds\" value=\"".$allA."\">");
-			echo("<td><input type='submit' value=\"Delete\"></td></form>");
+			// echo("<td><input type='submit' value=\"Delete\"></td></form>");
+			echo("<td><input type='submit' value=\"Delete\" class=\"button go large\"></td></form>");			
 			echo("</tr>");	
 		}
 		echo("</table>");
@@ -144,6 +175,17 @@
 	{
 		if(!checkAdvisors($firstName, $lastName))
 		{
+			echo("<br>");
+			echo("<br>");
+			echo("<br>");
+			echo("<br>");
+			echo("<br>");
+			echo("<br>");
+			echo("<br>");
+			echo("<br>");
+
+
+
 			echo("<P ALIGN=\"CENTER\">");
 			echo("<FONT SIZE=\"5\">");
 			echo("<mark>");
@@ -151,6 +193,8 @@
 			echo("</mark>");
 			echo("</FONT>");
 			echo("</P>");
+			echo("<div style = \"margin-top: -100px\">");
+			echo("</div>");
 			include("printingPage.php");
 		}
 		else
@@ -161,7 +205,27 @@
 
 			$rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
 
-			include("header.html");
+			// include("header.html");
+
+
+		echo("<div id=\"security-tip\">");
+		echo("<div class=\"content\">");
+		echo("<P ALIGN=\"CENTER\"><FONT SIZE=\"7\" COLOR=\"RED\"><U>UMBC</U></FONT>");
+		echo("<br><FONT SIZE=\"4\">College of Engineering <br>and Information Technology</FONT>");
+		echo("</P>");	
+		echo("</div>");
+		echo("</div>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+
 
 			include("buttons.html");
 
@@ -219,7 +283,8 @@
 					echo("<input type=\"hidden\" name=\"allDays\" value=\"".$allD."\">");
 					echo("<input type=\"hidden\" name=\"allAds\" value=\"".$allA."\">");
 					echo("<input type=\"hidden\" name=\"num\" value=\"".$row['num1']."\">");
-					echo("<td>".$capacity."&nbsp;<input type='submit' value=\"&dArr;\" style=\"background-color:black;color:red;\"></td></form>");
+					// echo("<td>".$capacity."&nbsp;<input type='submit' value=\"&dArr;\" style=\"background-color:black;color:red;\"></td></form>");
+					echo("<td>".$capacity."&nbsp;<input type='submit' value=\"&dArr;\"  class = \"button large\" style=\"width: 30px; height: 30px; background-color:#66AA44; border-radius:8px;\"></td></form>");
 				}
 				else if ($capacity == 5)
 				{
@@ -232,7 +297,8 @@
 					echo("<input type=\"hidden\" name=\"allDays\" value=\"".$allD."\">");
 					echo("<input type=\"hidden\" name=\"allAds\" value=\"".$allA."\">");
 					echo("<input type=\"hidden\" name=\"num\" value=\"".$row['num1']."\">");
-					echo("<td>".$capacity."&nbsp;<input type='submit' value=\"&uArr;\" style=\"background-color:black;color:green;\"></td></form>");	
+					// echo("<td>".$capacity."&nbsp;<input type='submit' value=\"&uArr;\" style=\"background-color:black;color:green;\"></td></form>");	
+					echo("<td>".$capacity."&nbsp;<input type='submit' value=\"&uArr;\"  class = \"button large\" style=\"width: 30px; height: 30px; background-color:#66AA44; border-radius:8px;\"></td></form>");
 
 				}
 				else
@@ -259,7 +325,8 @@
 				echo("<input type=\"hidden\" name=\"allDays\" value=\"".$allD."\">");
 				echo("<input type=\"hidden\" name=\"allAds\" value=\"".$allA."\">");
 
-				echo("<td><input type='submit' value=\"Delete\"></td></form>");
+				// echo("<td><input type='submit' value=\"Delete\"></td></form>");
+				echo("<td><input type='submit' value=\"Delete\" class=\"button go large\"></td></form>");			
 				echo("</tr>");	
 			}
 			echo("</table>");
@@ -270,6 +337,18 @@
 	{
 		if(!checkDate_($date))
 		{
+
+			echo("<br>");
+			echo("<br>");	
+			echo("<br>");
+			echo("<br>");
+			echo("<br>");
+			echo("<br>");
+			echo("<br>");
+			echo("<br>");
+
+
+
 			echo("<P ALIGN=\"CENTER\">");
 			echo("<FONT SIZE=\"5\">");
 			echo("<mark>");
@@ -277,6 +356,8 @@
 			echo("</mark>");
 			echo("</FONT>");
 			echo("</P>");
+			echo("<div style = \"margin-top: -100px\">");
+			echo("</div>");
 			include("printingPage.php");
 		}
 		else
@@ -284,7 +365,27 @@
 			$sql = "select * from appointments2 where `date1` = '$date' order by `date1`, `start1` ASC";
 			$rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
 			
-			include("header.html");
+			// include("header.html");
+
+
+		echo("<div id=\"security-tip\">");
+		echo("<div class=\"content\">");
+		echo("<P ALIGN=\"CENTER\"><FONT SIZE=\"7\" COLOR=\"RED\"><U>UMBC</U></FONT>");
+		echo("<br><FONT SIZE=\"4\">College of Engineering <br>and Information Technology</FONT>");
+		echo("</P>");	
+		echo("</div>");
+		echo("</div>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+
 
 			include("buttons.html");
 			
@@ -342,7 +443,8 @@
 				echo("<input type=\"hidden\" name=\"allDays\" value=\"".$allD."\">");
 				echo("<input type=\"hidden\" name=\"allAds\" value=\"".$allA."\">");
 				echo("<input type=\"hidden\" name=\"num\" value=\"".$row['num1']."\">");
-				echo("<td>".$capacity."&nbsp;<input type='submit' value=\"&dArr;\" style=\"background-color:black;color:red;\"></td></form>");
+				// echo("<td>".$capacity."&nbsp;<input type='submit' value=\"&dArr;\" style=\"background-color:black;color:red;\"></td></form>");
+				echo("<td>".$capacity."&nbsp;<input type='submit' value=\"&dArr;\"  class = \"button large\" style=\"width: 30px; height: 30px; background-color:#66AA44; border-radius:8px;\"></td></form>");
 			}
 			else if ($capacity == 5)
 			{
@@ -355,7 +457,8 @@
 				echo("<input type=\"hidden\" name=\"allDays\" value=\"".$allD."\">");
 				echo("<input type=\"hidden\" name=\"allAds\" value=\"".$allA."\">");
 				echo("<input type=\"hidden\" name=\"num\" value=\"".$row['num1']."\">");
-				echo("<td>".$capacity."&nbsp;<input type='submit' value=\"&uArr;\" style=\"background-color:black;color:green;\"></td></form>");
+				// echo("<td>".$capacity."&nbsp;<input type='submit' value=\"&uArr;\" style=\"background-color:black;color:green;\"></td></form>");
+				echo("<td>".$capacity."&nbsp;<input type='submit' value=\"&uArr;\"  class = \"button large\" style=\"width: 30px; height: 30px; background-color:#66AA44; border-radius:8px;\"></td></form>");
 
 			}
 			else
@@ -382,7 +485,8 @@
 			echo("<input type=\"hidden\" name=\"allDays\" value=\"".$allD."\">");
 			echo("<input type=\"hidden\" name=\"allAds\" value=\"".$allA."\">");
 
-			echo("<td><input type='submit' value=\"Delete\"></td></form>");
+			// echo("<td><input type='submit' value=\"Delete\"></td></form>");
+			echo("<td><input type='submit' value=\"Delete\" class=\"button go large\"></td></form>");			
 			echo("</tr>");	
 		}
 		echo("</table>");
@@ -394,6 +498,17 @@
 	{
 		if(!checkAdvisors($firstName, $lastName))
 		{
+
+			echo("<br>");
+			echo("<br>");
+			echo("<br>");
+			echo("<br>");
+			echo("<br>");
+			echo("<br>");
+			echo("<br>");
+			echo("<br>");
+
+
 			echo("<P ALIGN=\"CENTER\">");
 			echo("<FONT SIZE=\"5\">");
 			echo("<mark>");
@@ -401,10 +516,24 @@
 			echo("</mark>");
 			echo("</FONT>");
 			echo("</P>");
+			echo("<div style = \"margin-top: -100px\">");
+			echo("</div>");
 			include("printingPage.php");
 		}
 		else if(!checkAdDate($date, getID($firstName, $lastName)))
 		{
+
+			echo("<br>");
+			echo("<br>");
+			echo("<br>");
+			echo("<br>");
+			echo("<br>");
+			echo("<br>");
+			echo("<br>");
+			echo("<br>");
+
+
+
 			echo("<P ALIGN=\"CENTER\">");
 			echo("<FONT SIZE=\"5\">");
 			echo("<mark>");
@@ -412,6 +541,8 @@
 			echo("</mark>");
 			echo("</FONT>");
 			echo("</P>");
+			echo("<div style = \"margin-top: -100px\">");
+			echo("</div>");
 			include("printingPage.php");
 		}
 		else
@@ -421,7 +552,28 @@
 			$sql = "select * from appointments2 where `date1` = '$date' AND (`ID` = '$ID' OR `ID` = -1 OR `ID` = -2) order by `date1`, `start1` ASC";
 			$rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
 
-			include("header.html");
+			// include("header.html");
+
+
+
+		echo("<div id=\"security-tip\">");
+		echo("<div class=\"content\">");
+		echo("<P ALIGN=\"CENTER\"><FONT SIZE=\"7\" COLOR=\"RED\"><U>UMBC</U></FONT>");
+		echo("<br><FONT SIZE=\"4\">College of Engineering <br>and Information Technology</FONT>");
+		echo("</P>");	
+		echo("</div>");
+		echo("</div>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
+
 
 			include("buttons.html");
 
@@ -479,7 +631,8 @@
 				echo("<input type=\"hidden\" name=\"allDays\" value=\"".$allD."\">");
 				echo("<input type=\"hidden\" name=\"allAds\" value=\"".$allA."\">");
 				echo("<input type=\"hidden\" name=\"num\" value=\"".$row['num1']."\">");
-				echo("<td>".$capacity."&nbsp;<input type='submit' value=\"&dArr;\" style=\"background-color:black;color:red;\"></td></form>");
+				// echo("<td>".$capacity."&nbsp;<input type='submit' value=\"&dArr;\" style=\"background-color:black;color:red;\"></td></form>");
+				echo("<td>".$capacity."&nbsp;<input type='submit' value=\"&dArr;\"  class = \"button large\" style=\"width: 30px; height: 30px; background-color:#66AA44; border-radius:8px;\"></td></form>");
 			}
 			else if ($capacity == 5)
 			{
@@ -492,7 +645,8 @@
 				echo("<input type=\"hidden\" name=\"allDays\" value=\"".$allD."\">");
 				echo("<input type=\"hidden\" name=\"allAds\" value=\"".$allA."\">");
 				echo("<input type=\"hidden\" name=\"num\" value=\"".$row['num1']."\">");
-				echo("<td>".$capacity."&nbsp;<input type='submit' value=\"&uArr;\" style=\"background-color:black;color:green;\"></td></form>");
+				// echo("<td>".$capacity."&nbsp;<input type='submit' value=\"&uArr;\" style=\"background-color:black;color:green;\"></td></form>");
+				echo("<td>".$capacity."&nbsp;<input type='submit' value=\"&uArr;\"  class = \"button large\" style=\"width: 30px; height: 30px; background-color:#66AA44; border-radius:8px;\"></td></form>");
 
 			}
 			else
@@ -518,7 +672,8 @@
 			echo("<input type=\"hidden\" name=\"year\" value=\"".$year."\">");
 			echo("<input type=\"hidden\" name=\"allDays\" value=\"".$allD."\">");
 			echo("<input type=\"hidden\" name=\"allAds\" value=\"".$allA."\">");
-			echo("<td><input type='submit' value=\"Delete\"></td></form>");
+			// echo("<td><input type='submit' value=\"Delete\"></td></form>");
+			echo("<td><input type='submit' value=\"Delete\" class=\"button go large\"></td></form>");			
 			echo("</tr>");	
 		}
 		echo("</table>");
