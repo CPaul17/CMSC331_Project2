@@ -14,45 +14,57 @@ $fName = $lName = $idNum = "";
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 	//checks if first name was empty
 	if(empty($_POST["fName"])){
-		$errorMsg .= "<br>First name is required.";
+//		$errorMsg .= "<br>First name is required.";
+		$errorMsg .= "<br><font size=\"4\" color=\"red\"><b><u> First name is required.</u></b></font>";			
 	}
 	else{
 		$fName = $_POST["fName"];
 
 		//checks if first name is too long or has non-alphabetic characters
 		if(strlen($fName) > 25 || ctype_alpha($fName) == false){
-			$errorMsg .= "<br>First name can only be letters,
-				       and must be less than 25 characters.";
+//			$errorMsg .= "<br>First name can only be letters,
+//				       and must be less than 25 characters.";
+			$errorMsg .= "<br><font size=\"4\" color=\"red\"><b><u> First name can only be letters,
+			and must be less than 25 characters.</u></b></font>";				       
 		}
 	}
 	//checks if last namem was empty
 	if(empty($_POST["lName"])){
-		$errorMsg .= "<br>Last name is required.";
+//		$errorMsg .= "<br>Last name is required.";
+		$errorMsg .= "<br><font size=\"4\" color=\"red\"><b><u> Last name is required.</u></b></font>";		
 	}
 	else{
 		$lName = $_POST["lName"];
 
 		//checks if last name is too long or has non-alphabetic characters
 		if(strlen($lName) > 25 || ctype_alpha($lName) == false){
-			$errorMsg .= "<br>Last name can only be letters,
-				       and must be less than 25 characters.";
+//			$errorMsg .= "<br>Last name can only be letters,
+//				       and must be less than 25 characters.";
+
+			$errorMsg .= "<br><font size=\"4\" color=\"red\"><b><u> Last name can only be letters,
+			and must be less than 25 characters.</u></b></font>";				       
 		}
 
 	}
 	//checks if ID was empty
 	if(empty($_POST["idNum"])){
-		$errorMsg .= "<br>ID is required.";
+//		$errorMsg .= "<br>ID is required.";
+		$errorMsg .= "<br><font size=\"4\" color=\"red\"><b><u> ID is required.</u></b></font>";
+
 	}
 	else{
 		$idNum = $_POST["idNum"];
 
 		//checks if ID was not equal to 7 characters
 		if(strlen($idNum) != 7){
-			$errorMsg .= "<br>ID number must be 7 characters in length.";
+//			<center><font size="4" color="red"><b><u> Incorrect Login Information</u></b></font></center>
+			// $errorMsg .= "<br>ID number must be 7 characters in length.";
+			$errorMsg .= "<br><font size=\"4\" color=\"red\"><b><u> ID number must be 7 characters in length.</u></b></font>";			
 		}
 		//checks if ID has non-alphanumeric characters
 		if(ctype_alnum($idNum) == false){
-			$errorMsg.= "<br>ID number can only contain letters and numbers.";
+//			$errorMsg.= "<br>ID number can only contain letters and numbers.";
+			$errorMsg .= "<br><font size=\"4\" color=\"red\"><b><u> ID number can only contain letters and numbers.</u></b></font>";			
 		}
 	}
 	
