@@ -38,7 +38,7 @@
 <br>
 <br>
 
-<head>
+</head>
 <body>
 	<br>
 	<br>

@@ -6,6 +6,10 @@
 	{
 		header('Location: index.php');	
 	}
+	
+	include("cssCode.html");
+	include("cssCode2.html");
+
 	$debug=false;
 	include('../CommonMethods.php');
 	$COMMON = new Common($debug);
@@ -26,9 +30,38 @@
 	
 	deleteAppointment($num);
 	
-	include("header.html");
+echo("<html>");
+echo("<head>");
+			echo("<div id=\"security-tip\">");
+echo("<div class=\"content\">"); 
+echo("<div style=\"float:left\"><a href=\"adminHelp.php\"><button type=\"button\" class =\"button go large\" style=\"height:30px;width:80px\">Help</button></a></div>");
+echo("<div style=\"float:right\"><a href=\"logout.php\"><button type=\"button\" class =\"button go large\" style=\"height:30px;width:80px\">Log Out</button></a></div>");
+echo("<center><FONT SIZE=\"7\" COLOR=\"RED\"><U>UMBC</U></FONT><center>");
+echo("<center><FONT SIZE=\"4\">College of Engineering <br>and Information Technology</FONT></center>");
+echo("<div style=\"clear: both;\"></div>");
+echo("</div>");
+echo("</div>");
+echo("<br>");
+echo("<br>");
+echo("<br>");
+echo("<br>");
+echo("<br>");
+echo("<br>");
+echo("<br>");
+echo("<br>");
+echo("<br>");
+
+echo("</head>");
+echo("<body>");
+	echo("<br>");
+	echo("<br>");
+
+	echo("<div class=\"center\">");
 	echo("<br>");
 	echo("<P ALIGN=\"CENTER\"><FONT SIZE=\"5\">The appointment at ".convertTime($time)." on ".$date." has been removed.</FONT></P>");
+	echo("<br>");
+	echo("</div>");
+
 	echo("<CENTER>");
 	echo("<br>");
 	echo("<form action='schedulePrinter.php' method='post' name='form1'>");
@@ -39,8 +72,11 @@
 	echo("<input type=\"hidden\" name=\"year\" value=\"".$year."\">");
 	echo("<input type=\"hidden\" name=\"allDays\" value=\"".$allD."\">");
 	echo("<input type=\"hidden\" name=\"allAds\" value=\"".$allA."\">");
-	echo("<input type='submit' value=\"Back\" style=\"width:100px;height:60px;background-color:black;color:white;\">");
+	echo("<input type='submit' class=\"button go large\" value=\"Back\" style=\"width:150px;height:40px;\">");
 	echo("</CENTER>");
+echo("</body>");
+echo("</html>");
+
 
 	
 

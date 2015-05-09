@@ -71,6 +71,7 @@ echo("<br>");
 		echo("<th>"."<FONT SIZE=5>"."Last"."</FONT>"."</th>");
 		echo("<th>"."<FONT SIZE=5>"."First"."</FONT>"."</th>");
 		echo("<th>"."<FONT SIZE=5>"."Email"."</FONT>"."</th>");
+		echo("<th>"."<FONT SIZE=5>"."Delete"."</FONT>"."</th>");
 		echo("</tr>");
 		echo("<tr>");
 		while($row = mysql_fetch_array($rs))
@@ -79,6 +80,11 @@ echo("<br>");
 			echo("<td>".$row['lname']."</td>");
 			echo("<td>".$row['fname']."</td>");
 			echo("<td>".$row['email']."</td>");
+			echo("<form action='deleteAdvisor.php' method='post' name='form2'>");
+			echo("<input type=\"hidden\" name=\"lname\" value=\"".$row['lname']."\">");
+			echo("<input type=\"hidden\" name=\"fname\" value=\"".$row['fname']."\">");
+			echo("<td><input type='submit' onclick=\"return confirm('Are you sure?')\" value=\"Delete\" class=\"button go large\"></td></form>");
+
 			echo("</tr>");	
 		}
 		echo("</table>");
