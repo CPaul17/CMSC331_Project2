@@ -148,6 +148,8 @@ p.padding3
 <p class="padding3">- First: use the <a href="printingPage.php">Printing Page</a> to find the appointment that you are interested in.</p>
 <p class="padding3">- Once found, click on the arrow button next to the appointment. The 'up' arrow will increase the capacity to 10, while the 'down' arrow will decrease the capacity to 5.</p>
 <p class="padding3">- Afterwards, click on the 'Back' button in order to return to your printed schedule.</p>
+<br>
+<p class="padding3">** Capacity can only be decreased to 5 if there are no more than 5 students already signed up. **</p>
 </FONT>
 <br>
 <br>
