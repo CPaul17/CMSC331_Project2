@@ -5,6 +5,7 @@
 // Class: CMSC 331
 // Instructor: Lupoli
 // Description: Displays the options for appointment types the student can pick
+//
 
 //start session to save variables
 session_start(); 
