@@ -7,12 +7,15 @@
 // Description: Displays the day and advisor options for individual sign-up
 
 session_start(); 
+
+include ("cssCode.html");
+include ("cssCode2.html");
 ?>
 <html>
 <head>
 <!-- Format background and border for page -->
 <style>
-#header {
+/*#header {
 	background-color:yellow;
 	border: 10px solid black;
 	padding:10px;
@@ -27,17 +30,37 @@ session_start();
 	text-align:center;
 	font-size: 40px;
 }
+*/
 </style>
 </head>
 <body>
 
 <!-- page banner -->
-<div id="header">
-<h1>UMBC Student Advising</h1>
-</div>
+<div id="security-tip">
+      <div class="content">
+	<P ALIGN="CENTER"><FONT SIZE="7" COLOR="RED"><U>UMBC</U></FONT>
+	<br><FONT SIZE="4">College of Engineering <br>and Information Technology</FONT>
+	</P>
+	</div>
+	</div>
 
-<div id="section">
-<u>Individual Advising</u><br><br>
+
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+
+<div class="center">
+<P ALIGN="CENTER"><FONT SIZE="4"><U><big><b>Individual Advising</b></big></U></FONT></P>	
+<!-- <center><u>Individual Advising</u></center> -->
+	<br>
+	<br>
 
 <form method="post" action="timesSingle.php">
 
@@ -60,8 +83,8 @@ while($row != NULL){
 }
 
 if(count($advisorNames) != NULL){
-	echo "Advisors: ";
-	echo "<select name='adv' style='font-size: 28pt'>";
+	echo("<FONT SIZE=\"4\"><big><b> Advisors: </b></big></FONT>");
+	echo "<select name='adv' style='font-size: 23pt'>";
 	foreach($advisorNames as $element){
 		echo "<option value=".$element[2].">".$element[0]." ".$element[1]."</option>";
 	}	
@@ -72,11 +95,17 @@ else{
 	echo "Please return to the previous page.<br>";
 }
 
+//echo("<FONT SIZE=\"6\"><big><b> Day: </b></big></FONT>");
+
 ?>
 
+<br>
+
 <!-- List of dates available -->
-Day:
-<select name='singleDay' style="font-size: 28pt">
+<!-- Day: -->
+<FONT SIZE="4"><big><b> Day: </b></big></FONT>
+
+<select name='singleDay' style="font-size: 23pt">
 <option value='2015-01-01'>Thursday, January 1</option>
 <option value='2015-03-24'>Tuesday, March 24</option>
 <option value='2015-03-25'>Wednesday, March 25</option>
@@ -87,14 +116,24 @@ Day:
 <option value='2015-04-01'>Wednesday, April 1</option>
 <option value='2015-04-02'>Thursday, April 2</option>
 <option value='2015-04-03'>Friday, April 3</option>
-</select><br><br>
+</select>
+<br>
+<br>
+<br>
+<br>
 
-<input type="submit" style="font-size: 28pt" value="See Times"><br>
+
+<!-- <input type="submit" style="font-size: 28pt" value="See Times"><br> -->
+<center>
+<input type="submit" class="button go large" style="font-size: 15pt" value="See Times"><br>
 </form>
+
+<br>
 
 <!-- returns to previous page -->
 <form action="appOption.php">
-<input type="submit" style="font-size: 28pt" value="Previous">
+<input type="submit" class="button go large" style="font-size: 15pt" value="Previous">
+</center>
 </form>
 
 </div>
