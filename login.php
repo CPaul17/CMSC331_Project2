@@ -1,7 +1,6 @@
 <?php
 
 	$username = $_POST['uname'];
-	$password = $_POST['pass'];
 	$adminPass = $_POST['adminPass'];
 
 // 	echo("<br>");
@@ -34,7 +33,7 @@
 // 		echo("<br>");
 
 
-	if($adminPass == "password" && $username != "" && $password != "")
+	if($adminPass == "password" && $username != "")
 	{
 		header('Location: adminMenu.php');
 	}
@@ -98,12 +97,8 @@
 </div>
 
 <div class="field2">
-<FONT FACE="Times New Roman" SIZE = "3">Password: <input type='password1' name='pass'>
+<FONT FACE="Times New Roman" SIZE = "3">Administrator Password: <input type='password' name='adminPass'>
 <br>
-</div>
-
-<div class="field2">
-Administrator Password: <input type='password' name='adminPass'></FONT>
 </div>
 
 <br>

@@ -14,7 +14,6 @@
 
 <html>
 
-
 <body>
 
 
@@ -54,12 +53,6 @@
 <form action='login.php' method='post' name='form1'>
 
 <pre><P ALIGN="CENTER"><FONT FACE="Times New Roman" SIZE = "3">Username: <input type='text' name='uname'>      
-</div>
-
-<!-- <div class="field2"> -->
-<div class="fieldUsername">
-<!-- <FONT FACE="Times New Roman" SIZE = "3">Password: <input type='password1' name='pass'> -->
-<pre><P ALIGN="CENTER"><FONT FACE="Times New Roman" SIZE = "3">Password: <input type='password1' name='pass'>
 </div>
 
 <!-- <div class="field2"> -->
