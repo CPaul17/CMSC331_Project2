@@ -7,7 +7,10 @@
 // Description: Displays all available times for individual advising
 //		with the chosen advisor
 
+//
 session_start();
+include ("cssCode.html");
+include ("cssCode2.html");
 ?>
 <html>
 <head>
@@ -33,9 +36,25 @@ session_start();
 <body>
 
 <!-- page banner -->
-<div id = "header">
-<h1>UMBC Student Advising</h1>
-</div>
+<div id="security-tip">
+      <div class="content">
+	<P ALIGN="CENTER"><FONT SIZE="7" COLOR="RED"><U>UMBC</U></FONT>
+	<br><FONT SIZE="4">College of Engineering <br>and Information Technology</FONT>
+	</P>
+	</div>
+	</div>
+
+
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 
 <div id = "section">
 <u>Select from the available appointment times for the day.</u><br><br>

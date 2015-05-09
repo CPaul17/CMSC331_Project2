@@ -6,6 +6,7 @@
 // Instructor: Lupoli
 // Description: Displays the day and advisor options for individual sign-up
 
+//
 session_start(); 
 
 include ("cssCode.html");
@@ -56,7 +57,7 @@ include ("cssCode2.html");
 	<br>
 	<br>
 
-<div class="center">
+<div class="centerGroup">
 <P ALIGN="CENTER"><FONT SIZE="4"><U><big><b>Individual Advising</b></big></U></FONT></P>	
 <!-- <center><u>Individual Advising</u></center> -->
 	<br>
@@ -83,12 +84,12 @@ while($row != NULL){
 }
 
 if(count($advisorNames) != NULL){
-	echo("<FONT SIZE=\"4\"><big><b> Advisors: </b></big></FONT>");
+	echo("<center><FONT SIZE=\"4\"><big><b> Advisors: </b></big></FONT>");
 	echo "<select name='adv' style='font-size: 23pt'>";
 	foreach($advisorNames as $element){
 		echo "<option value=".$element[2].">".$element[0]." ".$element[1]."</option>";
 	}	
-	echo "</select><br><br>";
+	echo "</select></center><br><br>";
 }
 else{
 	echo "No advisors are available for appointments.<br>";
@@ -103,7 +104,7 @@ else{
 
 <!-- List of dates available -->
 <!-- Day: -->
-<FONT SIZE="4"><big><b> Day: </b></big></FONT>
+<center><FONT SIZE="4"><big><b> Day: </b></big></FONT>
 
 <select name='singleDay' style="font-size: 23pt">
 <option value='2015-01-01'>Thursday, January 1</option>
@@ -117,6 +118,7 @@ else{
 <option value='2015-04-02'>Thursday, April 2</option>
 <option value='2015-04-03'>Friday, April 3</option>
 </select>
+</center>
 <br>
 <br>
 <br>

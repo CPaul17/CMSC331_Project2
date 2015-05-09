@@ -7,6 +7,7 @@
 // Description: Displays the options for appointment types the student can pick
 //
 
+//
 //start session to save variables
 session_start(); 
 
@@ -67,7 +68,7 @@ $appointment = $row[4];
 <?php if($appointment == NULL) : ?>
 
 
-<div class="center">
+<div class="centerInd">
 
 
 <center>
