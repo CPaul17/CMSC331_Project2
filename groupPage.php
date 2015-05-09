@@ -106,10 +106,19 @@ Availability End Time:  <select name='endHour'>
 			<option value="10">10</option>
 			<option value="5">5</option>
 </select>
+<br>
+<div align="center">Major: <select name='major'>
+				<option value="ALL">ALL</option>
+				<option value="CMSC">CMSC</option>
+				<option value="CMPE">CMPE</option>
+				<option value="ENCH">ENCH</option>
+				<option value="ENME">ENME</option>
+				<option value="EGNR">EGNR</option>
+</select>
+</div>
 </FONT>
 
 </div>
-
 <br>
 <br>
 

@@ -85,6 +85,7 @@ echo("</div>");
 		echo("<th>"."<FONT SIZE=5>"."Advisor"."</FONT>"."</th>");
 		echo("<th>"."<FONT SIZE=5>"."Appt. Start"."</FONT>"."</th>");
 		echo("<th>"."<FONT SIZE=5>"."Appt. End  "."</FONT>"."</th>");
+		echo("<th>"."<FONT SIZE=5>"."Major"."</FONT>"."</th>");
 		echo("<th>"."<FONT SIZE=5>"."Signups"."</FONT>"."</th>");
 		echo("<th>"."<FONT SIZE=5>"."Capacity"."</FONT>"."</th>");
 		echo("<th>"."<FONT SIZE=5>"."Full?"."</FONT>"."</th>");
@@ -99,7 +100,14 @@ echo("</div>");
 			echo("<td>".getName($row['ID'])."</td>");
 			echo("<td>".convertTime($row['start1'])."</td>");
 			echo("<td>".convertTime($row['end1'])."</td>");
-			
+			if($row['major1'] != NULL)
+			{
+				echo("<td>".$row['major1']."</td>");
+			}
+			else
+			{
+				echo("<td>"."ALL"."</td>");
+			}
 			$signups;
 			$capacity;
 			if($row['ID'] == -1)
@@ -250,6 +258,7 @@ echo("</div>");
 			echo("<th>"."<FONT SIZE=5>"."Advisor"."</FONT>"."</th>");
 			echo("<th>"."<FONT SIZE=5>"."Appt. Start"."</FONT>"."</th>");
 			echo("<th>"."<FONT SIZE=5>"."Appt. End  "."</FONT>"."</th>");
+			echo("<th>"."<FONT SIZE=5>"."Major"."</FONT>"."</th>");
 			echo("<th>"."<FONT SIZE=5>"."Signups"."</FONT>"."</th>");
 			echo("<th>"."<FONT SIZE=5>"."Capacity"."</FONT>"."</th>");
 			echo("<th>"."<FONT SIZE=5>"."Full?"."</FONT>"."</th>");
@@ -264,6 +273,14 @@ echo("</div>");
 				echo("<td>".getName($row['ID'])."</td>");
 				echo("<td>".convertTime($row['start1'])."</td>");
 				echo("<td>".convertTime($row['end1'])."</td>");
+				if($row['major1'] != NULL)
+				{
+					echo("<td>".$row['major1']."</td>");
+				}
+				else
+				{
+					echo("<td>"."ALL"."</td>");
+				}
 				$signups;
 				$capacity;
 				if($row['ID'] == -1)
@@ -412,6 +429,7 @@ echo("</div>");
 			echo("<th>"."<FONT SIZE=5>"."Advisor"."</FONT>"."</th>");
 			echo("<th>"."<FONT SIZE=5>"."Appt. Start"."</FONT>"."</th>");
 			echo("<th>"."<FONT SIZE=5>"."Appt. End  "."</FONT>"."</th>");
+			echo("<th>"."<FONT SIZE=5>"."Major"."</FONT>"."</th>");
 			echo("<th>"."<FONT SIZE=5>"."Signups"."</FONT>"."</th>");
 			echo("<th>"."<FONT SIZE=5>"."Capacity"."</FONT>"."</th>");
 			echo("<th>"."<FONT SIZE=5>"."Full?"."</FONT>"."</th>");
@@ -426,6 +444,14 @@ echo("</div>");
 				echo("<td>".getName($row['ID'])."</td>");
 				echo("<td>".convertTime($row['start1'])."</td>");
 				echo("<td>".convertTime($row['end1'])."</td>");
+				if($row['major1'] != NULL)
+				{
+					echo("<td>".$row['major1']."</td>");
+				}
+				else
+				{
+					echo("<td>"."ALL"."</td>");
+				}
 				$signups;
 			$capacity;
 			if($row['ID'] == -1)
@@ -602,6 +628,7 @@ echo("</div>");
 			echo("<th>"."<FONT SIZE=5>"."Advisor"."</FONT>"."</th>");
 			echo("<th>"."<FONT SIZE=5>"."Appt. Start"."</FONT>"."</th>");
 			echo("<th>"."<FONT SIZE=5>"."Appt. End  "."</FONT>"."</th>");
+			echo("<th>"."<FONT SIZE=5>"."Major"."</FONT>"."</th>");
 			echo("<th>"."<FONT SIZE=5>"."Signups"."</FONT>"."</th>");
 			echo("<th>"."<FONT SIZE=5>"."Capacity"."</FONT>"."</th>");
 			echo("<th>"."<FONT SIZE=5>"."Full?"."</FONT>"."</th>");
@@ -616,6 +643,14 @@ echo("</div>");
 				echo("<td>".getName($row['ID'])."</td>");
 				echo("<td>".convertTime($row['start1'])."</td>");
 				echo("<td>".convertTime($row['end1'])."</td>");
+				if($row['major1'] != NULL)
+				{
+					echo("<td>".$row['major1']."</td>");
+				}
+				else
+				{
+					echo("<td>"."ALL"."</td>");
+				}
 				$signups;
 			$capacity;
 			if($row['ID'] == -1)

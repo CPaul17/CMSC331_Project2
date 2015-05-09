@@ -11,7 +11,7 @@
 	include('../CommonMethods.php');
 	$COMMON = new Common($debug); 
 	
-
+	$major = $_POST['major'];
 	$capacity = $_POST['capacity'];
 	$month = $_POST['month'];
 	$day = $_POST['day'];
@@ -193,11 +193,11 @@ else
 			}
 			if($capacity == 10)
 			{
-				addAppointment($startTime, $tempEnd, $date, -1, 10);
+				addAppointment($startTime, $tempEnd, $date, -1, 10, $major);
 			}
 			else
 			{
-				addAppointment($startTime, $tempEnd, $date, -2, 5);
+				addAppointment($startTime, $tempEnd, $date, -2, 5, $major);
 			}
 			$startTime = $tempEnd;
 			header('Location: successfulGroup.php');
@@ -271,10 +271,10 @@ function checkTime($appDate, $appTime)
 	
 }
 
-function addAppointment($sTime, $eTime, $date1, $ID, $cap)
+function addAppointment($sTime, $eTime, $date1, $ID, $cap, $maj)
 {
 	global $debug; global $COMMON;
-	$sql = "insert into appointments2 (`start1`, `end1`, `ID`, `date1`, `capacity1`) values ('$sTime', '$eTime', '$ID', '$date1', '$cap')";
+	$sql = "insert into appointments2 (`start1`, `end1`, `ID`, `date1`, `capacity1`, `major1`) values ('$sTime', '$eTime', '$ID', '$date1', '$cap', '$maj')";
 	$rs = $COMMON->executeQuery($sql, __FILE__);
 }
 function getBlocks($start, $end)
