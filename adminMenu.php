@@ -1,22 +1,31 @@
 <?php
-	// include("header.html");
- 	
+	session_start();
+?>
+<?php
+ 	if($_SESSION["login"] != 1)
+	{
+		header('Location: index.php');	
+	}
+
 	include("cssCode.html");
 	include("cssCode2.html");
+	
 ?>
 
 
 <html>
 <body>
-
+	
 	<div id="security-tip">
-      <div class="content">
-	<P ALIGN="CENTER"><FONT SIZE="7" COLOR="RED"><U>UMBC</U></FONT>
-	<br><FONT SIZE="4">College of Engineering <br>and Information Technology</FONT>
-	</P>
+      <div class="content"> 
+	<div style="float:left"><a href="adminHelp.php"><button type="button" class ="button go large" style="height:30px;width:80px">Help</button></a></div>
+	<div style="float:right"><a href="logout.php"><button type="button" class ="button go large" style="height:30px;width:80px">Log Out</button></a></div>
+	<center><FONT SIZE="7" COLOR="RED"><U>UMBC</U></FONT><center>
+	<center><FONT SIZE="4">College of Engineering <br>and Information Technology</FONT></center>
+	<div style="clear: both;"></div>
 	</div>
 	</div>
-
+	
 	<br>
 	<br>
 	<br>

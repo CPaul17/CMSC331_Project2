@@ -1,10 +1,16 @@
 <?php
-
+	session_start();
+?>
+<?php
+ 	if($_SESSION["login"] != 1)
+	{
+		header('Location: index.php');	
+	}
 	
 
 
 
-	$debug=false; session_start();
+	$debug=false;
 	include('../CommonMethods.php');
 	$COMMON = new Common($debug);
 	
@@ -19,10 +25,12 @@
 
 		//include("header.html");
 echo("<div id=\"security-tip\">");
-echo("<div class=\"content\">");
-echo("<P ALIGN=\"CENTER\"><FONT SIZE=\"7\" COLOR=\"RED\"><U>UMBC</U></FONT>");
-echo("<br><FONT SIZE=\"4\">College of Engineering <br>and Information Technology</FONT>");
-echo("</P>");
+echo("<div class=\"content\">"); 
+echo("<div style=\"float:left\"><a href=\"adminHelp.php\"><button type=\"button\" class =\"button go large\" style=\"height:30px;width:80px\">Help</button></a></div>");
+echo("<div style=\"float:right\"><a href=\"logout.php\"><button type=\"button\" class =\"button go large\" style=\"height:30px;width:80px\">Log Out</button></a></div>");
+echo("<center><FONT SIZE=\"7\" COLOR=\"RED\"><U>UMBC</U></FONT><center>");
+echo("<center><FONT SIZE=\"4\">College of Engineering <br>and Information Technology</FONT></center>");
+echo("<div style=\"clear: both;\"></div>");
 echo("</div>");
 echo("</div>");
 echo("<br>");

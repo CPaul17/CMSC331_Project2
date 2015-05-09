@@ -1,7 +1,13 @@
 <?php
+	session_start();
+?>
+<?php
+ 	if($_SESSION["login"] != 1)
+	{
+		header('Location: index.php');	
+	}
 
-
-	$debug=false; session_start();
+	$debug=false;
 	include('../CommonMethods.php');
 	$COMMON = new Common($debug); 
 	

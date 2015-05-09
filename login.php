@@ -1,5 +1,7 @@
 <?php
-
+	session_start();
+?>
+<?php
 	$username = $_POST['uname'];
 	$adminPass = $_POST['adminPass'];
 
@@ -35,6 +37,7 @@
 
 	if($adminPass == "password" && $username != "")
 	{
+		$_SESSION["login"] = 1;
 		header('Location: adminMenu.php');
 	}
 

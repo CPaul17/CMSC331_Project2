@@ -1,4 +1,7 @@
 <?php
+	session_start();
+?>
+<?php
  include("cssCode.html");
  include("cssCode2.html");
 
