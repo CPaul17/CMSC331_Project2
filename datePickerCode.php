@@ -10,10 +10,6 @@ http://stackoverflow.com/questions/7709320/jquery-ui-datepicker-enable-only-spec
 
 -->
 
-
-
-
-
 <?php
 echo "</body>\n"; 
 echo "</html>\n"; 
