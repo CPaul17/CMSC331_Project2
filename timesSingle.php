@@ -7,10 +7,48 @@
 // Description: Displays all available times for individual advising
 //		with the chosen advisor
 
-//
 session_start();
-include ("cssCode.html");
-include ("cssCode2.html");
+function timeFormat($time1){
+
+  $formatTime;
+  //convert number into string just it case it hasn't been
+  $time = "$time1";
+  $count = 0;
+  $i = 0;
+
+  //this while loop counts how many elements are in the array
+  while($time[$i] != NULL){
+    $count++;
+    $i++;
+  }
+
+  $size = $count;
+  //if it's only 3 in length ex. 900 or 300 etc. 
+  if($size == 3){
+    $formatTime = $formatTime . "0";
+    $formatTime = $formatTime . "$time[0]";
+    $formatTime = $formatTime . ":";    
+    $formatTime = $formatTime . "$time[1]";
+    $formatTime = $formatTime . "$time[2]";
+
+  }
+
+  //if it's 4 digits in length ex. 1500 or 2000 etc. 
+  if($size == 4){
+    $formatTime = $formatTime . "0";
+    $formatTime = $formatTime . "$time[0]";
+    $formatTime = $formatTime . ":";    
+    $formatTime = $formatTime . "$time[1]";
+    $formatTime = $formatTime . "$time[2]";
+
+  }
+
+  //now convert from 24 hour display to a 12 hour display with am and pm
+  $formatTime = DATE("g:i a", STRTOTIME("$time"));
+  
+  //return the formatted time
+  return $formatTime;
+}
 ?>
 <html>
 <head>
@@ -36,25 +74,9 @@ include ("cssCode2.html");
 <body>
 
 <!-- page banner -->
-<div id="security-tip">
-      <div class="content">
-	<P ALIGN="CENTER"><FONT SIZE="7" COLOR="RED"><U>UMBC</U></FONT>
-	<br><FONT SIZE="4">College of Engineering <br>and Information Technology</FONT>
-	</P>
-	</div>
-	</div>
-
-
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
+<div id = "header">
+<h1>UMBC Student Advising</h1>
+</div>
 
 <div id = "section">
 <u>Select from the available appointment times for the day.</u><br><br>
@@ -94,6 +116,7 @@ if(count($availSlots) != NULL){
 	echo "<select style='font-size: 28pt' name='appmt'>";
 	//all available times are echoed as a drop-down option
 	foreach($availSlots as $element){
+		$element[0] = timeFormat($element[0]);
 		echo "<option value=".$element[1].">".$element[0]."</option>";
 	}	
 	echo "</select><br><br>";

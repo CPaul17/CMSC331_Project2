@@ -44,16 +44,16 @@ include('../CommonMethods.php');
 $COMMON = new Common($debug);
 
 //retrieves student information from session
-$studentID = $_SESSION["idNum"];
+$id = $_SESSION["idNum"];
 
 //ID number for the appointment
 $appointmentID = $_POST['appmt'];
 
-$sql = "update `appointments2` set `full1`=1, `StudentID`='$studentID' 
-	where `num1`=$appointmentID";
-
+$sql = "update `appointments2` set `signups1`=1, `full1`=1 where `num1`=$appointmentID";
 $rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
 
+$sql = "update `StudentInfo` set `Appointment`=$appointmentID where `ID`='$id'";
+$rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
 ?>
 
 You have successfully created an appointment.<br>

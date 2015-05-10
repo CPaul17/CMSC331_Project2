@@ -51,13 +51,23 @@ $COMMON = new Common($debug);
 $id = $_SESSION['idNum'];
 
 //variable to hold the type of appointment the student has
-$appointment = $_POST['appointment'];
+$apmtID = $_POST['apmtID'];
 
 //deletes the appointment from the table specified by the type
-$sql = "delete from `$appointment` where `StudentID`='$id'";
+$sql = "select * from `appointments2` where `num1`=$apmtID";
 $rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
-	
-//updates student's Appointment field to show that the student no longer has an appointment
+$row = mysql_fetch_row($rs);
+
+$newTotal = $row[6] - 1;
+$full = $row[7];
+
+if($newTotal == 0){
+	$full = 0;
+}
+
+$sql = "update `appointments2` set `signups1`=$newTotal, `full1`=$full where `num1`=$apmtID";
+$rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
+
 $sql = "update `StudentInfo` set `Appointment`=NULL where `ID`='$id'";
 $rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
 

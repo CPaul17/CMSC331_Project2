@@ -45,18 +45,27 @@ $COMMON = new Common($debug);
 
 //retrieves user information from session
 $id = $_SESSION["idNum"];
-$date = $_SESSION["date"];
-$time = $_POST["time"];
 
-//uses student information to insert appointment into Group table
-$sql = "insert into `Group`(`StudentID`, `Date`, `Time`) values ('$id','$date', '$time')";
+$appointmentID = $_POST['appmt'];
+
+$sql = "select `signups1` from `appointments2` where `num1`=$appointmentID";
 $rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
 
-//updates the Appointment field in StudentInfo database to indicate the student
-//has a group appointment
-$sql = "update `StudentInfo` set `Appointment`='Group' where `ID` = '$id'";
-$rs =  $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
+$row = mysql_fetch_row($rs);
+$newTotal = $row[0] + 1;
 
+if($newTotal == 10){
+	$sql = "update `appointments2` set `full1`=1, `signups1`=$newTotal 
+	where `num1`=$appointmentID";
+	$rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
+}
+else{
+	$sql = "update `appointments2` set `signups1`=$newTotal where `num1`=$appointmentID";
+	$rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
+}
+
+$sql = "update `StudentInfo` set `Appointment`=$appointmentID where `ID`='$id'";
+$rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
 ?>
 
 You have successfully created an appointment.<br>
