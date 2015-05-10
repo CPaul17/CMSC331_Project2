@@ -44,7 +44,7 @@
 	$checkTOD = 0;
 	if($sTOD == am)
 	{
-		if(!($startTime >= 900 && $startTime < 1200))
+		if(!($startTime >= 800 && $startTime < 1200))
 		{
 			$checkTOD = 1;
 		}
@@ -66,7 +66,7 @@
 	
 	if($eTOD == am)
 	{
-		if(!($endTime >= 900 && $endTime < 1200))
+		if(!($endTime >= 800 && $endTime < 1200))
 		{
 			$checkTOD = 1;
 		}
@@ -171,7 +171,7 @@
 		echo("<P ALIGN=\"CENTER\">");
 		echo("<FONT SIZE=\"5\">");
 		echo("<mark>");
-		echo("** Appointments must be between 9:00 AM and 4:00 PM. **");
+		echo("** Appointments must be between 8:00 AM and 4:00 PM. **");
 		echo("</mark>");
 		echo("</FONT>");
 		echo("</P>");

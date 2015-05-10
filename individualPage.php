@@ -58,6 +58,7 @@
 <pre><P ALIGN="CENTER"><FONT FACE="Times New Roman" SIZE = "3">First Name: <input type='text' name='fname'>      Last Name: <input type='text' name='lname'>
 <br>
 Availability Start Time: <select name='startHour'>
+			<option value="8">8</option>
 			<option value="9">9</option>
 			<option value="10">10</option>
 			<option value="11">11</option>
@@ -89,6 +90,7 @@ Availability Start Time: <select name='startHour'>
 				</select> / <input type ='number' name='day' min='1' max='31' value='1' style="width:45px;"> / <input type='number' name='year' min='2015' value='2015' style="width:55px;">
 <br>
 Availability End Time:  <select name='endHour'>
+			<option value="8">8</option>
 			<option value="9">9</option>
 			<option value="10">10</option>
 			<option value="11">11</option>

@@ -51,7 +51,8 @@ rpad.padding {
 	<br>
 	<br>
 	<P ALIGN="CENTER"><FONT SIZE="6"><U>Printing Options</U></FONT></P>
-	<P ALIGN="CENTER"><FONT SIZE="4">Enter a date or check 'All' to print for every day:</FONT></P>
+	<br>
+	<P ALIGN="CENTER"><FONT FACE="Times New Roman" SIZE="4"><u>Enter a date or check 'All' for every day:</u> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<u>Enter times or check 'All' for any time:</u></FONT></P>
 	<form action='schedulePrinter.php' method='post' name='form1'>
 	<pre><P ALIGN="CENTER"><FONT FACE="Times New Roman" SIZE = "3">
 	 Date: <select name='month'>
@@ -67,8 +68,37 @@ rpad.padding {
 				<option value='10'>Oct</option>
 				<option value='11'>Nov</option>
 				<option value='12'>Dec</option>
-				</select> / <input type ='number' name='day' min='1' max='31' value='1' style="width:45px;"> / <input type='number' name='year' min='2015' value='2015' style="width:55px;">   or All? <input type='checkbox' name='allDays'>
-	<br></FONT><br><FONT FACE="Times New Roman" SIZE = "4">Enter a name or check 'All' to print for each advisor:</FONT>
+				</select> / <input type ='number' name='day' min='1' max='31' value='1' style="width:45px;"> / <input type='number' name='year' min='2015' value='2015' style="width:55px;">   or All? <input type='checkbox' name='allDays'>                                 From <select name='startHour'>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="10">10</option>
+			<option value="11">11</option>
+			<option value="12">12</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			</select> : <select name='startMin'>
+				<option value="00">00</option>
+				<option value="15">15</option>
+				<option value="30">30</option>
+				<option value="45">45</option>
+			</select> to <select name='endHour'>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="10">10</option>
+			<option value="11">11</option>
+			<option value="12">12</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			</select> : <select name='endMin'>
+				<option value="00">00</option>
+				<option value="15">15</option>
+				<option value="30">30</option>
+				<option value="45">45</option>
+			</select> or All? <input type='checkbox' name='allTimes'>
+	<br></FONT><br><FONT FACE="Times New Roman" SIZE = "4"><u>Enter a name or check 'All' to print for each advisor:</u></FONT>
 	<FONT FACE="Times New Roman" SIZE = "3"><br>
 	First Name: <input type='text' name='fname'>      Last Name: <input type='text' name='lname'>   or All? <input type='checkbox' name='allAds'>
 

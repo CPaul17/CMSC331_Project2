@@ -64,8 +64,8 @@ echo("<br>");
 		echo("<FONT SIZE=\"5\"><U>Advisors</U></FONT>");
 		echo("<br>");
 		echo("<br>");
-		// echo("<table border='5px' style=\"border:solid black;border-collapse:collapse;text-align:center;\"");
-		echo("<table border='5px' style=\"border: #122232;border-collapse:collapse;text-align:center;\"");
+		echo("<table border='5px' style=\"border:solid black;border-collapse:collapse;text-align:center;\"");
+		//echo("<table border='5px' style=\"border: #122232;border-collapse:collapse;text-align:center;\"");
 		
 		echo("<tr>");
 		echo("<th>"."<FONT SIZE=5>"."Last"."</FONT>"."</th>");
@@ -83,7 +83,7 @@ echo("<br>");
 			echo("<form action='deleteAdvisor.php' method='post' name='form2'>");
 			echo("<input type=\"hidden\" name=\"lname\" value=\"".$row['lname']."\">");
 			echo("<input type=\"hidden\" name=\"fname\" value=\"".$row['fname']."\">");
-			echo("<td><input type='submit' onclick=\"return confirm('Are you sure?')\" value=\"Delete\" class=\"button go large\"></td></form>");
+			echo("<td><input type='submit' onclick=\"return confirm('Permanently delete this advisor and their appointments?')\" value=\"Delete\" class=\"button go large\"></td></form>");
 
 			echo("</tr>");	
 		}

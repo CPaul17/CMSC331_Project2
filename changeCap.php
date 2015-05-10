@@ -21,8 +21,14 @@
 	$day = $_POST['day'];
 	$year = $_POST['year'];
 
+	$startHour = $_POST['startHour'];
+	$startMin = $_POST['startMin'];
+	$endHour = $_POST['endHour'];
+	$endMin = $_POST['endMin'];
+
 	$allD = $_POST['allDays'];
 	$allA = $_POST['allAds'];
+	$allT = $_POST['allTimes'];
 
 	$num = $_POST['num'];
 	
@@ -64,6 +70,11 @@ echo("<body>");
 	echo("<input type=\"hidden\" name=\"year\" value=\"".$year."\">");
 	echo("<input type=\"hidden\" name=\"allDays\" value=\"".$allD."\">");
 	echo("<input type=\"hidden\" name=\"allAds\" value=\"".$allA."\">");
+	echo("<input type=\"hidden\" name=\"allTimes\" value=\"".$allT."\">");
+	echo("<input type=\"hidden\" name=\"startHour\" value=\"".$_POST['startHour']."\">");
+	echo("<input type=\"hidden\" name=\"startMin\" value=\"".$_POST['startMin']."\">");
+	echo("<input type=\"hidden\" name=\"endHour\" value=\"".$_POST['endHour']."\">");
+	echo("<input type=\"hidden\" name=\"endMin\" value=\"".$_POST['endMin']."\">");
 	echo("<input type='submit' class=\"button go large\" value=\"Back\" style=\"width:150px;height:40px;\">");
 	echo("</CENTER>");
 echo("</body>");

@@ -25,9 +25,15 @@
 	$day = $_POST['day'];
 	$year = $_POST['year'];
 
+	$startHour = $_POST['startHour'];
+	$startMin = $_POST['startMin'];
+	$endHour = $_POST['endHour'];
+	$endMin = $_POST['endMin'];
+	
 	$allD = $_POST['allDays'];
 	$allA = $_POST['allAds'];
-	
+	$allT = $_POST['allTimes'];
+
 	deleteAppointment($num);
 	
 echo("<html>");
@@ -72,6 +78,11 @@ echo("<body>");
 	echo("<input type=\"hidden\" name=\"year\" value=\"".$year."\">");
 	echo("<input type=\"hidden\" name=\"allDays\" value=\"".$allD."\">");
 	echo("<input type=\"hidden\" name=\"allAds\" value=\"".$allA."\">");
+	echo("<input type=\"hidden\" name=\"allTimes\" value=\"".$allT."\">");
+	echo("<input type=\"hidden\" name=\"startHour\" value=\"".$_POST['startHour']."\">");
+	echo("<input type=\"hidden\" name=\"startMin\" value=\"".$_POST['startMin']."\">");
+	echo("<input type=\"hidden\" name=\"endHour\" value=\"".$_POST['endHour']."\">");
+	echo("<input type=\"hidden\" name=\"endMin\" value=\"".$_POST['endMin']."\">");
 	echo("<input type='submit' class=\"button go large\" value=\"Back\" style=\"width:150px;height:40px;\">");
 	echo("</CENTER>");
 echo("</body>");
@@ -92,7 +103,19 @@ function convertTime($time)
 {
 	$time_ = $time;
 	$min;
-	if($time_ >= 900 && $time_ < 1000)
+	if($time_ >= 800 && $time_ < 900)
+	{
+		$min = $time_ - 800;
+		if($min == 0)
+		{
+			$time_ = "8:00 AM";
+		}
+		else
+		{
+			$time_ = "8:".$min." AM";
+		}
+	}
+	else if($time_ >= 900 && $time_ < 1000)
 	{
 		$min = $time_ - 900;
 		if($min == 0)

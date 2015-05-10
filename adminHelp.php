@@ -65,7 +65,9 @@ p.padding3
 	 </FONT></center>
 <br>
 <br>
-
+<br>
+<br>
+<br>
 <h1><a id="IA"><p class="padding" style="color:black;"><u>Individual Appointments</u></p></a></h1>
 <br>
 <FONT SIZE=3>
@@ -74,7 +76,7 @@ p.padding3
 <p class="padding2">- You can schedule a large block of appointments at once for one day. Appointments will be split into 30 minute blocks if the availabilty specified is one hour or greater.</p>
 <p class="padding2">- Availability will not be scheduled and an error message will be returned if:</p>
 <p class="padding3">- The advisor name provided does not match records.</p>
-<p class="padding3">- The time specified is not within the period from 9:00 am through 4:00 pm.</p>
+<p class="padding3">- The time specified is not within the period from 8:00 am through 4:00 pm.</p>
 <p class="padding3">- The time specified does not meet the required 30 minute minimum.</p>
 </FONT>
 <br>
@@ -91,7 +93,7 @@ p.padding3
 <p class="padding2">- Each group appointment will be 30 minutes in length.</p>
 <p class="padding2">- You can schedule a large block of appointments at once for one day. Appointments will be split into 30 minute blocks if the availabilty specified is one hour or greater.</p>
 <p class="padding2">- Availability will not be scheduled and an error message will be returned if:</p>
-<p class="padding3">- The time specified is not within the period from 9:00 am through 4:00 pm.</p>
+<p class="padding3">- The time specified is not within the period from 8:00 am through 4:00 pm.</p>
 <p class="padding3">- The time specified does not meet the required 30 minute minimum.</p>
 </FONT>
 <br>
@@ -121,7 +123,7 @@ p.padding3
 <br>
 <FONT SIZE=3>
 <p class="padding2">- Use the <a href="printingPage.php">Printing Page</a> if you are looking to view scheduled availability.</p>
-<p class="padding2">- You can print the entire schedule, or you can print the schedule for a particular day, advisor, or both.</p>
+<p class="padding2">- You can print the entire schedule, or you can print the schedule for a particular day, advisor, time, or any combination of the three.</p>
 <p class="padding2">- The printed schedule will contain the following information:</p>
 <p class="padding3">- The Date, start time and end time for each displayed appointment.</p>
 <p class="padding3">- The advisor associated with each individual appointment, or 'Group' for each group appointment.</p>
@@ -129,8 +131,8 @@ p.padding3
 <p class="padding3">- The capacity and number of students signed up for each appointment, as well as whether or not each appointment is full.</p>
 <p class="padding2">- A schedule will not be printed and an error message will be returned if:</p>
 <p class="padding3">- 'All' advisors is unchecked and the provided name does not match an advisor on record.</p>
-<p class="padding3">- 'All' days is unchecked and there are no appointments scheduled for the provided day.</p>
-<p class="padding3">- 'All' advisors and 'All' days are both unchecked and there are no appointments scheduled for the given advisor on the given day.</p>
+<p class="padding3">- 'All' days is unchecked and there are no appointments scheduled for the provided day given any other constraints.</p>
+<p class="padding3">- 'All' times is unchecked and there are no appointments scheduled within the given time range given any other constraints.</p>
 </FONT>
 <br>
 <br>
