@@ -5,77 +5,73 @@
 // Class: CMSC 331
 // Instructor: Lupoli
 // Description: Shows options for days available for group advising
-
-include ("cssCode.html");
-include ("cssCode2.html");
 ?>
-
 
 <html>
 <head>
 <!-- Format background and border for page -->
-
-
-
+<style>
+#header {
+	background-color:yellow;
+	border: 10px solid black;
+	padding:10px;
+	color:black;
+	text-align:center;
+	font-size: 40px;
+}
+#section {
+	border: 10px solid black;
+	padding:30px;
+	height: 700px;
+	text-align:center;
+	font-size: 40px;
+}
+</style>
 </head>
 <body>
+<div id="header">
+<h1>UMBC Student Advising</h1>
+</div>
 
-
-<div id="security-tip">
-      <div class="content">
-	<P ALIGN="CENTER"><FONT SIZE="7" COLOR="RED"><U>UMBC</U></FONT>
-	<br><FONT SIZE="4">College of Engineering <br>and Information Technology</FONT>
-	</P>
-	</div>
-	</div>
-
-
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-
-<div class = "center">
-<P ALIGN="CENTER"><FONT SIZE="4"><U><big><b>Group Advising</b></big></U></FONT></P>	
-
-<br>
-<br>
+<div id = "section">
+<u>Group Advising</u><br><br>
 
 <form method="post" action="timesGroup.php">
 
-<!-- Group advising is only offered 3 days per week -->
-<FONT SIZE="4"><big><b> Day: </b></big></FONT>
+<?php
+$debug = false;
+include('../CommonMethods.php');
+$COMMON = new Common($debug);
 
-<select style="font-size: 23pt" name='groupDay'>
-<option value='2015-03-23'>Monday, March 23</option>
-<option value='2015-03-25'>Wednesday, March 25</option>
-<option value='2015-03-27'>Friday, March 27</option>
-<option value='2015-03-30'>Monday, March 30</option>
-<option value='2015-04-01'>Wednesday, April 1</option>
-<option value='2015-04-03'>Friday, April 3</option>
+$sql = "select `date1` from `appointments2` where `ID`=-1 and `full1`=0";
+$rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
+$row = mysql_fetch_row($rs);
 
-</select>
-<br>
-<br>
-<br>
-<br>
+$groupDays = array();
+while($row != NULL){
+	array_push($groupDays, $row[0]);
+	$row = mysql_fetch_row($rs);
+}
+$groupDays = array_unique($groupDays);
+if(count($groupDays) == 0){
+	echo "Sorry, no group days are available at this time.<br>";
+	echo "Please return to the previous page.";
+}
+else{
+	echo "<form action = 'timesGroup.php' method='post'>";
+	echo "Day: ";
+	echo "<select style='font-size: 28pt' name='groupDay'>";
+	foreach($groupDays as $element){
+		echo "<option value=".$element.">".$element."</option>";
+	}
+	echo "</select><br><br>";
+	echo "<input type='submit' style='font-size: 28pt' value='See Times'>";
+	echo "</form>";
+}
 
-<center>
-<input type="submit" class="button go large" style="font-size: 15pt"
- value="See Times"><br>
-</form>
-
-<br>
-
+?>
 <form action="appOption.php">
-<input type="submit" class="button go large" style="font-size: 15pt" value="Previous">
-</center>
+<input type="submit" style="font-size: 28pt" value="Previous">
 </form>
 
 </div>

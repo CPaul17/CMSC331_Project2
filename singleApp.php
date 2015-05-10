@@ -6,17 +6,13 @@
 // Instructor: Lupoli
 // Description: Displays the day and advisor options for individual sign-up
 
-//
 session_start(); 
-
-include ("cssCode.html");
-include ("cssCode2.html");
 ?>
 <html>
 <head>
 <!-- Format background and border for page -->
 <style>
-/*#header {
+#header {
 	background-color:yellow;
 	border: 10px solid black;
 	padding:10px;
@@ -31,37 +27,17 @@ include ("cssCode2.html");
 	text-align:center;
 	font-size: 40px;
 }
-*/
 </style>
 </head>
 <body>
 
 <!-- page banner -->
-<div id="security-tip">
-      <div class="content">
-	<P ALIGN="CENTER"><FONT SIZE="7" COLOR="RED"><U>UMBC</U></FONT>
-	<br><FONT SIZE="4">College of Engineering <br>and Information Technology</FONT>
-	</P>
-	</div>
-	</div>
+<div id="header">
+<h1>UMBC Student Advising</h1>
+</div>
 
-
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-
-<div class="centerGroup">
-<P ALIGN="CENTER"><FONT SIZE="4"><U><big><b>Individual Advising</b></big></U></FONT></P>	
-<!-- <center><u>Individual Advising</u></center> -->
-	<br>
-	<br>
+<div id="section">
+<u>Individual Advising</u><br><br>
 
 <form method="post" action="timesSingle.php">
 
@@ -84,58 +60,49 @@ while($row != NULL){
 }
 
 if(count($advisorNames) != NULL){
-	echo("<center><FONT SIZE=\"4\"><big><b> Advisors: </b></big></FONT>");
-	echo "<select name='adv' style='font-size: 23pt'>";
+	echo "Advisors: ";
+	echo "<select name='adv' style='font-size: 28pt'>";
 	foreach($advisorNames as $element){
 		echo "<option value=".$element[2].">".$element[0]." ".$element[1]."</option>";
 	}	
-	echo "</select></center><br><br>";
+	echo "</select><br><br>";
+	
+	$sql = "select `date1` from `appointments2` where `ID`!=-1 and `full1`=0";
+	$rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
+	$row = mysql_fetch_row($rs);
+
+	$singleDays = array();
+	while($row != NULL){
+		array_push($singleDays, $row[0]);
+		$row = mysql_fetch_row($rs);
+	}
+	$singleDays = array_unique($singleDays);
+	if(count($singleDays) == 0){
+		echo "Sorry, no single days are available at this time.<br>";
+		echo "Please return to the previous page.";
+	}
+	else{
+		echo "<form action = 'timesSingle.php' method='post'>";
+		echo "Day: ";
+		echo "<select style='font-size: 28pt' name='singleDay'>";
+		foreach($singleDays as $element){
+			echo "<option value=".$element.">".$element."</option>";
+		}
+		echo "</select><br><br>";
+		echo "<input type='submit' style='font-size: 28pt' value='See Times'>";
+		echo "</form>";
+	}
 }
 else{
 	echo "No advisors are available for appointments.<br>";
 	echo "Please return to the previous page.<br>";
 }
 
-//echo("<FONT SIZE=\"6\"><big><b> Day: </b></big></FONT>");
-
 ?>
-
-<br>
-
-<!-- List of dates available -->
-<!-- Day: -->
-<center><FONT SIZE="4"><big><b> Day: </b></big></FONT>
-
-<select name='singleDay' style="font-size: 23pt">
-<option value='2015-01-01'>Thursday, January 1</option>
-<option value='2015-03-24'>Tuesday, March 24</option>
-<option value='2015-03-25'>Wednesday, March 25</option>
-<option value='2015-03-26'>Thursday, March 26</option>
-<option value='2015-03-27'>Friday, March 27</option>
-<option value='2015-03-30'>Monday, March 30</option>
-<option value='2015-03-31'>Tuesday, March 31</option>
-<option value='2015-04-01'>Wednesday, April 1</option>
-<option value='2015-04-02'>Thursday, April 2</option>
-<option value='2015-04-03'>Friday, April 3</option>
-</select>
-</center>
-<br>
-<br>
-<br>
-<br>
-
-
-<!-- <input type="submit" style="font-size: 28pt" value="See Times"><br> -->
-<center>
-<input type="submit" class="button go large" style="font-size: 15pt" value="See Times"><br>
-</form>
-
-<br>
 
 <!-- returns to previous page -->
 <form action="appOption.php">
-<input type="submit" class="button go large" style="font-size: 15pt" value="Previous">
-</center>
+<input type="submit" style="font-size: 28pt" value="Previous">
 </form>
 
 </div>
