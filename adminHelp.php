@@ -51,18 +51,20 @@ p.padding3
 <br>
 	<center><FORM><INPUT Type="button" class="button go large" VALUE="Back" onClick="history.go(-1);return true;"></FORM></center>
 <br>
-	 <center><FONT SIZE=5><u>Contents</u></FONT>
+	<div class="centerMenu">
+	 <center><FONT SIZE=6><u>Contents</u></FONT>
 	<br>
-	<br><FONT SIZE=4><p><a href="#IA">Individual Appointments</a></p>
+	<br><FONT SIZE=5><p><a href="#IA" style="color:#122232;">Individual Appointments</a></p>
 	<br>
-	<p><a href="#GA">Group Appointments</a></p>
+	<p><a href="#GA" style="color:#122232;">Group Appointments</a></p>
 	<br>
-	<p><a href="#AD">Changing Advisors</a></p>
+	<p><a href="#AD" style="color:#122232;">Changing Advisors</a></p>
 	<br>
-	<p><a href="#SP">Printing Schedules</a></p>
+	<p><a href="#SP" style="color:#122232;">Printing Schedules</a></p>
 	<br>
-	<p><a href="#CC">Change or Delete Appointments</a></p>
+	<p><a href="#CC" style="color:#122232;">Change or Delete Appointments</a></p>
 	 </FONT></center>
+	</div>
 <br>
 <br>
 <br>
