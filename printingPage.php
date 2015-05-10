@@ -113,9 +113,10 @@ rpad.padding {
 	</form>
 <P ALIGN="RIGHT">
 <br>
+<br>
 <!-- <rpad class="padding"><a href="adminMenu.php"><button type="button" style="height:25px;background-color:red;color:white;">Main Menu</button></a></rpad>
  -->
- <rpad class="padding"><a href="adminMenu.php"><button type="button" class ="button go large" style="height:30px;">Main Menu</button></a></rpad>
+ <center><a href="adminMenu.php"><button type="button" class ="button go large" style="height:30px;">Main Menu</button></a></center>
 </P>
 
 </body>

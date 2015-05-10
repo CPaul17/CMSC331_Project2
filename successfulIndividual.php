@@ -56,17 +56,13 @@
 	<br>
 
 
-	<div class="fieldLogin">
-		<div class="center4">
-	<a href="individualPage.php"><button type="button" class="button go large" >Return to Individual</button></a>
-</div>
-</div>	
+	
+	<center><a href="individualPage.php"><button type="button" class="button go large" >Return to Individual</button></a></center>
 
-<div class="fieldLogin">
-	<div class="center5">
-	<a href="adminMenu.php"><button type="button" class="button go large" >Main Menu</button></a>
-</div>
-</div>
+	<br><br>
+
+	<center><a href="adminMenu.php"><button type="button" class="button go large" >Main Menu</button></a></center>
+
 
 </body>
 </html>

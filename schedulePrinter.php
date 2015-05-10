@@ -236,7 +236,7 @@ echo("</div>");
 			echo("</mark>");
 			echo("</FONT>");
 			echo("</P>");
-			echo("<div style = \"margin-top: -100px\">");
+			echo("<div style = \"margin-top: -157px\">");
 			echo("</div>");
 			include("printingPage.php");
 		}
@@ -425,7 +425,7 @@ echo("</div>");
 			echo("</mark>");
 			echo("</FONT>");
 			echo("</P>");
-			echo("<div style = \"margin-top: -100px\">");
+			echo("<div style = \"margin-top: -157px\">");
 			echo("</div>");
 			include("printingPage.php");
 		}
@@ -610,7 +610,7 @@ echo("</div>");
 			echo("</mark>");
 			echo("</FONT>");
 			echo("</P>");
-			echo("<div style = \"margin-top: -100px\">");
+			echo("<div style = \"margin-top: -157px\">");
 			echo("</div>");
 			include("printingPage.php");
 		}
@@ -635,7 +635,7 @@ echo("</div>");
 			echo("</mark>");
 			echo("</FONT>");
 			echo("</P>");
-			echo("<div style = \"margin-top: -100px\">");
+			echo("<div style = \"margin-top: -157px\">");
 			echo("</div>");
 			include("printingPage.php");
 		}
@@ -823,7 +823,7 @@ echo("</div>");
 			echo("</mark>");
 			echo("</FONT>");
 			echo("</P>");
-			echo("<div style = \"margin-top: -100px\">");
+			echo("<div style = \"margin-top: -157px\">");
 			echo("</div>");
 			include("printingPage.php");
 		}
@@ -1015,7 +1015,7 @@ echo("</div>");
 			echo("</mark>");
 			echo("</FONT>");
 			echo("</P>");
-			echo("<div style = \"margin-top: -100px\">");
+			echo("<div style = \"margin-top: -157px\">");
 			echo("</div>");
 			include("printingPage.php");
 		}
@@ -1040,7 +1040,7 @@ echo("</div>");
 			echo("</mark>");
 			echo("</FONT>");
 			echo("</P>");
-			echo("<div style = \"margin-top: -100px\">");
+			echo("<div style = \"margin-top: -157px\">");
 			echo("</div>");
 			include("printingPage.php");
 		}
@@ -1230,7 +1230,7 @@ echo("</div>");
 			echo("</mark>");
 			echo("</FONT>");
 			echo("</P>");
-			echo("<div style = \"margin-top: -100px\">");
+			echo("<div style = \"margin-top: -157px\">");
 			echo("</div>");
 			include("printingPage.php");
 		}
@@ -1257,7 +1257,7 @@ echo("</div>");
 			echo("</mark>");
 			echo("</FONT>");
 			echo("</P>");
-			echo("<div style = \"margin-top: -100px\">");
+			echo("<div style = \"margin-top: -157px\">");
 			echo("</div>");
 			include("printingPage.php");
 		}
@@ -1447,7 +1447,7 @@ echo("</div>");
 			echo("</mark>");
 			echo("</FONT>");
 			echo("</P>");
-			echo("<div style = \"margin-top: -100px\">");
+			echo("<div style = \"margin-top: -157px\">");
 			echo("</div>");
 			include("printingPage.php");
 		}
@@ -1472,7 +1472,7 @@ echo("</div>");
 			echo("</mark>");
 			echo("</FONT>");
 			echo("</P>");
-			echo("<div style = \"margin-top: -100px\">");
+			echo("<div style = \"margin-top: -157px\">");
 			echo("</div>");
 			include("printingPage.php");
 		}
@@ -1497,7 +1497,7 @@ echo("</div>");
 			echo("</mark>");
 			echo("</FONT>");
 			echo("</P>");
-			echo("<div style = \"margin-top: -100px\">");
+			echo("<div style = \"margin-top: -157px\">");
 			echo("</div>");
 			include("printingPage.php");
 		}

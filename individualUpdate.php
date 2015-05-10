@@ -131,7 +131,7 @@
 		echo("</mark>");
 		echo("</FONT>");
 		echo("</P>");
-		echo("<div style = \"margin-top: -100px\">");
+		echo("<div style = \"margin-top: -157px\">");
 		echo("</div>");
 		include("individualPage.php");
 	}
@@ -153,7 +153,7 @@
 		echo("</mark>");
 		echo("</FONT>");
 		echo("</P>");
-		echo("<div style = \"margin-top: -100px\">");
+		echo("<div style = \"margin-top: -157px\">");
 		echo("</div>");
 		include("individualPage.php");
 	}
@@ -175,7 +175,7 @@
 		echo("</mark>");
 		echo("</FONT>");
 		echo("</P>");
-		echo("<div style = \"margin-top: -100px\">");
+		echo("<div style = \"margin-top: -157px\">");
 		echo("</div>");
 		include("individualPage.php");
 	}
@@ -197,7 +197,7 @@
 		echo("</mark>");
 		echo("</FONT>");
 		echo("</P>");
-		echo("<div style = \"margin-top: -100px\">");
+		echo("<div style = \"margin-top: -157px\">");
 		echo("</div>");
 		include("individualPage.php");
 	}
@@ -248,6 +248,8 @@ else
 		echo("</mark>");
 		echo("</FONT>");
 		echo("</P>");
+		echo("<div style = \"margin-top: -157px\">");
+		echo("</div>");
 		include("individualPage.php");
 	}
 }

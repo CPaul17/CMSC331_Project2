@@ -58,7 +58,7 @@
 <center><a href="groupPage.php"><button type="button" class="button go large">Return to Group</button></a></center>
 
 <br>
-
+<br>
 <center><a href="adminMenu.php"><button type="button" class="button go large">Main Menu</button></a></center>
 
 </body>

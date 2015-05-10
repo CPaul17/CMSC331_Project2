@@ -14,7 +14,31 @@
 	$lastName = $_POST['lname'];
 	
 	$eMail = $_POST['email'];
-	
+	if($firstName == "" || $lastName == "")
+	{
+			echo("<br>");
+			echo("<br>");	
+			echo("<br>");
+			echo("<br>");
+			echo("<br>");
+			echo("<br>");
+			echo("<br>");
+			echo("<br>");
+
+			echo("<P ALIGN=\"CENTER\">");
+			echo("<FONT SIZE=\"5\">");
+			echo("<mark>");
+			echo("** Advisor must have a first and last name. **");
+			echo("</mark>");
+			echo("</FONT>");
+			echo("</P>");
+			echo("<div style = \"margin-top: -157px\">");
+			echo("</div>");
+			
+			include("addAdvisor.php");
+	}
+	else
+	{
 	if($eMail =="" || $eMail =="jdoe123" || $eMail == NULL)
 	{
 		if(checkAdvisors($firstName, $lastName))
@@ -41,7 +65,7 @@
 			echo("</mark>");
 			echo("</FONT>");
 			echo("</P>");
-			echo("<div style = \"margin-top: -100px\">");
+			echo("<div style = \"margin-top: -157px\">");
 			echo("</div>");
 			
 			include("addAdvisor.php");
@@ -79,6 +103,7 @@
 			
 			include("addAdvisor.php");
 		}
+	}
 	}
 function addAdvisor($first, $last)
 {

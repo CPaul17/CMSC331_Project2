@@ -54,7 +54,7 @@ p.padding3
 	<div class="centerMenu">
 	 <center><FONT SIZE=6><u>Contents</u></FONT>
 	<br>
-	<br><FONT SIZE=5><p><a href="#IA" style="color:#122232;">Individual Appointments</a></p>
+	<br><FONT SIZE=5><b><p><a href="#IA" style="color:#122232;">Individual Appointments</a></p>
 	<br>
 	<p><a href="#GA" style="color:#122232;">Group Appointments</a></p>
 	<br>
@@ -62,7 +62,7 @@ p.padding3
 	<br>
 	<p><a href="#SP" style="color:#122232;">Printing Schedules</a></p>
 	<br>
-	<p><a href="#CC" style="color:#122232;">Change or Delete Appointments</a></p>
+	<p><a href="#CC" style="color:#122232;">Change or Delete Appointments</a></p></b>
 	 </FONT></center>
 	</div>
 <br>
