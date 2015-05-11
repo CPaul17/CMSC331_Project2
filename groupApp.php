@@ -62,7 +62,8 @@ else{
 	echo "Day: ";
 	echo "<select style='font-size: 28pt' name='groupDay'>";
 	foreach($groupDays as $element){
-		echo "<option value=".$element.">".$element."</option>";
+		$newElem = date("l, M d", strtotime($element));
+		echo "<option value=".$element.">".$newElem."</option>";
 	}
 	echo "</select><br><br>";
 	echo "<input type='submit' style='font-size: 28pt' value='See Times'>";

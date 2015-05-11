@@ -39,7 +39,7 @@ session_start();
 <div id="section">
 <u>Individual Advising</u><br><br>
 
-<form method="post" action="selectAdvisor.php">
+<form method="post" action="selectSingleDay.php">
 
 <!-- List of advisors -->
 <?php

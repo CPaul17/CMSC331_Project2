@@ -142,6 +142,7 @@ $row = mysql_fetch_row($rs);
 $advID = $row[0];
 $time = timeFormat($row[1]);
 $date = $row[2];
+$newDate = date("l, M d", strtotime($date));
 
 if($advID != -1){
 	$sql = "select * from `advisors` where `ID`=$advID";
@@ -149,7 +150,7 @@ if($advID != -1){
 	$row = mysql_fetch_row($rs);
 
 	echo "Advisor: ".$row[2]." ".$row[1]."<br>";
-	echo "Date: ".$date."<br>";
+	echo "Date: ".$newDate."<br>";
 	echo "Time: ".$time."<br>";
 	echo "Email: ".$row[3]."<br>";
 }

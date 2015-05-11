@@ -90,10 +90,11 @@ $COMMON = new Common($debug);
 //date of the desired appointment
 $date = $_POST['groupDay'];
 $_SESSION['date'] = $date;
+$major = $_SESSION['major'];
 
 //checks database for all taken appointment times
 $sql = "select `start1`, `num1` from `appointments2` where `date1`='$date' and `ID`<0
-	and `capacity1`>0";
+	and `capacity1`>0 and `major1` in ('All', '$major')";
 $rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
 
 //creates array of the taken times

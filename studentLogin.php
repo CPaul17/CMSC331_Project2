@@ -79,6 +79,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 		//stores ID as session variable for future use
 		$_SESSION['idNum'] = $idNum;
+		$_SESSION['major'] = $major;
 
 		//redirects to options page
 		header('Location: appOption.php');
