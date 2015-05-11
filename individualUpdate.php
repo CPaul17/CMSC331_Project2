@@ -123,7 +123,8 @@
 		echo("<br>");
 		echo("<br>");
 		echo("<br>");
-
+		echo("<br>");
+		
 		echo("<P ALIGN=\"CENTER\">");
 		echo("<FONT SIZE=\"5\">");
 		echo("<mark>");
@@ -137,6 +138,7 @@
 	}
 	else if(!((($endTime - $startTime) >= 30) && (($endTime - $startTime) != 55)))
 	{
+		echo("<br>");
 		echo("<br>");
 		echo("<br>");
 		echo("<br>");
@@ -167,6 +169,7 @@
 		echo("<br>");
 		echo("<br>");
 		echo("<br>");
+		echo("<br>");
 
 		echo("<P ALIGN=\"CENTER\">");
 		echo("<FONT SIZE=\"5\">");
@@ -181,6 +184,7 @@
 	}
 	else if($checkMonth == 1)
 	{
+		echo("<br>");
 		echo("<br>");
 		echo("<br>");
 		echo("<br>");
@@ -232,6 +236,7 @@ else
 	}
 	if($check == 1)
 	{
+		echo("<br>");
 		echo("<br>");
 		echo("<br>");
 		echo("<br>");
