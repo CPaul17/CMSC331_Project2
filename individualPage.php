@@ -111,17 +111,17 @@ Availability End Time:  <select name='endHour'>
 </FONT>
 
 
-</div>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
-<div style = "margin-top: -70px"/>
+<!-- <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+ -->
+<div style = "margin-top: -130px"/>
 
 </div>
 
@@ -129,18 +129,25 @@ Availability End Time:  <select name='endHour'>
 
 <center><input type='submit' value="Submit" class="button go large"></center>
 
-
+<br>
 </form>
 
 
+
 <P ALIGN="CENTER">
-<div style = "margin-top: 190px"/>
+<!-- <div style = "margin-top: 190px"/>
 
 </div>
-
+ -->
 
 		<div style = "margin-top: -160px"/>
 <center><a href="adminMenu.php"><button type="button" class="button go large">Main Menu</button></a></center>
+
+ </div>
+
+	<div style = "margin-top: -170px"/>
+	</div>
+
 
  </div>
 
