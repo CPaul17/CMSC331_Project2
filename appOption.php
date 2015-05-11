@@ -112,7 +112,7 @@ function timeFormat($time1){
 }
 #boxed {
 	border: 1px solid black;
-	width: 600px;
+	width: 60%;
 }
 </style>
 </head>
@@ -226,8 +226,8 @@ else{
 <br>
 
 <big><big><big>
-You can only have one appointment. To get sign-up for a different option, 
-please delete your existing appointment<br><br>
+You can only have one appointment. To sign-up for a different option, 
+please delete your existing appointment.<br><br>
 </big></big></big>
 <!-- Log-out of scheduler -->
 <form action="studentLogin.php">
