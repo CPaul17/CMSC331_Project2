@@ -39,7 +39,7 @@ session_start();
 <div id="section">
 <u>Individual Advising</u><br><br>
 
-<form method="post" action="timesSingle.php">
+<form method="post" action="selectAdvisor.php">
 
 <!-- List of advisors -->
 <?php
@@ -66,32 +66,6 @@ if(count($advisorNames) != NULL){
 		echo "<option value=".$element[2].">".$element[0]." ".$element[1]."</option>";
 	}	
 	echo "</select><br><br>";
-	
-	$sql = "select `date1` from `appointments2` where `ID`!=-1 and `full1`=0";
-	$rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
-	$row = mysql_fetch_row($rs);
-
-	$singleDays = array();
-	while($row != NULL){
-		array_push($singleDays, $row[0]);
-		$row = mysql_fetch_row($rs);
-	}
-	$singleDays = array_unique($singleDays);
-	if(count($singleDays) == 0){
-		echo "Sorry, no single days are available at this time.<br>";
-		echo "Please return to the previous page.";
-	}
-	else{
-		echo "<form action = 'timesSingle.php' method='post'>";
-		echo "Day: ";
-		echo "<select style='font-size: 28pt' name='singleDay'>";
-		foreach($singleDays as $element){
-			echo "<option value=".$element.">".$element."</option>";
-		}
-		echo "</select><br><br>";
-		echo "<input type='submit' style='font-size: 28pt' value='See Times'>";
-		echo "</form>";
-	}
 }
 else{
 	echo "No advisors are available for appointments.<br>";
@@ -99,6 +73,8 @@ else{
 }
 
 ?>
+<input type="submit" style="font-size: 28pt" value="See Days">
+</form>
 
 <!-- returns to previous page -->
 <form action="appOption.php">

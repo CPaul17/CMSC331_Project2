@@ -96,8 +96,8 @@ $adv = $_POST['adv'];
 $_SESSION['advisor'] = $adv;
 
 //checks database for all taken appointment times
-$sql = "select `start1`, `num1` from `appointments2` where `date1`='$date' and `group_1`=0 
-	and `full1`=0 and `ID`=$adv";
+$sql = "select `start1`, `num1` from `appointments2` where `date1`='$date'
+	and `ID`=$adv and `capacity1`>0";
 $rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
 
 //creates array of the taken times

@@ -48,21 +48,14 @@ $id = $_SESSION["idNum"];
 
 $appointmentID = $_POST['appmt'];
 
-$sql = "select `signups1` from `appointments2` where `num1`=$appointmentID";
+$sql = "select `capacity1` from `appointments2` where `num1`=$appointmentID";
 $rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
 
 $row = mysql_fetch_row($rs);
-$newTotal = $row[0] + 1;
 
-if($newTotal == 10){
-	$sql = "update `appointments2` set `full1`=1, `signups1`=$newTotal 
-	where `num1`=$appointmentID";
-	$rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
-}
-else{
-	$sql = "update `appointments2` set `signups1`=$newTotal where `num1`=$appointmentID";
-	$rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
-}
+$newTotal = $row[0] - 1;
+$sql = "update `appointments2` set `capacity1`=$newTotal where `num1`=$appointmentID";
+$rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
 
 $sql = "update `StudentInfo` set `Appointment`=$appointmentID where `ID`='$id'";
 $rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);

@@ -43,7 +43,7 @@ $debug = false;
 include('../CommonMethods.php');
 $COMMON = new Common($debug);
 
-$sql = "select `date1` from `appointments2` where `ID`=-1 and `full1`=0";
+$sql = "select `date1` from `appointments2` where `ID`<0 and `capacity1`>0";
 $rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
 $row = mysql_fetch_row($rs);
 

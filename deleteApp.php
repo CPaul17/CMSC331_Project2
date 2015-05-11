@@ -54,18 +54,13 @@ $id = $_SESSION['idNum'];
 $apmtID = $_POST['apmtID'];
 
 //deletes the appointment from the table specified by the type
-$sql = "select * from `appointments2` where `num1`=$apmtID";
+$sql = "select `capacity1` from `appointments2` where `num1`=$apmtID";
 $rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
 $row = mysql_fetch_row($rs);
 
-$newTotal = $row[6] - 1;
-$full = $row[7];
+$updatedCap = $row[0] + 1;
 
-if($newTotal == 0){
-	$full = 0;
-}
-
-$sql = "update `appointments2` set `signups1`=$newTotal, `full1`=$full where `num1`=$apmtID";
+$sql = "update `appointments2` set `capacity1`=$updatedCap where `num1`='$apmtID'";
 $rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
 
 $sql = "update `StudentInfo` set `Appointment`=NULL where `ID`='$id'";

@@ -92,8 +92,8 @@ $date = $_POST['groupDay'];
 $_SESSION['date'] = $date;
 
 //checks database for all taken appointment times
-$sql = "select `start1`, `num1` from `appointments2` where `date1`='$date' and `ID`=-1
-	and `full1`=0";
+$sql = "select `start1`, `num1` from `appointments2` where `date1`='$date' and `ID`<0
+	and `capacity1`>0";
 $rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
 
 //creates array of the taken times
