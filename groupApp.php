@@ -5,36 +5,47 @@
 // Class: CMSC 331
 // Instructor: Lupoli
 // Description: Shows options for days available for group advising
+
+
+include ("cssCode.html");
+include ("cssCode2.html");
+
 ?>
 
 <html>
 <head>
 <!-- Format background and border for page -->
 <style>
-#header {
-	background-color:yellow;
-	border: 10px solid black;
-	padding:10px;
-	color:black;
-	text-align:center;
-	font-size: 40px;
-}
-#section {
-	border: 10px solid black;
-	padding:30px;
-	height: 700px;
-	text-align:center;
-	font-size: 40px;
-}
+
 </style>
 </head>
 <body>
-<div id="header">
-<h1>UMBC Student Advising</h1>
-</div>
 
-<div id = "section">
-<u>Group Advising</u><br><br>
+
+<!-- Page banner -->
+  <div id="security-tip">
+      <div class="content">
+  <P ALIGN="CENTER"><FONT SIZE="7" COLOR="RED"><U>UMBC</U></FONT>
+  <br><FONT SIZE="4">College of Engineering <br>and Information Technology</FONT>
+  </P>
+  </div>
+  </div>
+
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+<center>
+<div class = "center">
+<big><big><big><big><b><u>Group Advising</u></b></big></big></big></big><br><br><br>
 
 <form method="post" action="timesGroup.php">
 
@@ -59,22 +70,28 @@ if(count($groupDays) == 0){
 }
 else{
 	echo "<form action = 'timesGroup.php' method='post'>";
-	echo "Day: ";
-	echo "<select style='font-size: 28pt' name='groupDay'>";
+	echo "<big><big><big><big>Day: </big></big></big></big>";
+	echo "<select style='font-size: 24pt' name='groupDay'>";
 	foreach($groupDays as $element){
 		$newElem = date("l, M d", strtotime($element));
 		echo "<option value=".$element.">".$newElem."</option>";
 	}
-	echo "</select><br><br>";
-	echo "<input type='submit' style='font-size: 28pt' value='See Times'>";
+
+	echo "</select><br><br><br><br><br>";
+	echo "<input type='submit' style='font-size: 22pt; height: 40px;' class = 'button go large' value='See Times'>";
 	echo "</form>";
+	
 }
 
 ?>
+
+<br>
+<br>
 <form action="appOption.php">
-<input type="submit" style="font-size: 28pt" value="Previous">
+<input type="submit" style="font-size: 22pt; height: 40px;" class = 'button go large' value="Previous">
 </form>
 
 </div>
+</center>
 </body>
 </html>

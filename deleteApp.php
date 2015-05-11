@@ -8,36 +8,42 @@
 
 //start sessio to access variables
 session_start();
+
+include ("cssCode.html");
+include ("cssCode2.html");
+
 ?>
 
 <html>
 <head>
 <!-- Background and border format for page -->
-<style>
-#header {
-	background-color:yellow;
-	border: 10px solid black;
-	padding:10px;
-	color:black;
-	text-align:center;
-	font-size: 40px;
-}
-#section {
-	border: 10px solid black;
-	padding:30px;
-	text-align:center;
-	font-size: 40px;
-	height: 700px;
-}
-</style>
+
 </head>
 <body>
 
-<div id = "header">
-<h1>UMBC Student Advising</h1>
-</div>
+<!-- Page banner -->
+  <div id="security-tip">
+      <div class="content">
+  <P ALIGN="CENTER"><FONT SIZE="7" COLOR="RED"><U>UMBC</U></FONT>
+  <br><FONT SIZE="4">College of Engineering <br>and Information Technology</FONT>
+  </P>
+  </div>
+  </div>
 
-<div id = "section">
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+<center>
+<div class = "center">
 
 <form action="appOption.php">
 
@@ -66,15 +72,20 @@ $rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
 $sql = "update `StudentInfo` set `Appointment`=NULL where `ID`='$id'";
 $rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
 
-echo "Your appointment has been successfully deleted.<br><br>";
-echo "You may now return to the selection page and sign up for a new appointment.<br><br>";
+echo "<big><big><big><b>Your appointment has been successfully deleted.</big></big></big></b><br><br><br>";
+echo "<big><big><big><b>You may now return to the selection page and sign up for a new appointment.</big></big></big></b><br><br>";
+echo("<br>");
+echo("<br>");
+echo("<br>");
+
 ?>
 </form>
 
 <form action="appOption.php">
-<input type="submit" style="font-size: 28pt" value="Return">
+<input type="submit" style="font-size: 22pt; height: 40px;" class = "button go large" value="Return">
 </form>
 
 </div>
+</center>
 </body>
 </html>

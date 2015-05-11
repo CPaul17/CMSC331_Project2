@@ -7,38 +7,44 @@
 // Description: Displays the day and advisor options for individual sign-up
 
 session_start(); 
+
+include ("cssCode.html");
+include ("cssCode2.html");
+
 ?>
+
 <html>
 <head>
 <!-- Format background and border for page -->
-<style>
-#header {
-	background-color:yellow;
-	border: 10px solid black;
-	padding:10px;
-	color:black;
-	text-align:center;
-	font-size:40px;
-}
-#section {
-	border: 10px solid black;
-	height: 1000px;
-	padding:30px;
-	text-align:center;
-	font-size: 40px;
-}
-</style>
+
 </head>
 <body>
 
-<!-- page banner -->
-<div id="header">
-<h1>UMBC Student Advising</h1>
-</div>
+<!-- Page banner -->
+  <div id="security-tip">
+      <div class="content">
+  <P ALIGN="CENTER"><FONT SIZE="7" COLOR="RED"><U>UMBC</U></FONT>
+  <br><FONT SIZE="4">College of Engineering <br>and Information Technology</FONT>
+  </P>
+  </div>
+  </div>
 
-<div id="section">
-<u>Individual Advising</u><br><br>
 
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+<div class ="centerGroup">
+<P ALIGN="CENTER"><FONT SIZE="4"><U><big><b>Individual Advising</b></big></U></FONT></P>	
+<br>
+<br>
 <form method="post" action="selectSingleDay.php">
 
 <!-- List of advisors -->
@@ -60,25 +66,37 @@ while($row != NULL){
 }
 
 if(count($advisorNames) != NULL){
-	echo "Advisors: ";
-	echo "<select name='adv' style='font-size: 28pt'>";
+	echo("<center>");
+	echo "<big><big><big><big> Advisors: </big></big></big></big>";
+	echo "<select name='adv' style='font-size: 24pt'>";
 	foreach($advisorNames as $element){
 		echo "<option value=".$element[2].">".$element[0]." ".$element[1]."</option>";
 	}	
 	echo "</select><br><br>";
+		echo("</center>");
+		echo("<br>");
+		echo("<br>");
+		echo("<br>");
 }
 else{
+	echo("<big><big><big><big><u><b>");	
 	echo "No advisors are available for appointments.<br>";
 	echo "Please return to the previous page.<br>";
+	echo("</big></big></big></big></u></b>");	
 }
 
 ?>
-<input type="submit" style="font-size: 28pt" value="See Days">
+<center>
+<input type="submit" class="button go large" style="font-size: 22pt; height: 40`px;" value="See Days"><br>
 </form>
+
+<br>
+<br>
 
 <!-- returns to previous page -->
 <form action="appOption.php">
-<input type="submit" style="font-size: 28pt" value="Previous">
+<input type="submit" class="button go large" style="font-size: 22pt; height: 40px;" value="Previous">
+</center>
 </form>
 
 </div>

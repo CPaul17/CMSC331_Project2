@@ -8,6 +8,10 @@
 //		with the chosen advisor
 
 session_start();
+include ("cssCode.html");
+include ("cssCode2.html");
+
+
 function timeFormat($time1){
 
   $formatTime;
@@ -53,33 +57,37 @@ function timeFormat($time1){
 <html>
 <head>
 <!-- Format background and border for page -->
-<style>
-#header {
-	background-color:yellow;
-	border: 10px solid black;
-	padding:10px;
-	color:black;
-	text-align:center;
-	font-size: 40px;
-}
-#section {
-	border: 10px solid black;
-	padding:30px;
-	text-align:center;
-	font-size: 40px;
-	height: 1000px;
-}
-</style>
+
 </head>
 <body>
 
 <!-- page banner -->
-<div id = "header">
-<h1>UMBC Student Advising</h1>
-</div>
+  <!-- Page banner -->
+  <div id="security-tip">
+      <div class="content">
+  <P ALIGN="CENTER"><FONT SIZE="7" COLOR="RED"><U>UMBC</U></FONT>
+  <br><FONT SIZE="4">College of Engineering <br>and Information Technology</FONT>
+  </P>
+  </div>
+  </div>
 
-<div id = "section">
-<u>Select from the available appointment times for the day.</u><br><br>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+<center>
+<div class = "center">
+<P ALIGN="CENTER"><FONT SIZE="5"><U><b>Select from the available appointment times for the day.</b></U></FONT></P>  
+<br>
+<br>
 
 <?php
 //Common object to execute mysql
@@ -113,15 +121,22 @@ while($row != NULL){
 if(count($availSlots) != NULL){
 	//echos form and drop down menu
 	echo "<form method='post' action='confirmSingle.php'>";
-	echo "<select style='font-size: 28pt' name='appmt'>";
+	echo "<select style='font-size: 24pt' name='appmt'>";
 	//all available times are echoed as a drop-down option
 	foreach($availSlots as $element){
 		$element[0] = timeFormat($element[0]);
 		echo "<option value=".$element[1].">".$element[0]."</option>";
 	}	
+
 	echo "</select><br><br>";
-	echo "<input type='submit' style='font-size: 28pt' value='Sign-Up'>";
+  echo("<br>");
+  echo("<br>");
+
+	echo "<input type='submit' style='font-size: 24pt; height: 40px' class = 'button go large' value='Sign-Up'>";
 	echo "</form>";
+  echo("<br>");
+
+
 }
 //if no available times are found
 else{
@@ -132,9 +147,10 @@ else{
 ?>
 
 <form action="singleApp.php">
-<input type="submit" style="font-size: 28pt" value="Previous">
+<input type="submit" style="font-size: 24pt; height: 40px;" class = 'button go large' value="Previous">
 </form>
 
 </div>
+</center>
 </body>
 </html>
