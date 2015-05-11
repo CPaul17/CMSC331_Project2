@@ -45,12 +45,13 @@
 <body>
 	<br>
 	<br>
-	<div class="center">
+	<div class="centerPercent">
 	<P ALIGN="CENTER"><FONT SIZE="6">Schedule updated!
 	<br>
-	<br>
+	
 	Thank You</FONT>
-</div>
+<!-- </div> -->
+	<br>
 	<br>
 	<br>
 	<br>
@@ -59,10 +60,10 @@
 	
 	<center><a href="individualPage.php"><button type="button" class="button go large" >Return to Individual</button></a></center>
 
-	<br><br>
+	<br>
 
 	<center><a href="adminMenu.php"><button type="button" class="button go large" >Main Menu</button></a></center>
-
+</div>
 
 </body>
 </html>

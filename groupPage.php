@@ -119,9 +119,11 @@ Availability End Time:  <select name='endHour'>
 </div>
 </FONT>
 
-</div>
-<br>
-<br>
+<!-- </div> -->
+
+<div style = "margin-top: -120px"/>
+	</div>
+
 
 <!-- <div class="fieldLogin">
 	<div class="center2"> -->
@@ -130,12 +132,15 @@ Availability End Time:  <select name='endHour'>
 </div>
  --></form>
 <P ALIGN="CENTER">
-<br>
-<br>
+	
 <!-- <div class="fieldLogin">
 	<div class="center5"> -->
 
 <center><a href="adminMenu.php"><button type="button" class="button go large">Main Menu</button></a></center>
 </P>
+
+
+
+</div>
 </body>
 </html>
