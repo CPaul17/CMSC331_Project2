@@ -45,9 +45,9 @@
 	<div class="center">
 	<P ALIGN="CENTER"><FONT SIZE="6">Advisor added!
 	<br>
-	<br>
 	Thank You</FONT>
-	</div>
+<!-- 	</div> -->
+	<br>
 	<br>
 	<br>
 	<br>
@@ -55,5 +55,7 @@
 	<center><a href="addAdvisor.php"><button type="button" class="button go large">Add Another Advisor</button></a></center>
 	<br>
 	<center><a href="adminMenu.php"><button type="button" class="button go large">Main Menu</button></a></center>
+
+	</div>	
 </body>
 </html>

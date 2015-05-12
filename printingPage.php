@@ -103,8 +103,12 @@ rpad.padding {
 	First Name: <input type='text' name='fname'>      Last Name: <input type='text' name='lname'>   or All? <input type='checkbox' name='allAds'>
 
 
-</div>
+<!-- </div> -->
 
+
+
+<div style = "margin-top: -170px"/>
+</div>
 
 
 <!-- </FONT><br><br><input type='submit' value="Print Schedule" style="width:150px;height:100px;background-color:yellow;font-size:20;">  -->
@@ -112,12 +116,16 @@ rpad.padding {
 	</P></pre>
 	</form>
 <P ALIGN="RIGHT">
-<br>
-<br>
+
+<div style = "margin-top: -20px"/>
+</div>
+
 <!-- <rpad class="padding"><a href="adminMenu.php"><button type="button" style="height:25px;background-color:red;color:white;">Main Menu</button></a></rpad>
  -->
- <center><a href="adminMenu.php"><button type="button" class ="button go large" style="height:30px;">Main Menu</button></a></center>
+<center><a href="adminMenu.php"><button type="button" class ="button go large" style="width: 152px; height:40px;">Main Menu</button></a></center>
 </P>
+
+</div>
 
 </body>
 </html>

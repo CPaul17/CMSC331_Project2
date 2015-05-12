@@ -57,17 +57,16 @@
 	<br>
 	<form action='advisorUpdate.php' method='post' name='form1'>
 <pre><P ALIGN="CENTER"><FONT FACE="Times New Roman" SIZE = "3">First Name: <input type='text' name='fname' value="John">      Last Name: <input type='text' name='lname' value="Doe">
-	<br>
+<!-- 	<br> -->
 <FONT SIZE="4"><U>Optional:</U></FONT>
-	<br>
+<!-- 	<br> -->
 Email: <input type='text' name='email' value="jdoe123">@umbc.edu
 
-</div>
+<!-- </div> -->
 
-	<br><br>
+
 <center><input type='submit' value="Submit" class="button go large"> </P></pre></center>
 
-<br>
 
 	</FONT></P></pre>
 	</form>
@@ -81,8 +80,11 @@ Email: <input type='text' name='email' value="jdoe123">@umbc.edu
 <br>
 
 
-<center><a href="adminMenu.php"><button type="button" class="button go large" style="height:40px; width:150px; display: inline-block">Main Menu</button></a> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <a href="currentAdvisors.php"><button type="button" class="button go large" style="height:40px; display: inline-block">View Current Advisors</button></a></center>
+<!-- <center><a href="adminMenu.php"><button type="button" class="button go large" style="height:40px; width:150px; display: inline-block">Main Menu</button></a> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <a href="currentAdvisors.php"><button type="button" class="button go large" style="height:40px; display: inline-block">View Current Advisors</button></a></center> -->
 
+<center><a href="adminMenu.php"><button type="button" class="button go large" style="height:40px; width:150px; display: inline-block">Main Menu</button></a> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <a href="currentAdvisors.php"><button type="button" class="button go large" style="height:40px; display: inline-block">View Current Advisors</button></a></center>
+
+</div>
 
 <!-- &nbsp>
 &nbsp
