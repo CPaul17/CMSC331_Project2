@@ -295,11 +295,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
   
- <div class="actions">
+  <div class="actions">
     <div class="secondary">
 
     <div class="primary">
-<center><input value="Log In" class="button go large" type="submit"></center> 			 
+<input value="Log In" class="button go large" type="submit"> 			 
 
     </div>
   </div>
@@ -309,8 +309,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 <form action = 'index.php' method='post' name='form2'> 
     <div class="primary">
-<!--<input value="Previous" class="button go large" type="submit">--> 			 
-</div> 
+<input value="Previous" class="button go large" type="submit"> 			 
+</div>
 
 </body>
 <?php
