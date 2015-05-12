@@ -49,9 +49,14 @@
 <br><FONT SIZE="1"><br></FONT>
 <FONT SIZE="3">* Availability larger than 30 minutes will be broken up into 30 minute blocks.*
 <br>
+<br>
 </FONT>
 </P>
-<form action='groupUpdate.php' method='post' name='form1'>
+<form action='groupUpdate.php' method='post' name='form1'><center><FONT FACE="Times New Roman" SIZE = "3">Date: 
+<?php
+	include("datePickerCode2.php");
+?>
+</FONT></center>
 <pre><P ALIGN="CENTER"><FONT FACE="Times New Roman" SIZE = "3">
 Availability Start Time: <select name='startHour'>
 			<option value="8">8</option>
@@ -70,22 +75,7 @@ Availability Start Time: <select name='startHour'>
 			</select> <select name='stimofday'>
   <option value="am">AM</option>
   <option value="pm">PM</option>
-</select>                   Date: <select name='month'>
-				<option value='1'>Jan</option>
-				<option value='2'>Feb</option>
-				<option value='3'>Mar</option>
-				<option value='4'>Apr</option>
-				<option value='5'>May</option>
-				<option value='6'>Jun</option>
-				<option value='7'>Jul</option>
-				<option value='8'>Aug</option>
-				<option value='9'>Sep</option>
-				<option value='10'>Oct</option>
-				<option value='11'>Nov</option>
-				<option value='12'>Dec</option>
-				</select> / <input type ='number' name='day' min='1' max='31' value='1' style="width:45px;"> / <input type='number' name='year' min='2015' value='2015' style="width:55px;">
-<br>
-Availability End Time:  <select name='endHour'>
+</select>      Availability End Time:  <select name='endHour'>
 			<option value="8">8</option>
 			<option value="9">9</option>
 			<option value="10">10</option>
@@ -103,12 +93,12 @@ Availability End Time:  <select name='endHour'>
 			</select> <select name='etimofday'>
   <option value="am">AM</option>
   <option value="pm">PM</option>
-</select>                                             Capacity:  <select name='capacity'>
-			<option value="10">10</option>
-			<option value="5">5</option>
 </select>
 <br>
-<div align="center">Major: <select name='major'>
+<div align="center">Capacity:  <select name='capacity'>
+			<option value="10">10</option>
+			<option value="5">5</option>
+</select>                  Major: <select name='major'>
 				<option value="ALL">ALL</option>
 				<option value="CMSC">CMSC</option>
 				<option value="CMPE">CMPE</option>
@@ -135,7 +125,7 @@ Availability End Time:  <select name='endHour'>
 	
 <!-- <div class="fieldLogin">
 	<div class="center5"> -->
-
+<br>
 <center><a href="adminMenu.php"><button type="button" class="button go large">Main Menu</button></a></center>
 </P>
 

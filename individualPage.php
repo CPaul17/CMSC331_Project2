@@ -10,7 +10,6 @@
 	include("cssCode.html");
 	include("cssCode2.html");
 
-
 ?>
 
 <html>
@@ -54,9 +53,16 @@
 </FONT>
 </P>
 <br>
-<form action='individualUpdate.php' method='post' name='form1'>
+<form action='individualUpdate.php' method='post' name='form1'><center><FONT FACE="Times New Roman" SIZE = "3">Date: 
+<?php
+	include("datePickerCode.php");
+?>
+</FONT></center>
+<br>
+<br>
 <pre><P ALIGN="CENTER"><FONT FACE="Times New Roman" SIZE = "3">First Name: <input type='text' name='fname'>      Last Name: <input type='text' name='lname'>
 <br>
+
 Availability Start Time: <select name='startHour'>
 			<option value="8">8</option>
 			<option value="9">9</option>
@@ -74,22 +80,7 @@ Availability Start Time: <select name='startHour'>
 			</select> <select name='stimofday'>
   <option value="am">AM</option>
   <option value="pm">PM</option>
-</select>                   Date: <select name='month'>
-				<option value='1'>Jan</option>
-				<option value='2'>Feb</option>
-				<option value='3'>Mar</option>
-				<option value='4'>Apr</option>
-				<option value='5'>May</option>
-				<option value='6'>Jun</option>
-				<option value='7'>Jul</option>
-				<option value='8'>Aug</option>
-				<option value='9'>Sep</option>
-				<option value='10'>Oct</option>
-				<option value='11'>Nov</option>
-				<option value='12'>Dec</option>
-				</select> / <input type ='number' name='day' min='1' max='31' value='1' style="width:45px;"> / <input type='number' name='year' min='2015' value='2015' style="width:55px;">
-<br>
-Availability End Time:  <select name='endHour'>
+</select>                                    Availability End Time:  <select name='endHour'>
 			<option value="8">8</option>
 			<option value="9">9</option>
 			<option value="10">10</option>
@@ -110,9 +101,6 @@ Availability End Time:  <select name='endHour'>
 </select>                                                                         
 </FONT>
 
-
-
-
 <!-- <br>
 <br>
 <br>
@@ -126,7 +114,8 @@ Availability End Time:  <select name='endHour'>
 </div>
 
 
-
+<br>
+<br>
 <center><input type='submit' value="Submit" class="button go large"></center>
 
 <br>
@@ -150,7 +139,6 @@ Availability End Time:  <select name='endHour'>
 
 
  </div>
-
 
 </P>
 </body>
