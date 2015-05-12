@@ -5,9 +5,6 @@
 <!--__________________________________________________
 
 
-some fo the code has been taken from here
-http://stackoverflow.com/questions/7709320/jquery-ui-datepicker-enable-only-specific-days-in-array
-
 -->
 
 <?php
