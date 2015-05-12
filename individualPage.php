@@ -48,9 +48,7 @@
 <P ALIGN="CENTER"><FONT SIZE="5"><U>Schedule Individual Advising Availability</U></FONT>
 
 <br><FONT SIZE="1"><br></FONT>
-<FONT SIZE="3">* Availability larger than 30 minutes will be broken up into 30 minute blocks.*
-<br>
-</FONT>
+
 </P>
 <br>
 <form action='individualUpdate.php' method='post' name='form1'><center><FONT FACE="Times New Roman" SIZE = "3">Date: 

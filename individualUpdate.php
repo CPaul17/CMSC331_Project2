@@ -11,13 +11,13 @@
 	include('../CommonMethods.php');
 	$COMMON = new Common($debug); 
 
-	
+	$dates = $_POST['date'];
+	$delimiter = ", ";
+
 	$firstName = $_POST['fname'];
 	$lastName = $_POST['lname'];
 	
-	$month = $_POST['month'];
-	$day = $_POST['day'];
-	$year = $_POST['year'];
+/*
 	if($month < 10 && $year < 10)
 	{
 		$date = $year."-0".$month."-0".$day;
@@ -34,7 +34,7 @@
 	{
 		$date = $year."-".$month."-".$day;
 	}
-
+*/
 	$startTime = (($_POST['startHour']*100)+($_POST['startMin']));
 	$sTOD = $_POST['stimofday'];
 
@@ -115,6 +115,7 @@
 
 	if(!checkAdvisors($firstName, $lastName))
 	{
+		$check = 1;
 		echo("<br>");
 		echo("<br>");
 		echo("<br>");
@@ -138,6 +139,7 @@
 	}
 	else if(!((($endTime - $startTime) >= 30) && (($endTime - $startTime) != 55)))
 	{
+		$check = 1;
 		echo("<br>");
 		echo("<br>");
 		echo("<br>");
@@ -161,6 +163,7 @@
 	}
 	else if($checkTOD == 1)
 	{
+		$check = 1;
 		echo("<br>");
 		echo("<br>");
 		echo("<br>");
@@ -182,6 +185,7 @@
 		echo("</div>");
 		include("individualPage.php");
 	}
+	/*
 	else if($checkMonth == 1)
 	{
 		echo("<br>");
@@ -205,18 +209,22 @@
 		echo("</div>");
 		include("individualPage.php");
 	}
-	
+	*/
 else
 {
 	$ID = getID($firstName, $lastName);
+	$date = strtok($dates, $delimiter); 
+while ($date !== false && $check != 1)
+{
 	$blocks = getBlocks($startTime, $endTime);
+	$startTime2 = $startTime;
 	$check = 0;
 	for($i = 0; $i < $blocks; $i++)
 	{
 		
-		if(checkTime($ID, $date, $startTime))
+		if(checkTime($ID, $date, $startTime2))
 		{	
-			$tempEnd = $startTime + 30;
+			$tempEnd = $startTime2 + 30;
 			if((($tempEnd + 40) % 100) == 0)
 			{
 				$tempEnd = $tempEnd + 40;
@@ -225,9 +233,9 @@ else
 			{
 				$tempEnd = $tempEnd + 40;
 			}
-			addAppointment($ID, $startTime, $tempEnd, $date);
-			$startTime = $tempEnd;
-			header('Location: successfulIndividual.php');
+			addAppointment($ID, $startTime2, $tempEnd, $date);
+			$startTime2 = $tempEnd;
+			//header('Location: successfulIndividual.php');
 		}
 		else
 		{
@@ -249,7 +257,7 @@ else
 		echo("<P ALIGN=\"CENTER\">");
 		echo("<FONT SIZE=\"5\">");
 		echo("<mark>");
-		echo("** Availability not updated. Overlap with current schedule. **");
+		echo("** Overlap with current schedule on ".$date.". Any days prior were successful.**");
 		echo("</mark>");
 		echo("</FONT>");
 		echo("</P>");
@@ -257,8 +265,15 @@ else
 		echo("</div>");
 		include("individualPage.php");
 	}
+$date = strtok($delimiter); 
 }
 
+}
+
+if($check != 1)
+{
+	header('Location: successfulIndividual.php');
+}
 function checkAdvisors($first, $last)
 {
 	global $debug; global $COMMON;

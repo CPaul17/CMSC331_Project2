@@ -25,6 +25,7 @@ echo "  <link rel=\"stylesheet\" href=\"/resources/demos/style.css\">";
 echo "<!--   <input type='text' id='txtDate' /> -->"; 
 echo "  <input type=\"text\" name=\"date\" id=\"date\" readonly=\"readonly\" size=\"12\" />"; 
 echo "  <script>"; 
+echo "            $('#date').datepicker({ dateFormat: \"yy-mm-dd\" }).val();";
 echo "	var availableDates = [\"2-3-2015\",\"3-3-2015\",\"4-3-2015\",\"5-3-2015\",\"6-3-2015\",\"9-3-2015\",\"10-3-2015\",\"11-3-2015\",
 \"12-3-2015\",\"13-3-2015\",\"16-3-2015\",\"17-3-2015\",\"18-3-2015\",\"19-3-2015\",\"20-3-2015\",
 \"23-3-2015\",\"24-3-2015\",\"25-3-2015\",\"26-3-2015\",\"27-3-2015\",\"30-3-2015\",\"31-3-2015\",
@@ -40,7 +41,9 @@ echo "	  } else {";
 echo "	    return [false,\"\",\"unavailable\"];"; 
 echo "	  }"; 
 echo "	}"; 
-echo "		$('#date').multiDatesPicker({ beforeShowDay: available });"; 
+
+echo "		$('#date').multiDatesPicker({ beforeShowDay: available });";
+ 
 echo ""; 
 echo "  </script>"; 
 
