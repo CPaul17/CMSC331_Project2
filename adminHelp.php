@@ -74,12 +74,15 @@ p.padding3
 <br>
 <FONT SIZE=3>
 <p class="padding2">- Use the <a href="individualPage.php">Individual Page</a> if you are looking to schedule availability for appointments with individual students (not groups).</p>
+<p class="padding2">- Multiple days can be selected at once through the date picker.</p>
+<p class="padding3">- If there is overlap on any of the days selected, that day, and any days afterwards, will not be scheduled.</p>
 <p class="padding2">- Each individual appointment will be 30 minutes in length.</p>
-<p class="padding2">- You can schedule a large block of appointments at once for one day. Appointments will be split into 30 minute blocks if the availabilty specified is one hour or greater.</p>
+<p class="padding2">- You can schedule a large block of appointments at once for each day. Appointments will be split into 30 minute blocks if the availabilty specified is one hour or greater.</p>
 <p class="padding2">- Availability will not be scheduled and an error message will be returned if:</p>
 <p class="padding3">- The advisor name provided does not match records.</p>
 <p class="padding3">- The time specified is not within the period from 8:00 am through 4:00 pm.</p>
 <p class="padding3">- The time specified does not meet the required 30 minute minimum.</p>
+<p class="padding3">- The availability specified overlaps with the current schedule.</p>
 </FONT>
 <br>
 <br>
@@ -90,13 +93,16 @@ p.padding3
 <p class="padding2">- Use the <a href="groupPage.php">Group Page</a> if you are looking to schedule availability for appointments with groups of students.</p>
 <p class="padding2">- Group appointments can be scheduled with a maximum capacity of either 10 or 5 students, depending on the availability of individual advisors.</p>
 <p class="padding3">- For instructions on how to change the capacity of an appointment, look <a href="#CC">here</a>.</p>
+<p class="padding2">- Multiple days can be selected at once through the date picker.</p>
+<p class="padding3">- If there is overlap on any of the days selected, that day, and any days afterwards, will not be scheduled.</p>
 <p class="padding2">- Any group appointment can be open to all COEIT students, or specific to a certain major:</p>
 <p class="padding3">- computer science (CMSC), computer engineering (CMPE), chemical engineering (ENCH), mechanical engineering (ENME) or engineering (EGNR).</p>
 <p class="padding2">- Each group appointment will be 30 minutes in length.</p>
-<p class="padding2">- You can schedule a large block of appointments at once for one day. Appointments will be split into 30 minute blocks if the availabilty specified is one hour or greater.</p>
+<p class="padding2">- You can schedule a large block of appointments at once for each day. Appointments will be split into 30 minute blocks if the availabilty specified is one hour or greater.</p>
 <p class="padding2">- Availability will not be scheduled and an error message will be returned if:</p>
 <p class="padding3">- The time specified is not within the period from 8:00 am through 4:00 pm.</p>
 <p class="padding3">- The time specified does not meet the required 30 minute minimum.</p>
+<p class="padding3">- The availability specified overlaps with the current schedule.</p>
 </FONT>
 <br>
 <br>

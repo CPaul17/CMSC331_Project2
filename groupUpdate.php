@@ -10,12 +10,15 @@
 	$debug=false;
 	include('../CommonMethods.php');
 	$COMMON = new Common($debug); 
-	
+
+	$dates = $_POST['date'];
+	$delimiter = ", ";
+
 	$major = $_POST['major'];
 	$capacity = $_POST['capacity'];
-	$month = $_POST['month'];
-	$day = $_POST['day'];
-	$year = $_POST['year'];
+	$check = 0;
+
+	/*
 	if($month < 10 && $year < 10)
 	{
 		$date = $year."-0".$month."-0".$day;
@@ -32,7 +35,7 @@
 	{
 		$date = $year."-".$month."-".$day;
 	}
-
+	*/
 	$startTime = (($_POST['startHour']*100)+($_POST['startMin']));
 	$sTOD = $_POST['stimofday'];
 
@@ -83,6 +86,7 @@
 			$endTime = $endTime + 1200;
 		}
 	}
+	/*
 	$checkMonth = 0;
 	if($month == 2)
 	{
@@ -105,9 +109,11 @@
 			$checkMonth = 1;
 		}
 	}
+	*/
 
 	if(!((($endTime - $startTime) >= 30) && (($endTime - $startTime) != 55)))
 	{
+		$check = 1;
 		echo("<br>");
 		echo("<br>");
 		echo("<br>");
@@ -130,6 +136,7 @@
 	}
 	else if($checkTOD == 1)
 	{
+		$check = 1;
 		echo("<br>");
 		echo("<br>");
 		echo("<br>");
@@ -150,6 +157,7 @@
 		echo("</div>");
 		include("groupPage.php");
 	}
+	/*
 	else if($checkMonth == 1)
 	{
 		echo("<br>");
@@ -172,17 +180,22 @@
 		echo("</div>");
 		include("groupPage.php");
 	}
+	*/
 	
 else
 {
+	$date = strtok($dates, $delimiter); 
+while ($date !== false && $check != 1)
+{
 	$blocks = getBlocks($startTime, $endTime);
+	$startTime2 = $startTime;
 	$check = 0;
 	for($i = 0; $i < $blocks; $i++)
 	{
 		
-		if(checkTime($date, $startTime))
+		if(checkTime($date, $startTime2))
 		{	
-			$tempEnd = $startTime + 30;
+			$tempEnd = $startTime2 + 30;
 			if((($tempEnd + 40) % 100) == 0)
 			{
 				$tempEnd = $tempEnd + 40;
@@ -193,14 +206,14 @@ else
 			}
 			if($capacity == 10)
 			{
-				addAppointment($startTime, $tempEnd, $date, -1, 10, $major);
+				addAppointment($startTime2, $tempEnd, $date, -1, 10, $major);
 			}
 			else
 			{
-				addAppointment($startTime, $tempEnd, $date, -2, 5, $major);
+				addAppointment($startTime2, $tempEnd, $date, -2, 5, $major);
 			}
-			$startTime = $tempEnd;
-			header('Location: successfulGroup.php');
+			$startTime2 = $tempEnd;
+			//header('Location: successfulGroup.php');
 		}
 		else
 		{
@@ -221,7 +234,7 @@ else
 		echo("<P ALIGN=\"CENTER\">");
 		echo("<FONT SIZE=\"5\">");
 		echo("<mark>");
-		echo("** Availability not updated. Overlap with current schedule. **");
+		echo("** Overlap with current schedule on ".$date.". Any days prior were successful.**");
 		echo("</mark>");
 		echo("</FONT>");
 		echo("</P>");
@@ -229,8 +242,15 @@ else
 		echo("</div>");
 		include("groupPage.php");
 	}
+$date = strtok($delimiter); 
 }
 
+}
+
+if($check != 1)
+{
+	header('Location: successfulGroup.php');
+}
 function checkTime($appDate, $appTime)
 {
 	$exact;
