@@ -60,6 +60,8 @@ while($row != NULL){
 	$row = mysql_fetch_row($rs);
 }
 $singleDays = array_unique($singleDays);
+sort($singleDays);
+
 if(count($singleDays) == 0){
 
 	echo("<big><big><big><big><u><b>");
@@ -86,7 +88,7 @@ else{
 	echo("<br>");
 	echo("<br>");
 
-    echo "<input type='hidden' name='adv' value=".$advisorID.">";
+ 	echo "<input type='hidden' name='adv' value=".$advisorID.">";
 	echo "<input type='submit' style='font-size: 22pt; height: 40px;' class = 'button go large' value='See Times'>";
 }
 ?>

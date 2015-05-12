@@ -146,7 +146,8 @@ else{
 }
 ?>
 
-<form action="singleApp.php">
+<form method="post" action="selectSingleDay.php">
+<input type="hidden" name="adv" value="<?php echo htmlspecialchars($adv); ?>" />
 <input type="submit" style="font-size: 24pt; height: 40px;" class = 'button go large' value="Previous">
 </form>
 

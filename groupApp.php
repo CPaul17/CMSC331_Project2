@@ -64,6 +64,7 @@ while($row != NULL){
 	$row = mysql_fetch_row($rs);
 }
 $groupDays = array_unique($groupDays);
+sort($groupDays);
 if(count($groupDays) == 0){
 	echo "Sorry, no group days are available at this time.<br>";
 	echo "Please return to the previous page.";
