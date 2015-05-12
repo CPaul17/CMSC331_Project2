@@ -87,7 +87,7 @@ else{
 
 ?>
 <center>
-<input type="submit" class="button go large" style="font-size: 22pt; height: 40`px;" value="See Days"><br>
+<input type="submit" class="button go large" style="font-size: 22pt; height: 40px;" value="See Days"><br>
 </form>
 
 <br>

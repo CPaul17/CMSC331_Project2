@@ -87,7 +87,7 @@ else{
 	echo("<br>");
 
     echo "<input type='hidden' name='adv' value=".$advisorID.">";
-	echo "<input type='submit' style='font-size: 25pt; height: 40px;' class = 'button go large' value='See Times'>";
+	echo "<input type='submit' style='font-size: 22pt; height: 40px;' class = 'button go large' value='See Times'>";
 }
 ?>
 </form>
@@ -96,7 +96,7 @@ else{
 <br>
 
 <form action="singleApp.php">
-<input type="submit" class = "button go large" style="font-size: 25pt; height: 40px;" value="Previous"> 
+<input type="submit" class = "button go large" style="font-size: 22pt; height: 40px;" value="Previous"> 
 </form>
 
 </form>
