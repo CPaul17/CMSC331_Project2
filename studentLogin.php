@@ -228,12 +228,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	
 
 
-   <div id="security-tip">
+  <!-- Page banner -->
+  <div id="security-tip">
       <div class="content">
+  <P ALIGN="CENTER"><FONT SIZE="7" COLOR="RED"><U>UMBC</U></FONT>
+  <br><FONT SIZE="4">College of Engineering <br>and Information Technology</FONT>
+  </P>
+  </div>
+  </div>
 
- 	<center><font size="20"><strong>UMBC Undergraduate Advising</strong></center></font></center>
 
-        </div>
+  <br>
+  <br>
+  <br>
+  <br>
+
         <div class="secondary">
 
         </div>
@@ -290,7 +299,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <div class="secondary">
 
     <div class="primary">
-<!--      <input value="Log In" class="button go large" type="submit" name="send"> -->
 <input value="Log In" class="button go large" type="submit"> 			 
 
     </div>

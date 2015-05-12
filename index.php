@@ -6,23 +6,23 @@ include('cssCode.html');
 
 <html>
 <body>
-   <div id="security-tip">
+
+   <!-- Page banner -->
+  <div id="security-tip">
       <div class="content">
+  <P ALIGN="CENTER"><FONT SIZE="7" COLOR="RED"><U>UMBC</U></FONT>
+  <br><FONT SIZE="4">College of Engineering <br>and Information Technology</FONT>
+  </P>
+  </div>
+  </div>
 
- 	<center><big><big><big><big><big><big><strong>UMBC Undergraduate Advising</strong></center></big></big></big></big></big></big></center>
 
-        </div>
-        <div class="secondary">
-
-        </div>
-      </div>
-    </div>
-
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
 
 
 
