@@ -2,7 +2,6 @@
 	session_start();
 ?>
 <?php
-	$username = $_POST['uname'];
 	$adminPass = $_POST['adminPass'];
 
 // 	echo("<br>");
@@ -35,7 +34,7 @@
 // 		echo("<br>");
 
 
-	if($adminPass == "password" && $username != "")
+	if($adminPass == "password")
 	{
 		$_SESSION["login"] = 1;
 		header('Location: adminMenu.php');
@@ -87,7 +86,7 @@
 
 <br>
 <!-- <div class="center"> -->
-<div class="center">
+<div class="centerGroup">
 <P ALIGN="CENTER"><FONT SIZE="5"><U><big><b>Advising Administrator Log-in</b></big></U></FONT></P>	
 <P ALIGN="CENTER"><FONT SIZE="3">(Enter 'password' for the Administrator Password in order to log in.)</FONT></P>
 
@@ -95,12 +94,10 @@
 <div class="fieldUsername">
 
 <form action='login.php' method='post' name='form1'>
-
-<pre><P ALIGN="CENTER"><FONT FACE="Times New Roman" SIZE = "3">Username: <input type='text' name='uname'>      
 </div>
 
 <div class="field2">
-<FONT FACE="Times New Roman" SIZE = "3">Administrator Password: <input type='password' name='adminPass'>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <FONT FACE="Times New Roman" SIZE = "3">Administrator Password: <input type='password' name='adminPass'>
 <br>
 </div>
 
@@ -108,7 +105,7 @@
 
 <!--<input type='submit' value="Log in" style="width:100px;height:60px;background-color:black;color:yellow;"> </P></pre> -->
 <div class="fieldLogin">
-<input type='submit' value="Log in" class="button go large">
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type='submit' value="Log in" class="button go large">
 </div>
 
 <br>

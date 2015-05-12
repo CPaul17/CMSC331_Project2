@@ -46,7 +46,7 @@
 
 <br>
 <!-- <div class="center"> -->
-<div class="center">
+<div class="centerGroup">
 <P ALIGN="CENTER"><FONT SIZE="5"><U><big><b>Advising Administrator Log-in</b></big></U></FONT></P>	
 <P ALIGN="CENTER"><FONT SIZE="3">(Enter 'password' for the Administrator Password in order to log in.)</FONT></P>
 
@@ -55,11 +55,11 @@
 
 <form action='login.php' method='post' name='form1'>
 
-<pre><P ALIGN="CENTER"><FONT FACE="Times New Roman" SIZE = "3">Username: <input type='text' name='uname'>      
 </div>
 
+
 <!-- <div class="field2"> -->
-<center>Administrator Password: <big><input type='password' name='adminPass'></big></center>
+<center><FONT FACE="Times New Roman" SIZE = "3">Administrator Password: <big><input type='password' name='adminPass'></big></center>
 <!-- </div> -->
 
 <br>
